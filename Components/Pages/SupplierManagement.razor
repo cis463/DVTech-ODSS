@@ -1,0 +1,332 @@
+﻿@page "/suppliers"
+@using DVTech_ODSS.Models
+@using DVTech_ODSS.Services
+@inject ProcurementService ProcurementService
+@rendermode InteractiveServer
+
+<PageTitle>Supplier Management</PageTitle>
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col">
+            <h2>🏢 Supplier Management</h2>
+        </div>
+        <div class="col text-end">
+            <button class="btn btn-primary" @onclick="ShowAddForm">
+                ➕ Add New Supplier
+            </button>
+        </div>
+    </div>
+
+    @if (isLoading)
+    {
+        <div class="text-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    }
+    else if (showAddForm)
+    {
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>@(editingSupplier != null ? "Edit Supplier" : "Add New Supplier")</h5>
+            </div>
+            <div class="card-body">
+                <EditForm Model="currentSupplier" OnValidSubmit="SaveSupplier">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Supplier Name *</label>
+                            <InputText class="form-control" @bind-Value="currentSupplier.SupplierName" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Contact Person</label>
+                            <InputText class="form-control" @bind-Value="currentSupplier.ContactPerson" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <InputText class="form-control" @bind-Value="currentSupplier.PhoneNumber" placeholder="+63 XXX XXX XXXX" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Email</label>
+                            <InputText class="form-control" type="email" @bind-Value="currentSupplier.Email" />
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <InputTextArea class="form-control" rows="3" @bind-Value="currentSupplier.Address" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Status</label>
+                        <InputSelect class="form-control" @bind-Value="currentSupplier.Status">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </InputSelect>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-success">💾 Save</button>
+                        <button type="button" class="btn btn-secondary" @onclick="CancelForm">Cancel</button>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Supplier Name</th>
+                                <th>Contact Person</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (suppliers.Any())
+                            {
+                                @foreach (var supplier in suppliers)
+                                {
+                                    <tr style="cursor: pointer;" @onclick="() => ViewSupplierDetails(supplier)">
+                                        <td>@supplier.SupplierName</td>
+                                        <td>@supplier.ContactPerson</td>
+                                        <td>@supplier.PhoneNumber</td>
+                                        <td>@supplier.Email</td>
+                                        <td>
+                                            <span class="badge @(supplier.Status == "Active" ? "bg-success" : "bg-secondary")">
+                                                @supplier.Status
+                                            </span>
+                                        </td>
+                                        <td @onclick:stopPropagation="true">
+                                            <button class="btn btn-sm btn-outline-primary" @onclick="() => EditSupplier(supplier)">✏️</button>
+                                            <button class="btn btn-sm btn-outline-danger" @onclick="() => DeleteSupplier(supplier.SupplierId)">🗑️</button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="6" class="text-center">No suppliers found. Click "Add New Supplier" to get started.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Supplier Details Modal -->
+@if (showDetailsModal && selectedSupplier != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">🏢 Supplier Details</h5>
+                    <button type="button" class="btn-close" @onclick="CloseDetailsModal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-8">
+                            <label class="fw-bold text-muted">Supplier Name</label>
+                            <p class="fs-4">@selectedSupplier.SupplierName</p>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="fw-bold text-muted">Status</label>
+                            <p>
+                                <span class="badge @(selectedSupplier.Status == "Active" ? "bg-success" : "bg-secondary") fs-6">
+                                    @selectedSupplier.Status
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="fw-bold text-muted">Contact Person</label>
+                            <p class="fs-5">@(string.IsNullOrEmpty(selectedSupplier.ContactPerson) ? "Not specified" : selectedSupplier.ContactPerson)</p>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="fw-bold text-muted">Date Added</label>
+                            <p class="fs-5">@selectedSupplier.DateAdded.ToString("MMMM dd, yyyy")</p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="fw-bold text-muted">📞 Phone Number</label>
+                            <p class="fs-5">
+                                @if (!string.IsNullOrEmpty(selectedSupplier.PhoneNumber))
+                                {
+                                    <a href="tel:@selectedSupplier.PhoneNumber">@selectedSupplier.PhoneNumber</a>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Not provided</span>
+                                }
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="fw-bold text-muted">📧 Email</label>
+                            <p class="fs-5">
+                                @if (!string.IsNullOrEmpty(selectedSupplier.Email))
+                                {
+                                    <a href="mailto:@selectedSupplier.Email">@selectedSupplier.Email</a>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Not provided</span>
+                                }
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label class="fw-bold text-muted">📍 Address</label>
+                            <p>@(string.IsNullOrEmpty(selectedSupplier.Address) ? "No address provided" : selectedSupplier.Address)</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-title">📊 Supplier Summary</h6>
+                                    <p class="mb-1"><strong>Supplier ID:</strong> #@selectedSupplier.SupplierId</p>
+                                    <p class="mb-1"><strong>Account Age:</strong> @((DateTime.Now - selectedSupplier.DateAdded).Days) days</p>
+                                    <p class="mb-0"><strong>Active Status:</strong> @(selectedSupplier.IsActive ? "Yes" : "No")</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" @onclick="() => EditSupplier(selectedSupplier)">✏️ Edit Supplier</button>
+                    <button type="button" class="btn btn-secondary" @onclick="CloseDetailsModal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private Supplier? selectedSupplier = null;
+    private bool showDetailsModal = false;
+    private List<Supplier> suppliers = new();
+    private Supplier currentSupplier = new();
+    private Supplier? editingSupplier = null;
+    private bool showAddForm = false;
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadSuppliers();
+    }
+
+    private async Task LoadSuppliers()
+    {
+        isLoading = true;
+        suppliers = await ProcurementService.GetAllSuppliersAsync();
+        isLoading = false;
+    }
+
+    private void ShowAddForm()
+    {
+        currentSupplier = new Supplier();
+        editingSupplier = null;
+        showAddForm = true;
+    }
+
+    private void EditSupplier(Supplier supplier)
+    {
+        editingSupplier = supplier;
+        currentSupplier = new Supplier
+        {
+            SupplierId = supplier.SupplierId,
+            SupplierName = supplier.SupplierName,
+            ContactPerson = supplier.ContactPerson,
+            PhoneNumber = supplier.PhoneNumber,
+            Email = supplier.Email,
+            Address = supplier.Address,
+            Status = supplier.Status,
+            DateAdded = supplier.DateAdded,
+            IsActive = supplier.IsActive
+        };
+        showAddForm = true;
+        StateHasChanged(); // Force UI update
+    }
+
+    private async Task SaveSupplier()
+    {
+        bool success;
+
+        if (editingSupplier != null)
+        {
+            // Update existing supplier
+            editingSupplier.SupplierName = currentSupplier.SupplierName;
+            editingSupplier.ContactPerson = currentSupplier.ContactPerson;
+            editingSupplier.PhoneNumber = currentSupplier.PhoneNumber;
+            editingSupplier.Email = currentSupplier.Email;
+            editingSupplier.Address = currentSupplier.Address;
+            editingSupplier.Status = currentSupplier.Status;
+
+            success = await ProcurementService.UpdateSupplierAsync(editingSupplier);
+        }
+        else
+        {
+            success = await ProcurementService.AddSupplierAsync(currentSupplier);
+        }
+
+        if (success)
+        {
+            await LoadSuppliers();
+            CancelForm();
+            StateHasChanged();
+        }
+    }
+
+    private async Task DeleteSupplier(int id)
+    {
+        await ProcurementService.DeleteSupplierAsync(id);
+        await LoadSuppliers();
+    }
+
+    private void CancelForm()
+    {
+        showAddForm = false;
+        currentSupplier = new Supplier();
+        editingSupplier = null;
+    }
+
+    private void ViewSupplierDetails(Supplier supplier)
+    {
+        selectedSupplier = supplier;
+        showDetailsModal = true;
+        StateHasChanged();
+    }
+
+    private void CloseDetailsModal()
+    {
+        showDetailsModal = false;
+        selectedSupplier = null;
+        StateHasChanged();
+    }
+}

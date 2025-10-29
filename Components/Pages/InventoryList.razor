@@ -1,0 +1,659 @@
+﻿@page "/inventory"
+@using DVTech_ODSS.Models
+@using DVTech_ODSS.Services
+@inject InventoryService InventoryService
+@rendermode InteractiveServer
+
+<PageTitle>Inventory Management</PageTitle>
+
+<div class="container-fluid">
+    <div class="row mb-3 align-items-center">
+        <div class="col">
+            <h3 class="mb-0">📦 Inventory Management</h3>
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-primary" @onclick="ShowAddModal">
+                ➕ Add New Item
+            </button>
+            <button type="button" class="btn btn-secondary" @onclick="ShowArchiveList">
+                📁 Archives (@archivedItems.Count)
+            </button>
+        </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="row g-3 mb-3">
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body p-3">
+                    <p class="text-muted small mb-1">Total Inventory Value</p>
+                    <h4 class="mb-0 text-success">₱@CalculateTotalValue().ToString("N2")</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body p-3">
+                    <p class="text-muted small mb-1">Total Items</p>
+                    <h4 class="mb-0">@displayedItems.Count</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body p-3">
+                    <p class="text-muted small mb-1">Categories</p>
+                    <h4 class="mb-0">@GetAllCategories().Count</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body p-3">
+                    <p class="text-muted small mb-1">Low Stock Items</p>
+                    <h4 class="mb-0 text-danger">@lowStockItems.Count</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <div class="row g-2 align-items-center">
+                <div class="col-md-3">
+                    <input type="text" class="form-control form-control-sm" placeholder="🔍 Search by name..." @bind="searchText" @bind:event="oninput" @onkeyup="ApplyFilters" />
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select form-select-sm" @onchange="OnCategoryChanged">
+                        <option value="">All Categories</option>
+                        @foreach (var category in GetAllCategories())
+                        {
+                            <option value="@category">@category</option>
+                        }
+                    </select>
+
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-sm btn-outline-secondary w-100" @onclick="ResetFilters">Reset Filters</button>
+                </div>
+                <div class="col-md-4 text-end">
+                    @if (!string.IsNullOrEmpty(selectedCategory))
+                    {
+                        <span class="badge bg-info">@selectedCategory Value: ₱@CalculateCategoryValue(selectedCategory).ToString("N2")</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (lowStockItems.Any() && string.IsNullOrEmpty(selectedCategory))
+    {
+        <div class="alert alert-warning py-2" role="alert">
+            <strong>⚠️ Low Stock Alert!</strong> You have @lowStockItems.Count item(s) running low on stock.
+        </div>
+    }
+
+    @if (isLoading)
+    {
+        <div class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    }
+    else if (showArchives)
+    {
+        <div class="card shadow-sm">
+            <div class="card-header bg-secondary text-white py-2">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0">📁 Archived Items</h6>
+                    <button type="button" class="btn btn-sm btn-light" @onclick="CloseArchiveList">Back to Inventory</button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover table-sm mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="py-2">Item Name</th>
+                                <th class="py-2">Brand</th>
+                                <th class="py-2">Category</th>
+                                <th class="py-2">Quantity</th>
+                                <th class="py-2">Archived Date</th>
+                                <th class="py-2 text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (archivedItems.Any())
+                            {
+                                @foreach (var item in archivedItems)
+                                {
+                                    <tr>
+                                        <td class="py-2 small">@item.ItemName</td>
+                                        <td class="py-2 small">@item.Brand</td>
+                                        <td class="py-2 small">@item.Category</td>
+                                        <td class="py-2 small">@item.Quantity @item.Unit</td>
+                                        <td class="py-2 small">@item.ArchivedDate?.ToString("MMM dd, yyyy") ?? "Unknown"</td>
+                                        <td class="py-2 text-center">
+                                            <button type="button" class="btn btn-sm btn-outline-success py-0 px-2" @onclick="@(() => RestoreItem(item.ItemId))">↩️ Restore</button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="6" class="text-center py-4 text-muted">
+                                        No archived items.
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card shadow-sm">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover table-sm mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="py-2">Item Name</th>
+                                <th class="py-2">Brand</th>
+                                <th class="py-2">Category</th>
+                                <th class="py-2">Quantity</th>
+                                <th class="py-2">Unit</th>
+                                <th class="py-2">Unit Price</th>
+                                <th class="py-2">Total Value</th>
+                                <th class="py-2 text-center">Status</th>
+                                <th class="py-2 text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (displayedItems.Any())
+                            {
+                                @foreach (var item in displayedItems)
+                                {
+                                    <tr style="cursor: pointer;" @onclick="@(() => ViewItemDetails(item))">
+                                        <td class="py-2 small">@item.ItemName</td>
+                                        <td class="py-2 small">@item.Brand</td>
+                                        <td class="py-2 small">@item.Category</td>
+                                        <td class="py-2 small">
+                                            <span class="@(item.Quantity <= item.MinimumStockLevel ? "text-danger fw-bold" : "")">
+                                                @item.Quantity
+                                            </span>
+                                        </td>
+                                        <td class="py-2 small">@item.Unit</td>
+                                        <td class="py-2 small">₱@item.UnitPrice.ToString("N2")</td>
+                                        <td class="py-2 small"><strong>₱@((item.Quantity * item.UnitPrice).ToString("N2"))</strong></td>
+                                        <td class="py-2 text-center">
+                                            <span class="badge @GetStatusBadgeClass(item.Status) small">
+                                                @item.Status
+                                            </span>
+                                        </td>
+                                        <td class="py-2 text-center" @onclick:stopPropagation="true">
+                                            <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2" @onclick="@(() => ShowEditModal(item))">Edit</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary py-0 px-2" @onclick="@(() => ShowArchiveConfirmation(item))">Archive</button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="9" class="text-center py-4 text-muted">
+                                        No items found.
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot class="table-light">
+                            <tr>
+                                <td colspan="6" class="py-2 text-end"><strong>Total Inventory Value:</strong></td>
+                                <td colspan="3" class="py-2"><strong class="text-success">₱@CalculateTotalValue().ToString("N2")</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Add/Edit Item Modal -->
+@if (showFormModal)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.6);">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white py-2">
+                    <h6 class="modal-title mb-0">@(editingItem != null ? "Edit Item" : "Add New Item")</h6>
+                    <button type="button" class="btn-close btn-close-white" @onclick="CloseFormModal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="row g-2 mb-2">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold mb-1">Item Name *</label>
+                            <input type="text" class="form-control form-control-sm" @bind="itemName" placeholder="Enter item name" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold mb-1">Brand</label>
+                            <input type="text" class="form-control form-control-sm" @bind="brand" placeholder="Enter brand name" />
+                        </div>
+                    </div>
+
+                    <div class="row g-2 mb-2">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold mb-1">Category *</label>
+                            <input type="text" class="form-control form-control-sm" @bind="category" placeholder="e.g., Electronics, Furniture" />
+                            <small class="text-muted">New categories will be automatically registered</small>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold mb-1">Unit *</label>
+                            <input type="text" class="form-control form-control-sm" @bind="unit" placeholder="pcs, kg, liters" />
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label class="form-label small fw-bold mb-1">Description</label>
+                        <textarea class="form-control form-control-sm" rows="2" @bind="description" placeholder="Item description"></textarea>
+                    </div>
+
+                    <div class="row g-2 mb-3">
+                        <div class="col-md-3">
+                            <label class="form-label small fw-bold mb-1">Quantity *</label>
+                            <input type="number" class="form-control form-control-sm" @bind="quantity" min="0" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label small fw-bold mb-1">Min. Stock Level *</label>
+                            <input type="number" class="form-control form-control-sm" @bind="minimumStockLevel" min="0" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label small fw-bold mb-1">High Stock Level *</label>
+                            <input type="number" class="form-control form-control-sm" @bind="highStockLevel" min="0" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label small fw-bold mb-1">Unit Price</label>
+                            <input type="number" class="form-control form-control-sm" @bind="unitPrice" step="0.01" min="0" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-success btn-sm" @onclick="SaveItem">
+                        @(editingItem != null ? "Update" : "Save")
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm" @onclick="CloseFormModal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- View Details Modal -->
+@if (showDetailsModal && selectedItem != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.6);">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white py-2">
+                    <h6 class="modal-title mb-0">📦 Item Details</h6>
+                    <button type="button" class="btn-close btn-close-white" @onclick="CloseDetailsModal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="row mb-3">
+                        <div class="col-8">
+                            <h5 class="mb-1">@selectedItem.ItemName</h5>
+                            <p class="text-muted small mb-0">@selectedItem.Brand</p>
+                            <p class="text-muted small mb-0">@selectedItem.Category</p>
+                        </div>
+                        <div class="col-4 text-end">
+                            <span class="badge @GetStatusBadgeClass(selectedItem.Status) px-3 py-2">
+                                @selectedItem.Status
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label class="small text-muted mb-0">Description</label>
+                            <p class="mb-0">@(string.IsNullOrEmpty(selectedItem.Description) ? "No description" : selectedItem.Description)</p>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-3">
+                            <label class="small text-muted mb-0">Quantity</label>
+                            <p class="mb-0 fs-5 @(selectedItem.Quantity <= selectedItem.MinimumStockLevel ? "text-danger fw-bold" : "text-success")">
+                                @selectedItem.Quantity @selectedItem.Unit
+                            </p>
+                        </div>
+                        <div class="col-3">
+                            <label class="small text-muted mb-0">Min. Stock</label>
+                            <p class="mb-0">@selectedItem.MinimumStockLevel @selectedItem.Unit</p>
+                        </div>
+                        <div class="col-3">
+                            <label class="small text-muted mb-0">Unit Price</label>
+                            <p class="mb-0 text-primary">₱@selectedItem.UnitPrice.ToString("N2")</p>
+                        </div>
+                        <div class="col-3">
+                            <label class="small text-muted mb-0">Total Value</label>
+                            <p class="mb-0 text-success fw-bold">₱@((selectedItem.Quantity * selectedItem.UnitPrice).ToString("N2"))</p>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <label class="small text-muted mb-0">Date Added</label>
+                            <p class="mb-0 small">@selectedItem.DateAdded.ToString("MMM dd, yyyy")</p>
+                        </div>
+                        <div class="col-6">
+                            <label class="small text-muted mb-0">Last Restocked</label>
+                            <p class="mb-0 small">@(selectedItem.LastRestocked?.ToString("MMM dd, yyyy") ?? "Never")</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-primary" @onclick="@(() => ShowEditModalFromDetails(selectedItem))">Edit Item</button>
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CloseDetailsModal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Archive Confirmation Modal -->
+@if (showArchiveConfirmationModal && itemToArchive != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.6);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary text-white py-2">
+                    <h6 class="modal-title mb-0">📁 Confirm Archive</h6>
+                    <button type="button" class="btn-close btn-close-white" @onclick="CancelArchive"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to archive <strong>@itemToArchive.ItemName</strong>?</p>
+                    <p class="text-muted small mb-0">This item will be moved to Archives and can be restored later.</p>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="ConfirmArchive">Yes, Archive</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" @onclick="CancelArchive">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<InventoryItem> items = new();
+    private List<InventoryItem> displayedItems = new();
+    private List<InventoryItem> lowStockItems = new();
+    private List<InventoryItem> archivedItems = new();
+    private InventoryItem? editingItem = null;
+    private InventoryItem? selectedItem = null;
+    private InventoryItem? itemToArchive = null;
+
+    private bool showFormModal = false;
+    private bool showDetailsModal = false;
+    private bool showArchives = false;
+    private bool showArchiveConfirmationModal = false;
+    private bool isLoading = true;
+
+    private string searchText = "";
+    private string selectedCategory = "";
+
+    // Form fields
+    private string itemName = "";
+    private string brand = "";
+    private string category = "";
+    private string description = "";
+    private int quantity = 0;
+    private int minimumStockLevel = 10;
+    private int highStockLevel = 100;
+    private string unit = "pcs";
+    private decimal unitPrice = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadItems();
+    }
+
+    private async Task LoadItems()
+    {
+        isLoading = true;
+        items = await InventoryService.GetAllItemsAsync();
+        archivedItems = await InventoryService.GetArchivedItemsAsync();
+        displayedItems = items.ToList();
+        lowStockItems = await InventoryService.GetLowStockItemsAsync();
+        isLoading = false;
+        StateHasChanged();
+    }
+
+    private List<string> GetAllCategories()
+    {
+        return items.Select(i => i.Category).Distinct().OrderBy(c => c).ToList();
+    }
+
+    private decimal CalculateTotalValue()
+    {
+        return displayedItems.Sum(i => i.Quantity * i.UnitPrice);
+    }
+
+    private decimal CalculateCategoryValue(string cat)
+    {
+        return displayedItems.Where(i => i.Category == cat).Sum(i => i.Quantity * i.UnitPrice);
+    }
+
+    private void ApplyFilters()
+    {
+        var query = items.AsEnumerable();
+
+        if (!string.IsNullOrEmpty(searchText))
+        {
+            query = query.Where(i => i.ItemName.Contains(searchText, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrEmpty(selectedCategory))
+        {
+            query = query.Where(i => i.Category == selectedCategory);
+        }
+
+        displayedItems = query.ToList();
+        StateHasChanged();
+    }
+
+    private void ResetFilters()
+    {
+        searchText = "";
+        selectedCategory = "";
+        displayedItems = items.ToList();
+        StateHasChanged();
+    }
+
+    private void ShowAddModal()
+    {
+        editingItem = null;
+        itemName = "";
+        brand = "";
+        category = "";
+        description = "";
+        quantity = 0;
+        minimumStockLevel = 10;
+        highStockLevel = 100;
+        unit = "pcs";
+        unitPrice = 0;
+        showFormModal = true;
+        StateHasChanged();
+    }
+
+    private void ShowEditModal(InventoryItem item)
+    {
+        editingItem = item;
+        itemName = item.ItemName;
+        brand = item.Brand ?? "";
+        category = item.Category;
+        description = item.Description ?? "";
+        quantity = item.Quantity;
+        minimumStockLevel = item.MinimumStockLevel;
+        highStockLevel = item.HighStockLevel;
+        unit = item.Unit;
+        unitPrice = item.UnitPrice;
+        showFormModal = true;
+        StateHasChanged();
+    }
+
+    private void ShowEditModalFromDetails(InventoryItem item)
+    {
+        CloseDetailsModal();
+        ShowEditModal(item);
+    }
+
+    private async Task SaveItem()
+    {
+        if (string.IsNullOrWhiteSpace(itemName) || string.IsNullOrWhiteSpace(category))
+        {
+            // Ideally show a validation message
+            return;
+        }
+
+        bool success;
+
+        if (editingItem != null)
+        {
+            editingItem.ItemName = itemName;
+            editingItem.Brand = brand;
+            editingItem.Category = category;
+            editingItem.Description = description;
+            editingItem.Quantity = quantity;
+            editingItem.MinimumStockLevel = minimumStockLevel;
+            editingItem.HighStockLevel = highStockLevel;
+            editingItem.Unit = unit;
+            editingItem.UnitPrice = unitPrice;
+            editingItem.LastRestocked = DateTime.Now;
+
+            success = await InventoryService.UpdateItemAsync(editingItem);
+        }
+        else
+        {
+            var newItem = new InventoryItem
+            {
+                ItemName = itemName,
+                Brand = brand,
+                Category = category,
+                Description = description,
+                Quantity = quantity,
+                MinimumStockLevel = minimumStockLevel,
+                HighStockLevel = highStockLevel,
+                Unit = unit,
+                UnitPrice = unitPrice
+            };
+
+            success = await InventoryService.AddItemAsync(newItem);
+        }
+
+        if (success)
+        {
+            await LoadItems();
+            ApplyFilters();
+            CloseFormModal();
+        }
+    }
+
+    private void CloseFormModal()
+    {
+        showFormModal = false;
+        editingItem = null;
+        StateHasChanged();
+    }
+
+    private void ViewItemDetails(InventoryItem item)
+    {
+        selectedItem = item;
+        showDetailsModal = true;
+        StateHasChanged();
+    }
+
+    private void CloseDetailsModal()
+    {
+        selectedItem = null;
+        showDetailsModal = false;
+        StateHasChanged();
+    }
+
+    private void ShowArchiveList()
+    {
+        showArchives = true;
+        StateHasChanged();
+    }
+
+    private void CloseArchiveList()
+    {
+        showArchives = false;
+        StateHasChanged();
+    }
+
+    private void ShowArchiveConfirmation(InventoryItem item)
+    {
+        itemToArchive = item;
+        showArchiveConfirmationModal = true;
+        StateHasChanged();
+    }
+
+    private void CancelArchive()
+    {
+        itemToArchive = null;
+        showArchiveConfirmationModal = false;
+        StateHasChanged();
+    }
+
+    private async Task ConfirmArchive()
+    {
+        if (itemToArchive != null)
+        {
+            var success = await InventoryService.ArchiveItemAsync(itemToArchive.ItemId);
+            if (success)
+            {
+                await LoadItems();
+                CancelArchive();
+            }
+        }
+    }
+
+    private async Task RestoreItem(int id)
+    {
+        var success = await InventoryService.RestoreItemAsync(id);
+        if (success)
+        {
+            await LoadItems();
+            StateHasChanged();
+        }
+    }
+
+    private string GetStatusBadgeClass(string? status)
+    {
+        if (string.IsNullOrEmpty(status))
+            return "bg-secondary";
+
+        return status.ToLowerInvariant() switch
+        {
+            var s when s.Contains("high") => "bg-success",
+            var s when s.Contains("good") => "bg-primary",
+            var s when s.Contains("low") => "bg-warning text-dark",
+            var s when s.Contains("out") => "bg-danger",
+            _ => "bg-secondary"
+        };
+    }
+
+    private Task OnCategoryChanged(ChangeEventArgs e)
+    {
+        selectedCategory = e?.Value?.ToString() ?? "";
+        ApplyFilters();
+        return Task.CompletedTask;
+    }
+
+}
