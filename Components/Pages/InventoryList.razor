@@ -1,7 +1,8 @@
-﻿@page "/inventory"
+@page "/inventory"
 @using DVTech_ODSS.Models
 @using DVTech_ODSS.Services
 @inject InventoryService InventoryService
+@inject IJSRuntime JSRuntime
 @rendermode InteractiveServer
 
 <PageTitle>Inventory Management</PageTitle>
@@ -23,7 +24,7 @@
 
     <!-- Summary Cards -->
     <div class="row g-3 mb-3">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card shadow-sm">
                 <div class="card-body p-3">
                     <p class="text-muted small mb-1">Total Inventory Value</p>
@@ -31,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card shadow-sm">
                 <div class="card-body p-3">
                     <p class="text-muted small mb-1">Total Items</p>
@@ -39,15 +40,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card shadow-sm">
-                <div class="card-body p-3">
-                    <p class="text-muted small mb-1">Categories</p>
-                    <h4 class="mb-0">@GetAllCategories().Count</h4>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card shadow-sm">
                 <div class="card-body p-3">
                     <p class="text-muted small mb-1">Low Stock Items</p>
@@ -72,15 +65,20 @@
                             <option value="@category">@category</option>
                         }
                     </select>
-
                 </div>
-                <div class="col-md-2">
-                    <button type="button" class="btn btn-sm btn-outline-secondary w-100" @onclick="ResetFilters">Reset Filters</button>
+                <div class="col-md-3">
+                    <select class="form-select form-select-sm" @onchange="OnBrandChanged">
+                        <option value="">All Brands</option>
+                        @foreach (var brand in GetAllBrands())
+                        {
+                            <option value="@brand">@brand</option>
+                        }
+                    </select>
                 </div>
-                <div class="col-md-4 text-end">
-                    @if (!string.IsNullOrEmpty(selectedCategory))
+                <div class="col-md-3 text-end">
+                    @if (!string.IsNullOrEmpty(selectedCategory) || !string.IsNullOrEmpty(selectedBrand) || !string.IsNullOrEmpty(selectedStockStatus))
                     {
-                        <span class="badge bg-info">@selectedCategory Value: ₱@CalculateCategoryValue(selectedCategory).ToString("N2")</span>
+                        <span class="badge bg-info">@displayedItems.Count items shown</span>
                     }
                 </div>
             </div>
@@ -170,7 +168,14 @@
                                 <th class="py-2">Unit</th>
                                 <th class="py-2">Unit Price</th>
                                 <th class="py-2">Total Value</th>
-                                <th class="py-2 text-center">Status</th>
+                                <th class="py-2 text-center">
+                                    <select class="form-select form-select-sm d-inline-block w-auto" @onchange="OnStockStatusChanged" style="font-size: 0.875rem;">
+                                        <option value="">Stock Status ▼</option>
+                                        <option value="Low Stock">Low Stock</option>
+                                        <option value="Good Stock">Good Stock</option>
+                                        <option value="High Stock">High Stock</option>
+                                    </select>
+                                </th>
                                 <th class="py-2 text-center">Actions</th>
                             </tr>
                         </thead>
@@ -192,8 +197,8 @@
                                         <td class="py-2 small">₱@item.UnitPrice.ToString("N2")</td>
                                         <td class="py-2 small"><strong>₱@((item.Quantity * item.UnitPrice).ToString("N2"))</strong></td>
                                         <td class="py-2 text-center">
-                                            <span class="badge @GetStatusBadgeClass(item.Status) small">
-                                                @item.Status
+                                            <span class="badge @GetStockStatusBadgeClass(item) small">
+                                                @GetStockStatus(item)
                                             </span>
                                         </td>
                                         <td class="py-2 text-center" @onclick:stopPropagation="true">
@@ -212,12 +217,6 @@
                                 </tr>
                             }
                         </tbody>
-                        <tfoot class="table-light">
-                            <tr>
-                                <td colspan="6" class="py-2 text-end"><strong>Total Inventory Value:</strong></td>
-                                <td colspan="3" class="py-2"><strong class="text-success">₱@CalculateTotalValue().ToString("N2")</strong></td>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -239,55 +238,132 @@
                     <div class="row g-2 mb-2">
                         <div class="col-md-6">
                             <label class="form-label small fw-bold mb-1">Item Name *</label>
-                            <input type="text" class="form-control form-control-sm" @bind="itemName" placeholder="Enter item name" />
+                            <input type="text" class="form-control form-control-sm @(itemNameError ? "is-invalid" : "")" @bind="itemName" @bind:event="oninput" @onblur="ValidateItemName" placeholder="Enter item name" />
+                            @if (itemNameError)
+                            {
+                                <div class="invalid-feedback d-block small">Please enter a valid item name (minimum 3 characters, letters and numbers only)</div>
+                            }
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label small fw-bold mb-1">Brand</label>
-                            <input type="text" class="form-control form-control-sm" @bind="brand" placeholder="Enter brand name" />
+                            <label class="form-label small fw-bold mb-1">Brand *</label>
+                            <input list="brandList" type="text" class="form-control form-control-sm @(brandError ? "is-invalid" : "")" @bind="brand" @bind:event="oninput" @onblur="ValidateBrand" placeholder="Select or enter brand name" />
+                            <datalist id="brandList">
+                                @foreach (var existingBrand in GetAllBrands())
+                                {
+                                    <option value="@existingBrand">@existingBrand</option>
+                                }
+                            </datalist>
+                            @if (brandError)
+                            {
+                                <div class="invalid-feedback d-block small">Please enter a valid brand name (minimum 2 characters, letters only)</div>
+                            }
                         </div>
                     </div>
 
                     <div class="row g-2 mb-2">
                         <div class="col-md-6">
                             <label class="form-label small fw-bold mb-1">Category *</label>
-                            <input type="text" class="form-control form-control-sm" @bind="category" placeholder="e.g., Electronics, Furniture" />
+                            <input list="categoryList" type="text" class="form-control form-control-sm @(categoryError ? "is-invalid" : "")" @bind="category" @bind:event="oninput" @onblur="ValidateCategory" placeholder="Select or enter category" />
+                            <datalist id="categoryList">
+                                @foreach (var existingCategory in GetAllCategories())
+                                {
+                                    <option value="@existingCategory">@existingCategory</option>
+                                }
+                            </datalist>
                             <small class="text-muted">New categories will be automatically registered</small>
+                            @if (categoryError)
+                            {
+                                <div class="invalid-feedback d-block small">Please enter a valid category (minimum 2 characters)</div>
+                            }
                         </div>
                         <div class="col-md-6">
                             <label class="form-label small fw-bold mb-1">Unit *</label>
-                            <input type="text" class="form-control form-control-sm" @bind="unit" placeholder="pcs, kg, liters" />
+                            <input list="unitList" type="text" class="form-control form-control-sm @(unitError ? "is-invalid" : "")" @bind="unit" @bind:event="oninput" @onblur="ValidateUnit" placeholder="Select or enter unit" />
+                            <datalist id="unitList">
+                                @foreach (var existingUnit in GetAllUnits())
+                                {
+                                    <option value="@existingUnit">@existingUnit</option>
+                                }
+                            </datalist>
+                            @if (unitError)
+                            {
+                                <div class="invalid-feedback d-block small">Please enter a valid unit (minimum 1 character, letters only)</div>
+                            }
                         </div>
                     </div>
 
                     <div class="mb-2">
                         <label class="form-label small fw-bold mb-1">Description</label>
-                        <textarea class="form-control form-control-sm" rows="2" @bind="description" placeholder="Item description"></textarea>
+                        <textarea class="form-control form-control-sm @(descriptionError ? "is-invalid" : "")" rows="2" @bind="description" @bind:event="oninput" @onblur="ValidateDescription" placeholder="Item description"></textarea>
+                        @if (descriptionError)
+                        {
+                            <div class="invalid-feedback d-block small">Description must be at least 10 characters if provided</div>
+                        }
                     </div>
 
                     <div class="row g-2 mb-3">
                         <div class="col-md-3">
                             <label class="form-label small fw-bold mb-1">Quantity *</label>
-                            <input type="number" class="form-control form-control-sm" @bind="quantity" min="0" />
+                            <input type="number" class="form-control form-control-sm @(quantityError ? "is-invalid" : "")" @bind="quantity" @bind:event="oninput" @onblur="ValidateQuantity" min="1" />
+                            @if (quantityError)
+                            {
+                                <div class="invalid-feedback d-block small">Quantity must be at least 1</div>
+                            }
                         </div>
                         <div class="col-md-3">
                             <label class="form-label small fw-bold mb-1">Min. Stock Level *</label>
-                            <input type="number" class="form-control form-control-sm" @bind="minimumStockLevel" min="0" />
+                            <input type="number" class="form-control form-control-sm @(minStockError ? "is-invalid" : "")" @bind="minimumStockLevel" @bind:event="oninput" @onblur="ValidateMinStock" min="1" />
+                            @if (minStockError)
+                            {
+                                <div class="invalid-feedback d-block small">Min. stock must be at least 1</div>
+                            }
                         </div>
                         <div class="col-md-3">
                             <label class="form-label small fw-bold mb-1">High Stock Level *</label>
-                            <input type="number" class="form-control form-control-sm" @bind="highStockLevel" min="0" />
+                            <input type="number" class="form-control form-control-sm @(highStockError ? "is-invalid" : "")" @bind="highStockLevel" @bind:event="oninput" @onblur="ValidateHighStock" min="1" />
+                            @if (highStockError)
+                            {
+                                <div class="invalid-feedback d-block small">High stock must be greater than min. stock</div>
+                            }
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label small fw-bold mb-1">Unit Price</label>
-                            <input type="number" class="form-control form-control-sm" @bind="unitPrice" step="0.01" min="0" />
+                            <label class="form-label small fw-bold mb-1">Unit Price *</label>
+                            <input type="number" class="form-control form-control-sm @(priceError ? "is-invalid" : "")" @bind="unitPrice" @bind:event="oninput" @onblur="ValidatePrice" step="0.01" min="0" />
+                            @if (priceError)
+                            {
+                                <div class="invalid-feedback d-block small">Price must be 0 or greater</div>
+                            }
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer py-2">
-                    <button type="button" class="btn btn-success btn-sm" @onclick="SaveItem">
+                    <button type="button" class="btn btn-success btn-sm" @onclick="SaveItem" disabled="@(!IsFormValid())">
                         @(editingItem != null ? "Update" : "Save")
                     </button>
                     <button type="button" class="btn btn-secondary btn-sm" @onclick="CloseFormModal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Edit Confirmation Modal -->
+@if (showEditConfirmation && editingItem != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.6);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-warning py-2">
+                    <h6 class="modal-title mb-0">⚠️ Confirm Edit</h6>
+                    <button type="button" class="btn-close" @onclick="CancelEdit"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to save changes to <strong>@editingItem.ItemName</strong>?</p>
+                    <p class="text-muted small mb-0">This will update the item information in the inventory.</p>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-success" @onclick="ConfirmEdit">Yes, Save Changes</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" @onclick="CancelEdit">Cancel</button>
                 </div>
             </div>
         </div>
@@ -312,8 +388,8 @@
                             <p class="text-muted small mb-0">@selectedItem.Category</p>
                         </div>
                         <div class="col-4 text-end">
-                            <span class="badge @GetStatusBadgeClass(selectedItem.Status) px-3 py-2">
-                                @selectedItem.Status
+                            <span class="badge @GetStockStatusBadgeClass(selectedItem) px-3 py-2">
+                                @GetStockStatus(selectedItem)
                             </span>
                         </div>
                     </div>
@@ -402,21 +478,35 @@
     private bool showDetailsModal = false;
     private bool showArchives = false;
     private bool showArchiveConfirmationModal = false;
+    private bool showEditConfirmation = false;
     private bool isLoading = true;
 
     private string searchText = "";
     private string selectedCategory = "";
+    private string selectedBrand = "";
+    private string selectedStockStatus = "";
 
     // Form fields
     private string itemName = "";
     private string brand = "";
     private string category = "";
     private string description = "";
-    private int quantity = 0;
+    private int quantity = 1;
     private int minimumStockLevel = 10;
     private int highStockLevel = 100;
     private string unit = "pcs";
     private decimal unitPrice = 0;
+
+    // Validation flags
+    private bool itemNameError = false;
+    private bool brandError = false;
+    private bool categoryError = false;
+    private bool unitError = false;
+    private bool descriptionError = false;
+    private bool quantityError = false;
+    private bool minStockError = false;
+    private bool highStockError = false;
+    private bool priceError = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -429,7 +519,7 @@
         items = await InventoryService.GetAllItemsAsync();
         archivedItems = await InventoryService.GetArchivedItemsAsync();
         displayedItems = items.ToList();
-        lowStockItems = await InventoryService.GetLowStockItemsAsync();
+        lowStockItems = items.Where(i => i.Quantity <= i.MinimumStockLevel).ToList();
         isLoading = false;
         StateHasChanged();
     }
@@ -437,6 +527,18 @@
     private List<string> GetAllCategories()
     {
         return items.Select(i => i.Category).Distinct().OrderBy(c => c).ToList();
+    }
+
+    private List<string> GetAllBrands()
+    {
+        return items.Where(i => !string.IsNullOrEmpty(i.Brand)).Select(i => i.Brand!).Distinct().OrderBy(b => b).ToList();
+    }
+
+    private List<string> GetAllUnits()
+    {
+        var defaultUnits = new List<string> { "pcs", "units", "sets", "meters", "kg", "liters", "rolls", "cans", "bottles", "cylinders" };
+        var existingUnits = items.Select(i => i.Unit).Distinct().ToList();
+        return defaultUnits.Union(existingUnits).Distinct().OrderBy(u => u).ToList();
     }
 
     private decimal CalculateTotalValue()
@@ -463,16 +565,81 @@
             query = query.Where(i => i.Category == selectedCategory);
         }
 
+        if (!string.IsNullOrEmpty(selectedBrand))
+        {
+            query = query.Where(i => i.Brand == selectedBrand);
+        }
+
+        if (!string.IsNullOrEmpty(selectedStockStatus))
+        {
+            query = query.Where(i => GetStockStatus(i) == selectedStockStatus);
+        }
+
         displayedItems = query.ToList();
         StateHasChanged();
     }
 
-    private void ResetFilters()
+    // Validation methods
+    private void ValidateItemName()
     {
-        searchText = "";
-        selectedCategory = "";
-        displayedItems = items.ToList();
-        StateHasChanged();
+        itemNameError = string.IsNullOrWhiteSpace(itemName) || itemName.Length < 3 || !System.Text.RegularExpressions.Regex.IsMatch(itemName, @"^[a-zA-Z0-9\s\-\.]+$");
+    }
+
+    private void ValidateBrand()
+    {
+        brandError = string.IsNullOrWhiteSpace(brand) || brand.Length < 2 || !System.Text.RegularExpressions.Regex.IsMatch(brand, @"^[a-zA-Z0-9\s\-\.&]+$");
+    }
+
+    private void ValidateCategory()
+    {
+        categoryError = string.IsNullOrWhiteSpace(category) || category.Length < 2;
+    }
+
+    private void ValidateUnit()
+    {
+        unitError = string.IsNullOrWhiteSpace(unit) || unit.Length < 1 || !System.Text.RegularExpressions.Regex.IsMatch(unit, @"^[a-zA-Z]+$");
+    }
+
+    private void ValidateDescription()
+    {
+        descriptionError = !string.IsNullOrWhiteSpace(description) && description.Length < 10;
+    }
+
+    private void ValidateQuantity()
+    {
+        quantityError = quantity < 1;
+    }
+
+    private void ValidateMinStock()
+    {
+        minStockError = minimumStockLevel < 1;
+    }
+
+    private void ValidateHighStock()
+    {
+        highStockError = highStockLevel <= minimumStockLevel;
+    }
+
+    private void ValidatePrice()
+    {
+        priceError = unitPrice < 0;
+    }
+
+    private bool IsFormValid()
+    {
+        ValidateItemName();
+        ValidateBrand();
+        ValidateCategory();
+        ValidateUnit();
+        ValidateDescription();
+        ValidateQuantity();
+        ValidateMinStock();
+        ValidateHighStock();
+        ValidatePrice();
+
+        return !itemNameError && !brandError && !categoryError && !unitError &&
+               !descriptionError && !quantityError && !minStockError &&
+               !highStockError && !priceError;
     }
 
     private void ShowAddModal()
@@ -482,11 +649,23 @@
         brand = "";
         category = "";
         description = "";
-        quantity = 0;
+        quantity = 1;
         minimumStockLevel = 10;
         highStockLevel = 100;
         unit = "pcs";
         unitPrice = 0;
+
+        // Reset validation errors
+        itemNameError = false;
+        brandError = false;
+        categoryError = false;
+        unitError = false;
+        descriptionError = false;
+        quantityError = false;
+        minStockError = false;
+        highStockError = false;
+        priceError = false;
+
         showFormModal = true;
         StateHasChanged();
     }
@@ -503,6 +682,18 @@
         highStockLevel = item.HighStockLevel;
         unit = item.Unit;
         unitPrice = item.UnitPrice;
+
+        // Reset validation errors
+        itemNameError = false;
+        brandError = false;
+        categoryError = false;
+        unitError = false;
+        descriptionError = false;
+        quantityError = false;
+        minStockError = false;
+        highStockError = false;
+        priceError = false;
+
         showFormModal = true;
         StateHasChanged();
     }
@@ -515,17 +706,43 @@
 
     private async Task SaveItem()
     {
-        if (string.IsNullOrWhiteSpace(itemName) || string.IsNullOrWhiteSpace(category))
+        if (!IsFormValid())
         {
-            // Ideally show a validation message
             return;
         }
 
-        bool success;
-
+        // If editing, show confirmation modal
         if (editingItem != null)
         {
-            editingItem.ItemName = itemName;
+            showEditConfirmation = true;
+            StateHasChanged();
+            return;
+        }
+
+        // If adding new item, save directly
+        await PerformSave();
+    }
+
+    private async Task ConfirmEdit()
+    {
+        showEditConfirmation = false;
+        await PerformSave();
+    }
+
+    private void CancelEdit()
+    {
+        showEditConfirmation = false;
+        StateHasChanged();
+    }
+
+    private async Task PerformSave()
+    {
+        bool success;
+        bool isEditing = editingItem != null;
+
+        if (isEditing)
+        {
+            editingItem!.ItemName = itemName;
             editingItem.Brand = brand;
             editingItem.Category = category;
             editingItem.Description = description;
@@ -561,6 +778,20 @@
             await LoadItems();
             ApplyFilters();
             CloseFormModal();
+
+            // Show toast notification
+            if (isEditing)
+            {
+                await ShowToast("success", "Item Updated!", $"{itemName} has been successfully updated.");
+            }
+            else
+            {
+                await ShowToast("success", "Item Added!", $"{itemName} has been successfully added to inventory.");
+            }
+        }
+        else
+        {
+            await ShowToast("error", "Error", "Failed to save item. Please try again.");
         }
     }
 
@@ -618,35 +849,47 @@
             var success = await InventoryService.ArchiveItemAsync(itemToArchive.ItemId);
             if (success)
             {
+                var itemNameCopy = itemToArchive.ItemName;
                 await LoadItems();
                 CancelArchive();
+                await ShowToast("info", "Item Archived", $"{itemNameCopy} has been moved to archives.");
             }
         }
     }
 
     private async Task RestoreItem(int id)
     {
+        var item = archivedItems.FirstOrDefault(i => i.ItemId == id);
         var success = await InventoryService.RestoreItemAsync(id);
         if (success)
         {
             await LoadItems();
             StateHasChanged();
+            if (item != null)
+            {
+                await ShowToast("success", "Item Restored", $"{item.ItemName} has been restored to inventory.");
+            }
         }
     }
 
-    private string GetStatusBadgeClass(string? status)
+    private string GetStockStatus(InventoryItem item)
     {
-        if (string.IsNullOrEmpty(status))
-            return "bg-secondary";
+        if (item.Quantity <= item.MinimumStockLevel)
+            return "Low Stock";
+        else if (item.Quantity >= item.HighStockLevel)
+            return "High Stock";
+        else
+            return "Good Stock";
+    }
 
-        return status.ToLowerInvariant() switch
-        {
-            var s when s.Contains("high") => "bg-success",
-            var s when s.Contains("good") => "bg-primary",
-            var s when s.Contains("low") => "bg-warning text-dark",
-            var s when s.Contains("out") => "bg-danger",
-            _ => "bg-secondary"
-        };
+    private string GetStockStatusBadgeClass(InventoryItem item)
+    {
+        if (item.Quantity <= item.MinimumStockLevel)
+            return "bg-danger";
+        else if (item.Quantity >= item.HighStockLevel)
+            return "bg-success";
+        else
+            return "bg-primary";
     }
 
     private Task OnCategoryChanged(ChangeEventArgs e)
@@ -656,4 +899,31 @@
         return Task.CompletedTask;
     }
 
+    private Task OnBrandChanged(ChangeEventArgs e)
+    {
+        selectedBrand = e?.Value?.ToString() ?? "";
+        ApplyFilters();
+        return Task.CompletedTask;
+    }
+
+    private Task OnStockStatusChanged(ChangeEventArgs e)
+    {
+        selectedStockStatus = e?.Value?.ToString() ?? "";
+        ApplyFilters();
+        return Task.CompletedTask;
+    }
+
+    private async Task ShowToast(string type, string title, string message)
+    {
+        var toastType = type switch
+        {
+            "success" => "success",
+            "error" => "danger",
+            "info" => "info",
+            "warning" => "warning",
+            _ => "info"
+        };
+
+        await JSRuntime.InvokeVoidAsync("showToast", toastType, title, message);
+    }
 }
