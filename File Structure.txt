@@ -1,0 +1,53 @@
+UPDATED FILE STRUCTURE
+
+.
+└── DvTech -/
+    ├── DVTech-ODSS/
+    │   ├── Components/
+    │   │   ├── Layout/
+    │   │   │   ├── MainLayout.razor
+    │   │   │   ├── MainLayout.razor.css
+    │   │   │   ├── NavMenu.razor
+    │   │   │   └── NavMenu.razor.css
+    │   │   ├── Pages/
+    │   │   │   ├── PurchaseOrders.razor
+    │   │   │   ├── ScheduleManagement.razor
+    │   │   │   ├── SupplierManagement.razor
+    │   │   │   ├── EmployeeManagement.razor
+    │   │   │   ├── Error.razor
+    │   │   │   ├── Home.razor
+    │   │   │   └── InventoryList.razor
+    │   │   ├── App.razor
+    │   │   └── Routes.razor
+    │   ├── Data/
+    │   │   ├── ApplicationDbContext.cs
+    │   │   └── DbSeeder.cs
+    │   ├── Models/
+    │   │   ├── Employee.cs
+    │   │   ├── InventoryItem.cs
+    │   │   ├── PurchaseOrder.cs
+    │   │   ├── PurchaseOrderItem.cs
+    │   │   ├── Schedule.cs
+    │   │   ├── Supplier.cs
+    │   │   └── SupplierItem.cs
+    │   ├── Properties/
+    │   │   └── launchSettings.json
+    │   ├── Services/
+    │   │   ├── InventoryService.cs
+    │   │   ├── ManpowerService.cs
+    │   │   └── ProcurementService.cs
+    │   ├── wwwroot/
+    │   │   ├── js/
+    │   │   │   └── toast.js
+    │   │   ├── lib
+    │   │   ├── app.css
+    │   │   └── favicon.png
+    │   ├── appsettings.Development.json
+    │   ├── appsettings.json
+    │   ├── DVTech-ODSS.csproj
+    │   ├── DVTech-ODSS.csproj.user
+    │   ├── DVTech-ODSS.sln
+    │   └── Program.cs
+    ├── dvtech_odss.sql
+    ├── File Structure.txt
+    └── GitHubURLS.txt

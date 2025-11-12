@@ -1,0 +1,1621 @@
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\appsettings.Development.json
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\appsettings.json
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.runtime.json
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.endpoints.json
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.exe
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.deps.json
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.runtimeconfig.json
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.pdb
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.GeneratedMSBuildEditorConfig.editorconfig
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfoInputs.cache
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfo.cs
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.CoreCompileInputs.cache
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.MvcApplicationPartsAssemblyInfo.cache
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\scopedcss\bundle\DVTech-ODSS.styles.css
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\scopedcss\projectbundle\DVTech-ODSS.bundle.scp.css
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\iqitx0pjk9-bqjiyaj88i.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\h0u40o1a97-c2jlpeoesf.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\333u2t701z-erw9l3u2r3.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\4m2az6koot-aexeepp0ev.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\emehro9y1d-d7shbmvgxk.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\ddw0tysvca-ausgxo2sd3.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\s6fnsylyss-k8d9w2qqmf.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\vpk2j6l5c1-cosvhxvwiu.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\scq06hlkm3-ub07r2b239.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\qdqdj62t4t-fvhpjtyr6v.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\v2k7pxrt0w-b7pk76d08c.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\9ezd7wt31n-fsbi9cje9m.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\8cbzfvkz0r-rzd6atqjts.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\rxekpastqg-ee0r1s7dh0.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\du5hf0xvnw-dxx9fxp4il.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\iia3o55685-jd9uben2k1.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\gv53lekc1y-khv3u5hwcm.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\g7oai9im2s-r4e9w2rdcm.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\4w1nmw5p55-lcd1t2u6c8.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\emj1li09u8-c2oey78nd0.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\0x5a9i3yo7-tdbxkamptv.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\8mywlmidxa-j5mq2jizvt.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\r3nunuv02t-06098lyss8.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\dsnu96sk8d-nvvlpmu67g.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\41mos4d9je-s35ty4nyc5.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\s5gizojqog-pj5nd1wqec.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\f86oylqftt-46ein0sx1k.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\mxmj2a0ewn-v0zj4ognzu.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\9s6qzubzr3-37tfw0ft22.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\ropm2yrdkj-hrwsygsryq.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\jpe2moxcfg-pk9g2wxc8p.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\g69ioc0f42-ft3s53vfgj.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\0iv9winxv3-6cfz1n2cew.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\dhlp6wy7fm-6pdc2jztkx.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\rfvvzn6e6r-493y06b0oq.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\detavk3ofe-iovd86k7lj.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\xhuwml7a7c-vr1egmr9el.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\oesuap09g3-kbrnm935zg.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\tab0wdsta3-jj8uyg4cgr.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\w4xycgikrt-y7v9cxd14o.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\1zcpv0v0el-notf2xhcfb.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\jlhgz5h968-h1s4sie4z3.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\egznalrrbv-63fj8s7r0e.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\ut1pa5cokg-0j3bgjxly4.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\gm36ep30so-kd5pn5xjyl.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\kivrqcejkz-kd5pn5xjyl.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.development.json
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.dll
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\refint\DVTech-ODSS.dll
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.pdb
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.genruntimeconfig.cache
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\ref\DVTech-ODSS.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Humanizer.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Mono.TextTemplating.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\MySqlConnector.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\System.CodeDom.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Convention.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Hosting.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Runtime.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\System.Composition.TypedParts.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.AssemblyReference.cache
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\DVTech-O.47CC0FD5.Up2Date
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\dm3oc8mw2c-750ql8ni0t.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.sourcelink.json
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\compressed\boqp6plwdu-3bdquklayw.gz
+C:\DvTech\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\appsettings.Development.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\appsettings.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.endpoints.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.runtime.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.exe
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.deps.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.runtimeconfig.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Humanizer.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Mono.TextTemplating.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\MySqlConnector.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.CodeDom.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Convention.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Hosting.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Runtime.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.TypedParts.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.AssemblyReference.cache
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rpswa.dswa.cache.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.GeneratedMSBuildEditorConfig.editorconfig
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfoInputs.cache
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfo.cs
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.CoreCompileInputs.cache
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.MvcApplicationPartsAssemblyInfo.cache
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.sourcelink.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rjimswa.dswa.cache.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\bundle\DVTech-ODSS.styles.css
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\projectbundle\DVTech-ODSS.bundle.scp.css
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\dm3oc8mw2c-750ql8ni0t.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\boqp6plwdu-3bdquklayw.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\iqitx0pjk9-bqjiyaj88i.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\h0u40o1a97-c2jlpeoesf.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\333u2t701z-erw9l3u2r3.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\4m2az6koot-aexeepp0ev.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\emehro9y1d-d7shbmvgxk.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\ddw0tysvca-ausgxo2sd3.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\s6fnsylyss-k8d9w2qqmf.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\vpk2j6l5c1-cosvhxvwiu.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\scq06hlkm3-ub07r2b239.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\qdqdj62t4t-fvhpjtyr6v.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\v2k7pxrt0w-b7pk76d08c.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\9ezd7wt31n-fsbi9cje9m.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\8cbzfvkz0r-rzd6atqjts.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\rxekpastqg-ee0r1s7dh0.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\du5hf0xvnw-dxx9fxp4il.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\iia3o55685-jd9uben2k1.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\gv53lekc1y-khv3u5hwcm.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\g7oai9im2s-r4e9w2rdcm.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\4w1nmw5p55-lcd1t2u6c8.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\emj1li09u8-c2oey78nd0.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\0x5a9i3yo7-tdbxkamptv.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\8mywlmidxa-j5mq2jizvt.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\r3nunuv02t-06098lyss8.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\dsnu96sk8d-nvvlpmu67g.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\41mos4d9je-s35ty4nyc5.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\s5gizojqog-pj5nd1wqec.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\f86oylqftt-46ein0sx1k.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\mxmj2a0ewn-v0zj4ognzu.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\9s6qzubzr3-37tfw0ft22.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\ropm2yrdkj-hrwsygsryq.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\jpe2moxcfg-pk9g2wxc8p.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\g69ioc0f42-ft3s53vfgj.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\0iv9winxv3-6cfz1n2cew.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\dhlp6wy7fm-6pdc2jztkx.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\rfvvzn6e6r-493y06b0oq.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\detavk3ofe-iovd86k7lj.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\xhuwml7a7c-vr1egmr9el.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\oesuap09g3-kbrnm935zg.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\tab0wdsta3-jj8uyg4cgr.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\w4xycgikrt-y7v9cxd14o.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\1zcpv0v0el-notf2xhcfb.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\jlhgz5h968-h1s4sie4z3.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\egznalrrbv-63fj8s7r0e.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\ut1pa5cokg-0j3bgjxly4.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\gm36ep30so-kd5pn5xjyl.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\kivrqcejkz-kd5pn5xjyl.gz
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json.cache
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.development.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-O.47CC0FD5.Up2Date
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\refint\DVTech-ODSS.dll
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.genruntimeconfig.cache
+G:\SAD Backup\11\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\ref\DVTech-ODSS.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\appsettings.Development.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\appsettings.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.endpoints.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.runtime.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.exe
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.deps.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.runtimeconfig.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.pdb
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Humanizer.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Mono.TextTemplating.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\MySqlConnector.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.CodeDom.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Convention.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Hosting.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Runtime.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.TypedParts.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.AssemblyReference.cache
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.GeneratedMSBuildEditorConfig.editorconfig
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfoInputs.cache
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfo.cs
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.CoreCompileInputs.cache
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.MvcApplicationPartsAssemblyInfo.cache
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.sourcelink.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\bundle\DVTech-ODSS.styles.css
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\projectbundle\DVTech-ODSS.bundle.scp.css
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\dm3oc8mw2c-750ql8ni0t.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\iqitx0pjk9-bqjiyaj88i.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\h0u40o1a97-c2jlpeoesf.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\333u2t701z-erw9l3u2r3.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\4m2az6koot-aexeepp0ev.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\emehro9y1d-d7shbmvgxk.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\ddw0tysvca-ausgxo2sd3.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\s6fnsylyss-k8d9w2qqmf.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\vpk2j6l5c1-cosvhxvwiu.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\scq06hlkm3-ub07r2b239.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\qdqdj62t4t-fvhpjtyr6v.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\v2k7pxrt0w-b7pk76d08c.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\9ezd7wt31n-fsbi9cje9m.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\8cbzfvkz0r-rzd6atqjts.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\rxekpastqg-ee0r1s7dh0.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\du5hf0xvnw-dxx9fxp4il.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\iia3o55685-jd9uben2k1.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\gv53lekc1y-khv3u5hwcm.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\g7oai9im2s-r4e9w2rdcm.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\4w1nmw5p55-lcd1t2u6c8.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\emj1li09u8-c2oey78nd0.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\0x5a9i3yo7-tdbxkamptv.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\8mywlmidxa-j5mq2jizvt.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\r3nunuv02t-06098lyss8.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\dsnu96sk8d-nvvlpmu67g.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\41mos4d9je-s35ty4nyc5.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\s5gizojqog-pj5nd1wqec.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\f86oylqftt-46ein0sx1k.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\mxmj2a0ewn-v0zj4ognzu.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\9s6qzubzr3-37tfw0ft22.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\ropm2yrdkj-hrwsygsryq.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\jpe2moxcfg-pk9g2wxc8p.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\g69ioc0f42-ft3s53vfgj.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\0iv9winxv3-6cfz1n2cew.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\dhlp6wy7fm-6pdc2jztkx.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\rfvvzn6e6r-493y06b0oq.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\detavk3ofe-iovd86k7lj.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\xhuwml7a7c-vr1egmr9el.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\oesuap09g3-kbrnm935zg.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\tab0wdsta3-jj8uyg4cgr.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\w4xycgikrt-y7v9cxd14o.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\1zcpv0v0el-notf2xhcfb.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\jlhgz5h968-h1s4sie4z3.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\egznalrrbv-63fj8s7r0e.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\ut1pa5cokg-0j3bgjxly4.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\gm36ep30so-kd5pn5xjyl.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\kivrqcejkz-kd5pn5xjyl.gz
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.development.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-O.47CC0FD5.Up2Date
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\refint\DVTech-ODSS.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.pdb
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.genruntimeconfig.cache
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\ref\DVTech-ODSS.dll
+C:\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\boqp6plwdu-et7om74bcc.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.AssemblyReference.cache
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\refint\DVTech-ODSS.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\appsettings.Development.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\appsettings.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.endpoints.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.runtime.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.exe
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.deps.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.runtimeconfig.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Humanizer.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Mono.TextTemplating.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\MySqlConnector.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.CodeDom.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Convention.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Hosting.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Runtime.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\System.Composition.TypedParts.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rpswa.dswa.cache.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.GeneratedMSBuildEditorConfig.editorconfig
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfoInputs.cache
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfo.cs
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.CoreCompileInputs.cache
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.MvcApplicationPartsAssemblyInfo.cache
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.sourcelink.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rjimswa.dswa.cache.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\bundle\DVTech-ODSS.styles.css
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\scopedcss\projectbundle\DVTech-ODSS.bundle.scp.css
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\dm3oc8mw2c-750ql8ni0t.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\boqp6plwdu-et7om74bcc.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\iqitx0pjk9-bqjiyaj88i.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\h0u40o1a97-c2jlpeoesf.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\333u2t701z-erw9l3u2r3.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\4m2az6koot-aexeepp0ev.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\emehro9y1d-d7shbmvgxk.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\ddw0tysvca-ausgxo2sd3.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\s6fnsylyss-k8d9w2qqmf.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\vpk2j6l5c1-cosvhxvwiu.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\scq06hlkm3-ub07r2b239.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\qdqdj62t4t-fvhpjtyr6v.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\v2k7pxrt0w-b7pk76d08c.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\9ezd7wt31n-fsbi9cje9m.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\8cbzfvkz0r-rzd6atqjts.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\rxekpastqg-ee0r1s7dh0.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\du5hf0xvnw-dxx9fxp4il.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\iia3o55685-jd9uben2k1.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\gv53lekc1y-khv3u5hwcm.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\g7oai9im2s-r4e9w2rdcm.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\4w1nmw5p55-lcd1t2u6c8.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\emj1li09u8-c2oey78nd0.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\0x5a9i3yo7-tdbxkamptv.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\8mywlmidxa-j5mq2jizvt.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\r3nunuv02t-06098lyss8.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\dsnu96sk8d-nvvlpmu67g.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\41mos4d9je-s35ty4nyc5.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\s5gizojqog-pj5nd1wqec.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\f86oylqftt-46ein0sx1k.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\mxmj2a0ewn-v0zj4ognzu.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\9s6qzubzr3-37tfw0ft22.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\ropm2yrdkj-hrwsygsryq.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\jpe2moxcfg-pk9g2wxc8p.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\g69ioc0f42-ft3s53vfgj.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\0iv9winxv3-6cfz1n2cew.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\dhlp6wy7fm-6pdc2jztkx.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\rfvvzn6e6r-493y06b0oq.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\detavk3ofe-iovd86k7lj.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\xhuwml7a7c-vr1egmr9el.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\oesuap09g3-kbrnm935zg.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\tab0wdsta3-jj8uyg4cgr.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\w4xycgikrt-y7v9cxd14o.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\1zcpv0v0el-notf2xhcfb.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\jlhgz5h968-h1s4sie4z3.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\egznalrrbv-63fj8s7r0e.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\ut1pa5cokg-0j3bgjxly4.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\gm36ep30so-kd5pn5xjyl.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\compressed\kivrqcejkz-kd5pn5xjyl.gz
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json.cache
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.development.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-O.47CC0FD5.Up2Date
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.genruntimeconfig.cache
+G:\SAD Backup\14\DvTech - can modify the profit without crashing the world\DVTech-ODSS\obj\Debug\net9.0\ref\DVTech-ODSS.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\appsettings.Development.json
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\appsettings.json
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.endpoints.json
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.runtime.json
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.exe
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.deps.json
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.runtimeconfig.json
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.pdb
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Humanizer.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Mono.TextTemplating.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\MySqlConnector.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.CodeDom.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Convention.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Hosting.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Runtime.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.TypedParts.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.AssemblyReference.cache
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.GeneratedMSBuildEditorConfig.editorconfig
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfoInputs.cache
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfo.cs
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.CoreCompileInputs.cache
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.MvcApplicationPartsAssemblyInfo.cache
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.sourcelink.json
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\bundle\DVTech-ODSS.styles.css
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\projectbundle\DVTech-ODSS.bundle.scp.css
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dm3oc8mw2c-750ql8ni0t.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\boqp6plwdu-et7om74bcc.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\iqitx0pjk9-bqjiyaj88i.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\h0u40o1a97-c2jlpeoesf.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\333u2t701z-erw9l3u2r3.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\4m2az6koot-aexeepp0ev.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\emehro9y1d-d7shbmvgxk.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ddw0tysvca-ausgxo2sd3.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\s6fnsylyss-k8d9w2qqmf.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\vpk2j6l5c1-cosvhxvwiu.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\scq06hlkm3-ub07r2b239.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\qdqdj62t4t-fvhpjtyr6v.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\v2k7pxrt0w-b7pk76d08c.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\9ezd7wt31n-fsbi9cje9m.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\8cbzfvkz0r-rzd6atqjts.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\rxekpastqg-ee0r1s7dh0.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\du5hf0xvnw-dxx9fxp4il.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\iia3o55685-jd9uben2k1.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\gv53lekc1y-khv3u5hwcm.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\g7oai9im2s-r4e9w2rdcm.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\4w1nmw5p55-lcd1t2u6c8.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\emj1li09u8-c2oey78nd0.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\0x5a9i3yo7-tdbxkamptv.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\8mywlmidxa-j5mq2jizvt.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\r3nunuv02t-06098lyss8.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dsnu96sk8d-nvvlpmu67g.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\41mos4d9je-s35ty4nyc5.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\s5gizojqog-pj5nd1wqec.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\f86oylqftt-46ein0sx1k.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\mxmj2a0ewn-v0zj4ognzu.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\9s6qzubzr3-37tfw0ft22.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ropm2yrdkj-hrwsygsryq.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\jpe2moxcfg-pk9g2wxc8p.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\g69ioc0f42-ft3s53vfgj.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\0iv9winxv3-6cfz1n2cew.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dhlp6wy7fm-6pdc2jztkx.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\rfvvzn6e6r-493y06b0oq.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\detavk3ofe-iovd86k7lj.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\xhuwml7a7c-vr1egmr9el.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\oesuap09g3-kbrnm935zg.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\tab0wdsta3-jj8uyg4cgr.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\w4xycgikrt-y7v9cxd14o.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\1zcpv0v0el-notf2xhcfb.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\jlhgz5h968-h1s4sie4z3.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\egznalrrbv-63fj8s7r0e.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ut1pa5cokg-0j3bgjxly4.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.development.json
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-O.47CC0FD5.Up2Date
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.dll
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\refint\DVTech-ODSS.dll
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.pdb
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.genruntimeconfig.cache
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\ref\DVTech-ODSS.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\appsettings.Development.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\appsettings.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.endpoints.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.runtime.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.exe
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.deps.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.runtimeconfig.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Humanizer.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Mono.TextTemplating.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\MySqlConnector.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.CodeDom.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Convention.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Hosting.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Runtime.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.TypedParts.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.AssemblyReference.cache
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rpswa.dswa.cache.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.GeneratedMSBuildEditorConfig.editorconfig
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfoInputs.cache
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfo.cs
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.CoreCompileInputs.cache
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.MvcApplicationPartsAssemblyInfo.cache
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.sourcelink.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjimswa.dswa.cache.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\bundle\DVTech-ODSS.styles.css
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\projectbundle\DVTech-ODSS.bundle.scp.css
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dm3oc8mw2c-750ql8ni0t.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\boqp6plwdu-et7om74bcc.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\iqitx0pjk9-bqjiyaj88i.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\h0u40o1a97-c2jlpeoesf.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\333u2t701z-erw9l3u2r3.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\4m2az6koot-aexeepp0ev.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\emehro9y1d-d7shbmvgxk.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ddw0tysvca-ausgxo2sd3.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\s6fnsylyss-k8d9w2qqmf.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\vpk2j6l5c1-cosvhxvwiu.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\scq06hlkm3-ub07r2b239.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\qdqdj62t4t-fvhpjtyr6v.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\v2k7pxrt0w-b7pk76d08c.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\9ezd7wt31n-fsbi9cje9m.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\8cbzfvkz0r-rzd6atqjts.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\rxekpastqg-ee0r1s7dh0.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\du5hf0xvnw-dxx9fxp4il.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\iia3o55685-jd9uben2k1.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\gv53lekc1y-khv3u5hwcm.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\g7oai9im2s-r4e9w2rdcm.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\4w1nmw5p55-lcd1t2u6c8.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\emj1li09u8-c2oey78nd0.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\0x5a9i3yo7-tdbxkamptv.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\8mywlmidxa-j5mq2jizvt.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\r3nunuv02t-06098lyss8.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dsnu96sk8d-nvvlpmu67g.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\41mos4d9je-s35ty4nyc5.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\s5gizojqog-pj5nd1wqec.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\f86oylqftt-46ein0sx1k.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\mxmj2a0ewn-v0zj4ognzu.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\9s6qzubzr3-37tfw0ft22.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ropm2yrdkj-hrwsygsryq.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\jpe2moxcfg-pk9g2wxc8p.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\g69ioc0f42-ft3s53vfgj.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\0iv9winxv3-6cfz1n2cew.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dhlp6wy7fm-6pdc2jztkx.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\rfvvzn6e6r-493y06b0oq.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\detavk3ofe-iovd86k7lj.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\xhuwml7a7c-vr1egmr9el.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\oesuap09g3-kbrnm935zg.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\tab0wdsta3-jj8uyg4cgr.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\w4xycgikrt-y7v9cxd14o.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\1zcpv0v0el-notf2xhcfb.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\jlhgz5h968-h1s4sie4z3.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\egznalrrbv-63fj8s7r0e.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ut1pa5cokg-0j3bgjxly4.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\gm36ep30so-kd5pn5xjyl.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\kivrqcejkz-kd5pn5xjyl.gz
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json.cache
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.development.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-O.47CC0FD5.Up2Date
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\refint\DVTech-ODSS.dll
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.genruntimeconfig.cache
+G:\SAD Backup\17\DvTech -\DVTech-ODSS\obj\Debug\net9.0\ref\DVTech-ODSS.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\appsettings.Development.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\appsettings.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.endpoints.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.runtime.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.exe
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.deps.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.runtimeconfig.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Humanizer.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Mono.TextTemplating.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\MySqlConnector.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.CodeDom.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Convention.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Hosting.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Runtime.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.TypedParts.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.AssemblyReference.cache
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rpswa.dswa.cache.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.GeneratedMSBuildEditorConfig.editorconfig
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfoInputs.cache
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfo.cs
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.CoreCompileInputs.cache
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.MvcApplicationPartsAssemblyInfo.cache
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.sourcelink.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjimswa.dswa.cache.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\bundle\DVTech-ODSS.styles.css
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\projectbundle\DVTech-ODSS.bundle.scp.css
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dm3oc8mw2c-750ql8ni0t.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\boqp6plwdu-et7om74bcc.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\iqitx0pjk9-bqjiyaj88i.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\h0u40o1a97-c2jlpeoesf.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\333u2t701z-erw9l3u2r3.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\4m2az6koot-aexeepp0ev.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\emehro9y1d-d7shbmvgxk.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ddw0tysvca-ausgxo2sd3.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\s6fnsylyss-k8d9w2qqmf.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\vpk2j6l5c1-cosvhxvwiu.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\scq06hlkm3-ub07r2b239.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\qdqdj62t4t-fvhpjtyr6v.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\v2k7pxrt0w-b7pk76d08c.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\9ezd7wt31n-fsbi9cje9m.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\8cbzfvkz0r-rzd6atqjts.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\rxekpastqg-ee0r1s7dh0.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\du5hf0xvnw-dxx9fxp4il.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\iia3o55685-jd9uben2k1.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\gv53lekc1y-khv3u5hwcm.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\g7oai9im2s-r4e9w2rdcm.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\4w1nmw5p55-lcd1t2u6c8.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\emj1li09u8-c2oey78nd0.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\0x5a9i3yo7-tdbxkamptv.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\8mywlmidxa-j5mq2jizvt.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\r3nunuv02t-06098lyss8.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dsnu96sk8d-nvvlpmu67g.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\41mos4d9je-s35ty4nyc5.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\s5gizojqog-pj5nd1wqec.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\f86oylqftt-46ein0sx1k.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\mxmj2a0ewn-v0zj4ognzu.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\9s6qzubzr3-37tfw0ft22.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ropm2yrdkj-hrwsygsryq.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\jpe2moxcfg-pk9g2wxc8p.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\g69ioc0f42-ft3s53vfgj.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\0iv9winxv3-6cfz1n2cew.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dhlp6wy7fm-6pdc2jztkx.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\rfvvzn6e6r-493y06b0oq.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\detavk3ofe-iovd86k7lj.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\xhuwml7a7c-vr1egmr9el.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\oesuap09g3-kbrnm935zg.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\tab0wdsta3-jj8uyg4cgr.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\w4xycgikrt-y7v9cxd14o.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\1zcpv0v0el-notf2xhcfb.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\jlhgz5h968-h1s4sie4z3.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\egznalrrbv-63fj8s7r0e.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ut1pa5cokg-0j3bgjxly4.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\gm36ep30so-kd5pn5xjyl.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\kivrqcejkz-kd5pn5xjyl.gz
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json.cache
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.development.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-O.47CC0FD5.Up2Date
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\refint\DVTech-ODSS.dll
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.genruntimeconfig.cache
+G:\SAD Backup\24\DvTech -\DVTech-ODSS\obj\Debug\net9.0\ref\DVTech-ODSS.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\appsettings.Development.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\appsettings.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.endpoints.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.runtime.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.exe
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.deps.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.runtimeconfig.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Humanizer.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Mono.TextTemplating.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\MySqlConnector.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.CodeDom.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Convention.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Hosting.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Runtime.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.TypedParts.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.AssemblyReference.cache
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rpswa.dswa.cache.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.GeneratedMSBuildEditorConfig.editorconfig
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfoInputs.cache
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfo.cs
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.CoreCompileInputs.cache
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.MvcApplicationPartsAssemblyInfo.cache
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.sourcelink.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjimswa.dswa.cache.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\bundle\DVTech-ODSS.styles.css
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\projectbundle\DVTech-ODSS.bundle.scp.css
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dm3oc8mw2c-750ql8ni0t.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\boqp6plwdu-et7om74bcc.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\iqitx0pjk9-bqjiyaj88i.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\h0u40o1a97-c2jlpeoesf.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\333u2t701z-erw9l3u2r3.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\4m2az6koot-aexeepp0ev.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\emehro9y1d-d7shbmvgxk.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ddw0tysvca-ausgxo2sd3.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\s6fnsylyss-k8d9w2qqmf.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\vpk2j6l5c1-cosvhxvwiu.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\scq06hlkm3-ub07r2b239.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\qdqdj62t4t-fvhpjtyr6v.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\v2k7pxrt0w-b7pk76d08c.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\9ezd7wt31n-fsbi9cje9m.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\8cbzfvkz0r-rzd6atqjts.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\rxekpastqg-ee0r1s7dh0.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\du5hf0xvnw-dxx9fxp4il.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\iia3o55685-jd9uben2k1.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\gv53lekc1y-khv3u5hwcm.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\g7oai9im2s-r4e9w2rdcm.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\4w1nmw5p55-lcd1t2u6c8.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\emj1li09u8-c2oey78nd0.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\0x5a9i3yo7-tdbxkamptv.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\8mywlmidxa-j5mq2jizvt.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\r3nunuv02t-06098lyss8.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dsnu96sk8d-nvvlpmu67g.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\41mos4d9je-s35ty4nyc5.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\s5gizojqog-pj5nd1wqec.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\f86oylqftt-46ein0sx1k.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\mxmj2a0ewn-v0zj4ognzu.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\9s6qzubzr3-37tfw0ft22.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ropm2yrdkj-hrwsygsryq.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\jpe2moxcfg-pk9g2wxc8p.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\g69ioc0f42-ft3s53vfgj.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\0iv9winxv3-6cfz1n2cew.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dhlp6wy7fm-6pdc2jztkx.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\rfvvzn6e6r-493y06b0oq.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\detavk3ofe-iovd86k7lj.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\xhuwml7a7c-vr1egmr9el.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\oesuap09g3-kbrnm935zg.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\tab0wdsta3-jj8uyg4cgr.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\w4xycgikrt-y7v9cxd14o.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\1zcpv0v0el-notf2xhcfb.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\jlhgz5h968-h1s4sie4z3.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\egznalrrbv-63fj8s7r0e.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ut1pa5cokg-0j3bgjxly4.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\gm36ep30so-kd5pn5xjyl.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\kivrqcejkz-kd5pn5xjyl.gz
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json.cache
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.development.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-O.47CC0FD5.Up2Date
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\refint\DVTech-ODSS.dll
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.genruntimeconfig.cache
+G:\SAD Backup\26\DvTech -\DVTech-ODSS\obj\Debug\net9.0\ref\DVTech-ODSS.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\appsettings.Development.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\appsettings.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.endpoints.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.staticwebassets.runtime.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.exe
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.deps.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.runtimeconfig.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Humanizer.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Mono.TextTemplating.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\MySqlConnector.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.CodeDom.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Convention.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Hosting.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.Runtime.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\System.Composition.TypedParts.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.AssemblyReference.cache
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rpswa.dswa.cache.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.GeneratedMSBuildEditorConfig.editorconfig
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfoInputs.cache
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.AssemblyInfo.cs
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.csproj.CoreCompileInputs.cache
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.MvcApplicationPartsAssemblyInfo.cache
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.sourcelink.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjimswa.dswa.cache.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\bundle\DVTech-ODSS.styles.css
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\scopedcss\projectbundle\DVTech-ODSS.bundle.scp.css
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dm3oc8mw2c-750ql8ni0t.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\boqp6plwdu-et7om74bcc.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\iqitx0pjk9-bqjiyaj88i.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\h0u40o1a97-c2jlpeoesf.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\333u2t701z-erw9l3u2r3.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\4m2az6koot-aexeepp0ev.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\emehro9y1d-d7shbmvgxk.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ddw0tysvca-ausgxo2sd3.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\s6fnsylyss-k8d9w2qqmf.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\vpk2j6l5c1-cosvhxvwiu.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\scq06hlkm3-ub07r2b239.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\qdqdj62t4t-fvhpjtyr6v.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\v2k7pxrt0w-b7pk76d08c.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\9ezd7wt31n-fsbi9cje9m.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\8cbzfvkz0r-rzd6atqjts.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\rxekpastqg-ee0r1s7dh0.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\du5hf0xvnw-dxx9fxp4il.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\iia3o55685-jd9uben2k1.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\gv53lekc1y-khv3u5hwcm.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\g7oai9im2s-r4e9w2rdcm.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\4w1nmw5p55-lcd1t2u6c8.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\emj1li09u8-c2oey78nd0.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\0x5a9i3yo7-tdbxkamptv.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\8mywlmidxa-j5mq2jizvt.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\r3nunuv02t-06098lyss8.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dsnu96sk8d-nvvlpmu67g.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\41mos4d9je-s35ty4nyc5.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\s5gizojqog-pj5nd1wqec.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\f86oylqftt-46ein0sx1k.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\mxmj2a0ewn-v0zj4ognzu.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\9s6qzubzr3-37tfw0ft22.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ropm2yrdkj-hrwsygsryq.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\jpe2moxcfg-pk9g2wxc8p.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\g69ioc0f42-ft3s53vfgj.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\0iv9winxv3-6cfz1n2cew.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\dhlp6wy7fm-6pdc2jztkx.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\rfvvzn6e6r-493y06b0oq.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\detavk3ofe-iovd86k7lj.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\xhuwml7a7c-vr1egmr9el.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\oesuap09g3-kbrnm935zg.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\tab0wdsta3-jj8uyg4cgr.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\w4xycgikrt-y7v9cxd14o.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\1zcpv0v0el-notf2xhcfb.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\jlhgz5h968-h1s4sie4z3.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\egznalrrbv-63fj8s7r0e.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\ut1pa5cokg-0j3bgjxly4.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\gm36ep30so-kd5pn5xjyl.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\kivrqcejkz-kd5pn5xjyl.gz
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.json.cache
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.development.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-O.47CC0FD5.Up2Date
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\refint\DVTech-ODSS.dll
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.pdb
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\DVTech-ODSS.genruntimeconfig.cache
+G:\SAD Backup\28\DvTech -\DVTech-ODSS\obj\Debug\net9.0\ref\DVTech-ODSS.dll
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\gm36ep30so-opu9ukpmq3.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\kivrqcejkz-opu9ukpmq3.gz
+C:\DvTech -\DVTech-ODSS\obj\Debug\net9.0\compressed\o7c1nppooc-k6kitwa0tx.gz

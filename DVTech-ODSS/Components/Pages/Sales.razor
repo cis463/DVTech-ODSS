@@ -1,0 +1,688 @@
+﻿@page "/sales"
+@using DVTech_ODSS.Models
+@using DVTech_ODSS.Services
+@using DVTech_ODSS.Components
+@inject SalesService SalesService
+@inject InventoryService InventoryService
+@inject AuthStateProvider AuthState
+@inject IJSRuntime JSRuntime
+@rendermode InteractiveServer
+
+<AuthGuard>
+    <PageTitle>Sales Management</PageTitle>
+
+    <div class="container-fluid">
+        <div class="row mb-3 align-items-center">
+            <div class="col">
+                <h3 class="mb-0">💰 Sales Management</h3>
+            </div>
+            @if (AuthState.IsSecretary)
+            {
+                <div class="col-auto">
+                    <button class="btn btn-success" @onclick="ShowNewSaleForm">
+                        ➕ New Sale
+                    </button>
+                </div>
+            }
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="row g-3 mb-3">
+            <div class="col-md-3">
+                <div class="card shadow-sm border-success">
+                    <div class="card-body p-3">
+                        <p class="text-muted small mb-1">💵 Today's Sales</p>
+                        <h4 class="mb-0 text-success">₱@todaySales.ToString("N2")</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm border-primary">
+                    <div class="card-body p-3">
+                        <p class="text-muted small mb-1">📈 Today's Profit</p>
+                        <h4 class="mb-0 text-primary">₱@todayProfit.ToString("N2")</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm border-info">
+                    <div class="card-body p-3">
+                        <p class="text-muted small mb-1">📊 Total Sales</p>
+                        <h4 class="mb-0 text-info">@sales.Count</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm border-warning">
+                    <div class="card-body p-3">
+                        <p class="text-muted small mb-1">💰 Total Revenue</p>
+                        <h4 class="mb-0 text-warning">₱@sales.Sum(s => s.TotalAmount).ToString("N2")</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Date Range Filter -->
+        <div class="card shadow-sm mb-3">
+            <div class="card-body p-3">
+                <div class="row g-2 align-items-end">
+                    <div class="col-md-3">
+                        <label class="form-label small fw-bold mb-1">From Date</label>
+                        <input type="date" class="form-control form-control-sm" @bind="filterFromDate" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label small fw-bold mb-1">To Date</label>
+                        <input type="date" class="form-control form-control-sm" @bind="filterToDate" />
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary btn-sm" @onclick="ApplyDateFilter">
+                            🔍 Apply Filter
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" @onclick="ClearDateFilter">
+                            ✖️ Clear
+                        </button>
+                    </div>
+                    @if (isFiltered)
+                    {
+                        <div class="col-md-3">
+                            <div class="alert alert-info py-1 px-2 mb-0 small">
+                                Showing: @filteredSales.Count of @allSales.Count sales
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        @if (isLoading)
+        {
+            <div class="text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        }
+        else if (showSaleForm && AuthState.IsSecretary)
+        {
+            <!-- NEW SALE FORM - Secretary Only -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white py-2">
+                    <h6 class="mb-0">New Sale Transaction</h6>
+                </div>
+                <div class="card-body p-3">
+                    <div class="row g-2 mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold mb-1">Customer Name</label>
+                            <input type="text" class="form-control form-control-sm" @bind="customerName" placeholder="Optional" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold mb-1">Contact</label>
+                            <input type="text" class="form-control form-control-sm" @bind="customerContact" placeholder="Optional" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold mb-1">Payment Method</label>
+                            <select class="form-select form-select-sm" @bind="paymentMethod">
+                                <option value="Cash">Cash</option>
+                                <option value="GCash">GCash</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                                <option value="Credit Card">Credit Card</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold mb-1">Notes</label>
+                        <textarea class="form-control form-control-sm" rows="2" @bind="saleNotes" placeholder="Optional notes..."></textarea>
+                    </div>
+
+                    <hr />
+
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0">Select Items to Sell</h6>
+                        <input type="text" class="form-control form-control-sm w-25" placeholder="🔍 Search items..." @bind="searchText" @bind:event="oninput" @onkeyup="FilterItems" />
+                    </div>
+
+                    @if (filteredItems.Any())
+                    {
+                        <div class="row g-2">
+                            @foreach (var item in filteredItems)
+                            {
+                                var saleItem = saleItems.FirstOrDefault(si => si.ItemId == item.ItemId);
+                                var quantity = saleItem?.Quantity ?? 0;
+
+                                <div class="col-md-3">
+                                    <div class="card h-100 @(quantity > 0 ? "border-success shadow-sm" : "")">
+                                        <div class="card-body p-2">
+                                            <h6 class="card-title mb-1 small">@item.ItemName</h6>
+                                            <p class="card-text mb-2" style="font-size: 0.75rem; color: #6c757d;">
+                                                <strong>@item.Brand</strong><br />
+                                                Stock: @item.Quantity @item.Unit<br />
+                                                Price: ₱@item.SellingPrice.ToString("N2")
+                                            </p>
+
+                                            <div class="input-group input-group-sm">
+                                                <input type="number"
+                                                       class="form-control"
+                                                       min="0"
+                                                       max="@item.Quantity"
+                                                       value="@quantity"
+                                                       @onchange="@(e => UpdateItemQuantity(item, e.Value?.ToString()))" />
+                                                <span class="input-group-text">@item.Unit</span>
+                                            </div>
+
+                                            @if (quantity > 0)
+                                            {
+                                                <div class="mt-2 pt-2 border-top">
+                                                    <small class="text-success fw-bold">₱@((quantity * item.SellingPrice).ToString("N2"))</small>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning py-2">No items available for sale.</div>
+                    }
+
+                    @if (saleItems.Any())
+                    {
+                        <div class="card mt-3 bg-light border-0">
+                            <div class="card-body p-3">
+                                <div class="row text-center">
+                                    <div class="col-3">
+                                        <small class="text-muted">Items</small>
+                                        <h5 class="mb-0">@saleItems.Count</h5>
+                                    </div>
+                                    <div class="col-3">
+                                        <small class="text-muted">Total Qty</small>
+                                        <h5 class="mb-0">@saleItems.Sum(si => si.Quantity)</h5>
+                                    </div>
+                                    <div class="col-3">
+                                        <small class="text-muted">Total</small>
+                                        <h5 class="mb-0 text-success">₱@CalculateTotalAmount().ToString("N2")</h5>
+                                    </div>
+                                    <div class="col-3">
+                                        <small class="text-muted">Profit</small>
+                                        <h5 class="mb-0 text-primary">₱@CalculateTotalProfit().ToString("N2")</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="d-flex gap-2 mt-3">
+                        <button class="btn btn-success" @onclick="CompleteSale" disabled="@(!CanCompleteSale())">
+                            ✅ Complete Sale
+                        </button>
+                        <button class="btn btn-outline-secondary" @onclick="CancelSale">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <!-- SALES LIST - Both Admin and Secretary can view -->
+            <div class="card shadow-sm">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-sm mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="py-2">Sale #</th>
+                                    <th class="py-2">Date</th>
+                                    <th class="py-2">Customer</th>
+                                    <th class="py-2 text-center">Items</th>
+                                    <th class="py-2 text-end">Total</th>
+                                    <th class="py-2 text-end">Profit</th>
+                                    <th class="py-2">Payment</th>
+                                    <th class="py-2">Sold By</th>
+                                    <th class="py-2 text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (sales.Any())
+                                {
+                                    @foreach (var sale in sales)
+                                    {
+                                        <tr style="cursor: pointer;" @onclick="() => ViewSaleDetails(sale)">
+                                            <td class="py-2 small"><strong>@sale.SaleNumber</strong></td>
+                                            <td class="py-2 small">@sale.SaleDate.ToString("MMM dd, yyyy hh:mm tt")</td>
+                                            <td class="py-2 small">@(sale.CustomerName ?? "Walk-in")</td>
+                                            <td class="py-2 text-center small">@sale.SaleItems.Count</td>
+                                            <td class="py-2 text-end small"><strong class="text-success">₱@sale.TotalAmount.ToString("N2")</strong></td>
+                                            <td class="py-2 text-end small"><strong class="text-primary">₱@sale.TotalProfit.ToString("N2")</strong></td>
+                                            <td class="py-2 small">@sale.PaymentMethod</td>
+                                            <td class="py-2 small">@sale.CreatedBy</td>
+                                            <td class="py-2 text-center" @onclick:stopPropagation="true">
+                                                <button class="btn btn-sm btn-outline-primary py-0 px-2" @onclick="() => ViewSaleDetails(sale)">👁️</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="9" class="text-center py-4 text-muted">
+                                            No sales recorded yet.
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- SALE DETAILS MODAL - Both can view -->
+    @if (showDetailsModal && selectedSale != null)
+    {
+        <!-- Hidden Print Content -->
+        <div id="print-receipt-@selectedSale.SaleNumber" style="display: none;">
+            <div class="receipt-header">
+                <h2>DVTech ODSS</h2>
+                <p>Office Data & Supply System</p>
+                <p>Sales Receipt</p>
+            </div>
+
+            <div class="receipt-info">
+                <table>
+                    <tr>
+                        <td>Receipt No:</td>
+                        <td>@selectedSale.SaleNumber</td>
+                    </tr>
+                    <tr>
+                        <td>Date:</td>
+                        <td>@selectedSale.SaleDate.ToString("MMMM dd, yyyy hh:mm tt")</td>
+                    </tr>
+                    <tr>
+                        <td>Customer:</td>
+                        <td>@(selectedSale.CustomerName ?? "Walk-in Customer")</td>
+                    </tr>
+                    @if (!string.IsNullOrEmpty(selectedSale.CustomerContact))
+                    {
+                        <tr>
+                            <td>Contact:</td>
+                            <td>@selectedSale.CustomerContact</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>Payment Method:</td>
+                        <td>@selectedSale.PaymentMethod</td>
+                    </tr>
+                    <tr>
+                        <td>Processed by:</td>
+                        <td>@selectedSale.CreatedBy</td>
+                    </tr>
+                </table>
+            </div>
+
+            @if (!string.IsNullOrEmpty(selectedSale.Notes))
+            {
+                <div style="margin-bottom: 20px; padding: 10px; background-color: #f9f9f9; border-left: 3px solid #28a745;">
+                    <strong>Notes:</strong> @selectedSale.Notes
+                </div>
+            }
+
+            <table class="items">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Brand</th>
+                        <th class="text-end">Qty</th>
+                        <th class="text-end">Price</th>
+                        <th class="text-end">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in selectedSale.SaleItems)
+                    {
+                        <tr>
+                            <td>@item.ItemName</td>
+                            <td>@item.Brand</td>
+                            <td class="text-end">@item.Quantity @item.Unit</td>
+                            <td class="text-end">₱@item.UnitPrice.ToString("N2")</td>
+                            <td class="text-end">₱@item.TotalPrice.ToString("N2")</td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" class="text-end">Total Amount:</td>
+                        <td class="text-end">₱@selectedSale.TotalAmount.ToString("N2")</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="signature-section">
+                <p><strong>Received by:</strong></p>
+                <div class="signature-line">
+                    Customer Signature
+                </div>
+            </div>
+
+            <div class="signature-section">
+                <p><strong>Prepared by:</strong></p>
+                <div class="signature-line">
+                    @selectedSale.CreatedBy<br />Secretary Signature
+                </div>
+            </div>
+
+            <div class="receipt-footer">
+                <p>Thank you for your business!</p>
+                <p style="font-size: 10px;">This is a computer-generated receipt.</p>
+            </div>
+        </div>
+
+        <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.6);">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white py-2">
+                        <h6 class="modal-title mb-0">💰 Sale Details - @selectedSale.SaleNumber</h6>
+                        <button type="button" class="btn-close btn-close-white" @onclick="CloseDetailsModal"></button>
+                    </div>
+                    <div class="modal-body p-3">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <p class="small mb-1"><strong>Date:</strong> @selectedSale.SaleDate.ToString("MMM dd, yyyy hh:mm tt")</p>
+                                <p class="small mb-1"><strong>Customer:</strong> @(selectedSale.CustomerName ?? "Walk-in Customer")</p>
+                                @if (!string.IsNullOrEmpty(selectedSale.CustomerContact))
+                                {
+                                    <p class="small mb-0"><strong>Contact:</strong> @selectedSale.CustomerContact</p>
+                                }
+                            </div>
+                            <div class="col-md-6 text-end">
+                                <p class="small mb-1"><strong>Payment:</strong> @selectedSale.PaymentMethod</p>
+                                <p class="small mb-0"><strong>Sold by:</strong> @selectedSale.CreatedBy</p>
+                            </div>
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(selectedSale.Notes))
+                        {
+                            <div class="alert alert-info py-2 small mb-3">
+                                <strong>Notes:</strong> @selectedSale.Notes
+                            </div>
+                        }
+
+                        <h6 class="mb-2">Items Sold</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm table-bordered mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="py-1 small">Item</th>
+                                        <th class="py-1 small">Brand</th>
+                                        <th class="py-1 text-end small">Qty</th>
+                                        <th class="py-1 text-end small">Price</th>
+                                        <th class="py-1 text-end small">Total</th>
+                                        <th class="py-1 text-end small">Profit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in selectedSale.SaleItems)
+                                    {
+                                        <tr>
+                                            <td class="py-1 small">@item.ItemName</td>
+                                            <td class="py-1 small">@item.Brand</td>
+                                            <td class="py-1 text-end small">@item.Quantity @item.Unit</td>
+                                            <td class="py-1 text-end small">₱@item.UnitPrice.ToString("N2")</td>
+                                            <td class="py-1 text-end small"><strong>₱@item.TotalPrice.ToString("N2")</strong></td>
+                                            <td class="py-1 text-end small text-primary"><strong>₱@item.Profit.ToString("N2")</strong></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot class="table-light">
+                                    <tr>
+                                        <td colspan="4" class="py-2 text-end small"><strong>Total Sale:</strong></td>
+                                        <td class="py-2 text-end"><strong class="text-success">₱@selectedSale.TotalAmount.ToString("N2")</strong></td>
+                                        <td class="py-2 text-end"><strong class="text-primary">₱@selectedSale.TotalProfit.ToString("N2")</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer py-2">
+                        <button type="button"
+                                class="btn btn-sm btn-primary"
+                                onclick="printSaleReceipt('@selectedSale.SaleNumber'); return false;">
+                            🖨️ Print Receipt
+                        </button>
+                        <button type="button" class="btn btn-sm btn-secondary" @onclick="CloseDetailsModal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</AuthGuard>
+
+@code {
+    private List<Sale> allSales = new();
+    private List<Sale> sales = new();
+    private List<Sale> filteredSales = new();
+    private List<InventoryItem> availableItems = new();
+    private List<InventoryItem> filteredItems = new();
+    private List<SaleItem> saleItems = new();
+    private Sale? selectedSale = null;
+
+    private bool isLoading = true;
+    private bool showSaleForm = false;
+    private bool showDetailsModal = false;
+    private bool isFiltered = false;
+
+    private string searchText = string.Empty;
+    private string customerName = string.Empty;
+    private string customerContact = string.Empty;
+    private string paymentMethod = "Cash";
+    private string saleNotes = string.Empty;
+
+    private DateTime? filterFromDate = null;
+    private DateTime? filterToDate = null;
+
+    private decimal todaySales = 0;
+    private decimal todayProfit = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        isLoading = true;
+        allSales = await SalesService.GetAllSalesAsync();
+        sales = allSales;
+        filteredSales = allSales;
+
+        // Only load inventory items if user is Secretary
+        if (AuthState.IsSecretary)
+        {
+            availableItems = await InventoryService.GetAllItemsAsync();
+            filteredItems = availableItems.Where(i => i.Quantity > 0).ToList();
+        }
+
+        todaySales = await SalesService.GetTotalSalesTodayAsync();
+        todayProfit = await SalesService.GetTotalProfitTodayAsync();
+        isLoading = false;
+    }
+
+    private void ApplyDateFilter()
+    {
+        if (filterFromDate.HasValue || filterToDate.HasValue)
+        {
+            filteredSales = allSales.Where(s =>
+            {
+                bool matchesFrom = !filterFromDate.HasValue || s.SaleDate.Date >= filterFromDate.Value.Date;
+                bool matchesTo = !filterToDate.HasValue || s.SaleDate.Date <= filterToDate.Value.Date;
+                return matchesFrom && matchesTo;
+            }).ToList();
+
+            sales = filteredSales;
+            isFiltered = true;
+        }
+        else
+        {
+            sales = allSales;
+            filteredSales = allSales;
+            isFiltered = false;
+        }
+        StateHasChanged();
+    }
+
+    private void ClearDateFilter()
+    {
+        filterFromDate = null;
+        filterToDate = null;
+        sales = allSales;
+        filteredSales = allSales;
+        isFiltered = false;
+        StateHasChanged();
+    }
+
+    private void ShowNewSaleForm()
+    {
+        // Only Secretary can create sales
+        if (!AuthState.IsSecretary)
+            return;
+
+        customerName = string.Empty;
+        customerContact = string.Empty;
+        paymentMethod = "Cash";
+        saleNotes = string.Empty;
+        saleItems = new();
+        searchText = string.Empty;
+        filteredItems = availableItems.Where(i => i.Quantity > 0).ToList();
+        showSaleForm = true;
+    }
+
+    private void FilterItems()
+    {
+        if (string.IsNullOrWhiteSpace(searchText))
+        {
+            filteredItems = availableItems.Where(i => i.Quantity > 0).ToList();
+        }
+        else
+        {
+            filteredItems = availableItems
+                .Where(i => i.Quantity > 0 &&
+                    (i.ItemName.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                    (i.Brand != null && i.Brand.Contains(searchText, StringComparison.OrdinalIgnoreCase))))
+                .ToList();
+        }
+        StateHasChanged();
+    }
+
+    private void UpdateItemQuantity(InventoryItem item, string? quantityStr)
+    {
+        if (!int.TryParse(quantityStr, out int quantity) || quantity < 0)
+            return;
+
+        if (quantity > item.Quantity)
+            quantity = item.Quantity;
+
+        var existingItem = saleItems.FirstOrDefault(si => si.ItemId == item.ItemId);
+
+        if (quantity == 0)
+        {
+            if (existingItem != null)
+                saleItems.Remove(existingItem);
+        }
+        else
+        {
+            if (existingItem != null)
+            {
+                existingItem.Quantity = quantity;
+            }
+            else
+            {
+                saleItems.Add(new SaleItem
+                {
+                    ItemId = item.ItemId,
+                    ItemName = item.ItemName,
+                    Brand = item.Brand,
+                    Category = item.Category,
+                    Unit = item.Unit,
+                    Quantity = quantity,
+                    UnitPrice = item.SellingPrice,
+                    UnitCost = item.UnitPrice
+                });
+            }
+        }
+
+        StateHasChanged();
+    }
+
+    private decimal CalculateTotalAmount()
+    {
+        return saleItems.Sum(si => si.Quantity * si.UnitPrice);
+    }
+
+    private decimal CalculateTotalProfit()
+    {
+        return saleItems.Sum(si => si.Quantity * (si.UnitPrice - si.UnitCost));
+    }
+
+    private bool CanCompleteSale()
+    {
+        return saleItems.Any();
+    }
+
+    private async Task CompleteSale()
+    {
+        if (!CanCompleteSale() || !AuthState.IsSecretary)
+            return;
+
+        var sale = new Sale
+        {
+            CustomerName = string.IsNullOrWhiteSpace(customerName) ? null : customerName,
+            CustomerContact = string.IsNullOrWhiteSpace(customerContact) ? null : customerContact,
+            PaymentMethod = paymentMethod,
+            Notes = string.IsNullOrWhiteSpace(saleNotes) ? null : saleNotes,
+            CreatedBy = AuthState.CurrentUser?.FullName ?? "Unknown",
+            SaleItems = saleItems.ToList()
+        };
+
+        var (success, message) = await SalesService.CreateSaleAsync(sale);
+
+        if (success)
+        {
+            await LoadData();
+            CancelSale();
+            await ShowToast("success", "Sale Completed!", message);
+        }
+        else
+        {
+            await ShowToast("error", "Sale Failed", message);
+        }
+    }
+
+    private void CancelSale()
+    {
+        showSaleForm = false;
+        saleItems = new();
+        StateHasChanged();
+    }
+
+    private void ViewSaleDetails(Sale sale)
+    {
+        selectedSale = sale;
+        showDetailsModal = true;
+    }
+
+    private void CloseDetailsModal()
+    {
+        showDetailsModal = false;
+        selectedSale = null;
+    }
+
+    private async Task ShowToast(string type, string title, string message)
+    {
+        try
+        {
+            await JSRuntime.InvokeVoidAsync("showToast", type, title, message);
+        }
+        catch { }
+    }
+}

@@ -1,0 +1,1520 @@
+﻿@page "/suppliers"
+@using DVTech_ODSS.Models
+@using DVTech_ODSS.Services
+@using System.Text.RegularExpressions
+@inject ProcurementService ProcurementService
+@rendermode InteractiveServer
+
+<PageTitle>Supplier Management</PageTitle>
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col">
+            <h2>🏢 Supplier Management</h2>
+        </div>
+        <div class="col text-end">
+            @if (!showArchives)
+            {
+                <button class="btn btn-secondary me-2" @onclick="ShowArchiveList">
+                    📁 Archives (@archivedSuppliers.Count)
+                </button>
+            }
+            <button class="btn btn-primary" @onclick="ShowAddForm">
+                ➕ Add New Supplier
+            </button>
+        </div>
+    </div>
+
+    @if (isLoading)
+    {
+        <div class="text-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    }
+    else if (showAddForm)
+    {
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>@(editingSupplier != null ? "Edit Supplier" : "Add New Supplier")</h5>
+            </div>
+            <div class="card-body">
+                <EditForm Model="currentSupplier" OnValidSubmit="SaveSupplier">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+
+                    <h6 class="text-primary mb-3">Supplier Information</h6>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold small mb-1">Supplier Name *</label>
+                            <InputText class="@GetSupplierNameClass()"
+                                       @bind-Value="currentSupplier.SupplierName"
+                                       placeholder="Enter supplier name"
+                                       maxlength="100" />
+                            @if (string.IsNullOrWhiteSpace(currentSupplier.SupplierName))
+                            {
+                                <div class="invalid-feedback text-muted">Supplier name is required</div>
+                            }
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold small mb-1">Contact Person *</label>
+                            <InputText class="@GetContactPersonClass()"
+                                       @bind-Value="currentSupplier.ContactPerson"
+                                       placeholder="Enter contact person name"
+                                       @oninput="@((e) => { currentSupplier.ContactPerson = e.Value?.ToString(); StateHasChanged(); })"
+                                       maxlength="100" />
+                            @if (!IsValidContactPerson(currentSupplier.ContactPerson))
+                            {
+                                <div class="invalid-feedback text-muted">
+                                    @if (string.IsNullOrWhiteSpace(currentSupplier.ContactPerson))
+                                    {
+                                        <span> Contact person is required</span>
+                                    }
+                                    else if (currentSupplier.ContactPerson.Count(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c)) >= 2)
+                                    {
+                                        <span>Contact person name cannot contain 2 or more special characters</span>
+                                    }
+                                    else
+                                    {
+                                        <span>Contact person name must contain mostly letters</span>
+                                    }
+                                </div>
+                            }
+                            <small class="text-muted">Must contain letters, max 1 special character allowed</small>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold small mb-1">Phone Number *</label>
+                            <div class="input-group">
+                                <span class="input-group-text">+63</span>
+                                <input type="text"
+                                       class="@GetPhoneNumberClass()"
+                                       @bind="phoneNumberInput"
+                                       @oninput="@HandlePhoneInput"
+                                       placeholder="9XX XXX XXXX"
+                                       maxlength="13" />
+                            </div>
+                            @if (!IsValidPhoneNumber(currentSupplier.PhoneNumber))
+                            {
+                                <div class="invalid-feedback text-muted ">
+                                    @if (string.IsNullOrWhiteSpace(phoneNumberInput))
+                                    {
+                                        <span>Phone number is required</span>
+                                    }
+                                    else if (!phoneNumberInput.StartsWith("9"))
+                                    {
+                                        <span>Philippine mobile numbers must start with 9</span>
+                                    }
+                                    else
+                                    {
+                                        <span>Phone number must be 10 digits (9XX XXX XXXX)</span>
+                                    }
+                                </div>
+                            }
+                            <small class="text-muted">Format: 9XX XXX XXXX (10 digits)</small>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold small mb-1">Email</label>
+                            <InputText class="@GetEmailClass()"
+                                       type="email"
+                                       @bind-Value="currentSupplier.Email"
+                                       placeholder="supplier@example.com"
+                                       maxlength="100" />
+                            @if (!IsValidEmail(currentSupplier.Email) && !string.IsNullOrWhiteSpace(currentSupplier.Email))
+                            {
+                                <div class="invalid-feedback d-block">Please enter a valid email address</div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small mb-1">Address</label>
+                        <InputTextArea class="form-control"
+                                       rows="3"
+                                       @bind-Value="currentSupplier.Address"
+                                       @oninput="@((e) => { currentSupplier.Address = e.Value?.ToString(); StateHasChanged(); })"
+                                       placeholder="Enter supplier address"
+                                       maxlength="200" />
+                        <small class="text-muted">@(currentSupplier.Address?.Length ?? 0)/200 characters</small>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold small mb-1">Status</label>
+                        <InputSelect class="form-control" @bind-Value="currentSupplier.Status">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </InputSelect>
+                    </div>
+
+                    <hr />
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="text-primary mb-0">Items Supplied *</h6>
+                        <button type="button" class="btn btn-sm btn-success" @onclick="ShowAddItemModal">
+                            ➕ Add Item
+                        </button>
+                    </div>
+
+                    @if (supplierItems.Count == 0)
+                    {
+                        <div class="alert alert-info">
+                            No items added yet. Click "Add Item" to add items that this supplier provides.
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="table-responsive mb-3">
+                            <table class="table table-hover table-sm mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="py-2">Item Name</th>
+                                        <th class="py-2">Brand</th>
+                                        <th class="py-2">Category</th>
+                                        <th class="py-2">Unit</th>
+                                        <th class="py-2">Price/Unit</th>
+                                        <th class="py-2">Description</th>
+                                        <th class="py-2 text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < supplierItems.Count; i++)
+                                    {
+                                        var index = i;
+                                        var item = supplierItems[index];
+                                        <tr style="cursor: pointer;" @onclick="@(() => ViewItemDetails(index))">
+                                            <td class="py-2 small">@item.ItemName</td>
+                                            <td class="py-2 small">@item.Brand</td>
+                                            <td class="py-2 small">
+                                                <span class="badge bg-secondary">@item.Category</span>
+                                            </td>
+                                            <td class="py-2 small">@item.Unit</td>
+                                            <td class="py-2 small"><strong class="text-success">₱@item.PricePerUnit.ToString("N2")</strong></td>
+                                            <td class="py-2 small" style="max-width: 200px;">
+                                                <span class="text-truncate d-inline-block" style="max-width: 200px;" title="@item.Description">
+                                                    @(string.IsNullOrEmpty(item.Description) ? "—" : item.Description)
+                                                </span>
+                                            </td>
+                                            <td class="py-2 text-center" @onclick:stopPropagation="true">
+                                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" @onclick="() => EditItemInModal(index)">
+                                                    ✏️
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger py-0 px-2" @onclick="() => RemoveSupplierItem(index)">
+                                                    🗑️
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+
+                    <datalist id="categoryList">
+                        <option value="Electronics" />
+                        <option value="Hardware" />
+                        <option value="Tools" />
+                        <option value="Materials" />
+                        <option value="Safety Equipment" />
+                        <option value="Office Supplies" />
+                    </datalist>
+
+                    <datalist id="unitList">
+                        <option value="pcs" />
+                        <option value="units" />
+                        <option value="sets" />
+                        <option value="meters" />
+                        <option value="kg" />
+                        <option value="liters" />
+                        <option value="rolls" />
+                        <option value="cans" />
+                        <option value="bottles" />
+                    </datalist>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-success" disabled="@(!IsFormValid())">💾 Save Supplier</button>
+                        <button type="button" class="btn btn-secondary" @onclick="CancelForm">Cancel</button>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    }
+    else if (showArchives)
+    {
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h6 class="mb-0">📁 Archived Suppliers</h6>
+                <button type="button" class="btn btn-sm btn-light" @onclick="CloseArchiveList">Back to Suppliers</button>
+            </div>
+            <div class="card-body">
+                @if (archivedSuppliers.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Supplier Name</th>
+                                    <th>Contact Person</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Items Count</th>
+                                    <th>Archived Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var supplier in archivedSuppliers)
+                                {
+                                    <tr>
+                                        <td>@supplier.SupplierName</td>
+                                        <td>@supplier.ContactPerson</td>
+                                        <td>@supplier.PhoneNumber</td>
+                                        <td>@supplier.Email</td>
+                                        <td>
+                                            <span class="badge bg-secondary">@supplier.SupplierItems.Count items</span>
+                                        </td>
+                                        <td>@supplier.ArchivedDate?.ToString("MMM dd, yyyy") ?? "Unknown"</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-success" @onclick="() => ShowRestoreConfirmation(supplier)">↩️ Restore</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-info mb-0">No archived suppliers.</div>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Supplier Name</th>
+                                <th>Contact Person</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Items Count</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (suppliers.Any())
+                            {
+                                @foreach (var supplier in suppliers)
+                                {
+                                    <tr style="cursor: pointer;" @onclick="() => ViewSupplierDetails(supplier)">
+                                        <td>@supplier.SupplierName</td>
+                                        <td>@supplier.ContactPerson</td>
+                                        <td>@supplier.PhoneNumber</td>
+                                        <td>@supplier.Email</td>
+                                        <td>
+                                            <span class="badge bg-info">@supplier.SupplierItems.Count items</span>
+                                        </td>
+                                        <td>
+                                            <span class="badge @(supplier.Status == "Active" ? "bg-success" : "bg-secondary")">
+                                                @supplier.Status
+                                            </span>
+                                        </td>
+                                        <td @onclick:stopPropagation="true">
+                                            <button class="btn btn-sm btn-outline-primary" @onclick="() => EditSupplier(supplier)">✏️</button>
+                                            <button class="btn btn-sm btn-outline-warning" @onclick="() => ShowArchiveConfirmation(supplier)" title="Archive">📦</button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="7" class="text-center">No suppliers found. Click "Add New Supplier" to get started.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Supplier Details Modal -->
+@if (showDetailsModal && selectedSupplier != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">🏢 Supplier Details</h5>
+                    <button type="button" class="btn-close" @onclick="CloseDetailsModal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-8">
+                            <label class="fw-bold text-muted">Supplier Name</label>
+                            <p class="fs-4">@selectedSupplier.SupplierName</p>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="fw-bold text-muted">Status</label>
+                            <p>
+                                <span class="badge @(selectedSupplier.Status == "Active" ? "bg-success" : "bg-secondary") fs-6">
+                                    @selectedSupplier.Status
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="fw-bold text-muted">Contact Person</label>
+                            <p class="fs-5">@(string.IsNullOrEmpty(selectedSupplier.ContactPerson) ? "Not specified" : selectedSupplier.ContactPerson)</p>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="fw-bold text-muted">Date Added</label>
+                            <p class="fs-5">@selectedSupplier.DateAdded.ToString("MMMM dd, yyyy")</p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="fw-bold text-muted">📞 Phone Number</label>
+                            <p class="fs-5">
+                                @if (!string.IsNullOrEmpty(selectedSupplier.PhoneNumber))
+                                {
+                                    <a href="tel:@selectedSupplier.PhoneNumber">@selectedSupplier.PhoneNumber</a>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Not provided</span>
+                                }
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="fw-bold text-muted">📧 Email</label>
+                            <p class="fs-5">
+                                @if (!string.IsNullOrEmpty(selectedSupplier.Email))
+                                {
+                                    <a href="mailto:@selectedSupplier.Email">@selectedSupplier.Email</a>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Not provided</span>
+                                }
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <label class="fw-bold text-muted">📍 Address</label>
+                            <p>@(string.IsNullOrEmpty(selectedSupplier.Address) ? "No address provided" : selectedSupplier.Address)</p>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <h6 class="mb-3">📦 Items Supplied (@selectedSupplier.SupplierItems.Count)</h6>
+                    @if (selectedSupplier.SupplierItems.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-sm table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Item Name</th>
+                                        <th>Brand</th>
+                                        <th>Category</th>
+                                        <th>Description</th>
+                                        <th>Unit</th>
+                                        <th class="text-end">Price/Unit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in selectedSupplier.SupplierItems.Where(si => si.IsActive))
+                                    {
+                                        <tr>
+                                            <td><strong>@item.ItemName</strong></td>
+                                            <td>@item.Brand</td>
+                                            <td>
+                                                <span class="badge bg-secondary">@item.Category</span>
+                                            </td>
+                                            <td>@(string.IsNullOrEmpty(item.Description) ? "-" : item.Description)</td>
+                                            <td>@item.Unit</td>
+                                            <td class="text-end"><strong>₱@item.PricePerUnit.ToString("N2")</strong></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-info">
+                            No items registered for this supplier.
+                        </div>
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" @onclick="() => EditSupplier(selectedSupplier)">✏️ Edit Supplier</button>
+                    <button type="button" class="btn btn-secondary" @onclick="CloseDetailsModal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- ADD/EDIT ITEM MODAL -->
+@if (showItemModal)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-success text-white">
+                    <h6 class="modal-title mb-0">@(editingItemIndex >= 0 ? "✏️ Edit Item" : "➕ Add New Item")</h6>
+                    <button type="button" class="btn-close btn-close-white" @onclick="CloseItemModal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small mb-1">Item Name *</label>
+                            <input type="text"
+                                   class="form-control @(GetItemNameValidationClass())"
+                                   @bind="tempItem.ItemName"
+                                   @bind:event="oninput"
+                                   placeholder="Enter item name"
+                                   maxlength="100" />
+                            @if (string.IsNullOrWhiteSpace(tempItem.ItemName))
+                            {
+                                <div class="invalid-feedback text-muted">Item name is required</div>
+                            }
+                            else if (!IsValidItemName(tempItem.ItemName))
+                            {
+                                <div class="invalid-feedback d-block">Item name can have maximum 2 special characters</div>
+                            }
+                            <small class="text-muted">Max 2 special characters allowed</small>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small mb-1">Brand *</label>
+                            <input type="text"
+                                   class="form-control @(GetBrandValidationClass())"
+                                   @bind="tempItem.Brand"
+                                   @bind:event="oninput"
+                                   placeholder="Enter brand"
+                                   maxlength="100" />
+                            @if (string.IsNullOrWhiteSpace(tempItem.Brand))
+                            {
+                                <div class="invalid-feedback text-muted ">Brand is required</div>
+                            }
+                            else if (!IsValidBrand(tempItem.Brand))
+                            {
+                                <div class="invalid-feedback d-block">Brand can have maximum 2 special characters</div>
+                            }
+                            <small class="text-muted">Max 2 special characters allowed</small>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small mb-1">Category *</label>
+                            <input list="categoryList"
+                                   type="text"
+                                   class="form-control @(GetCategoryValidationClass())"
+                                   @bind="tempItem.Category"
+                                   @bind:event="oninput"
+                                   placeholder="Enter category"
+                                   maxlength="50" />
+                            @if (string.IsNullOrWhiteSpace(tempItem.Category))
+                            {
+                                <div class="invalid-feedback text-muted">Category is required</div>
+                            }
+                            else if (!IsValidCategory(tempItem.Category))
+                            {
+                                <div class="invalid-feedback d-block">Category cannot contain special characters</div>
+                            }
+                            <small class="text-muted">Letters, numbers, and spaces only</small>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small mb-1">Unit *</label>
+                            <input list="unitList"
+                                   type="text"
+                                   class="form-control @(GetUnitValidationClass())"
+                                   @bind="tempItem.Unit"
+                                   @bind:event="oninput"
+                                   placeholder="e.g., pcs, units"
+                                   maxlength="20" />
+                            @if (string.IsNullOrWhiteSpace(tempItem.Unit))
+                            {
+                                <div class="invalid-feedback d-block">Unit is required</div>
+                            }
+                            else if (!IsValidUnit(tempItem.Unit))
+                            {
+                                <div class="invalid-feedback d-block">Unit cannot contain special characters</div>
+                            }
+                            <small class="text-muted">Letters, numbers, and spaces only</small>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label fw-bold small mb-1">Price Per Unit (₱) *</label>
+                            <input type="number"
+                                   class="form-control @(tempItem.PricePerUnit < 0 ? "is-invalid" : "")"
+                                   step="0.01"
+                                   min="0"
+                                   @bind="tempItem.PricePerUnit"
+                                   placeholder="0.00" />
+                            @if (tempItem.PricePerUnit < 0)
+                            {
+                                <div class="invalid-feedback d-block">Price cannot be negative</div>
+                            }
+                            <small class="text-muted">Price can be ₱0.00 or higher</small>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label fw-bold small mb-1">Description</label>
+                            <textarea class="form-control @(tempItem.Description?.Length > 200 ? "is-invalid" : "")"
+                                      rows="3"
+                                      @bind="tempItem.Description"
+                                      @bind:event="oninput"
+                                      placeholder="Optional description..."
+                                      maxlength="200"></textarea>
+                            <small class="text-muted">@(tempItem.Description?.Length ?? 0)/200 characters</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CloseItemModal">Cancel</button>
+                    <button type="button" class="btn btn-sm btn-success" @onclick="SaveItemFromModal" disabled="@(!IsItemFormValid())">
+                        💾 @(editingItemIndex >= 0 ? "Update Item" : "Add Item")
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- ITEM DETAILS MODAL -->
+@if (showItemDetailsModal && selectedItem != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-light">
+                    <h6 class="modal-title mb-0">📦 @selectedItem.ItemName</h6>
+                    <button type="button" class="btn-close" @onclick="CloseItemDetailsModal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Brand</p>
+                                    <p class="mb-0 fw-bold">@selectedItem.Brand</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Category</p>
+                                    <p class="mb-0"><span class="badge bg-secondary">@selectedItem.Category</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Unit</p>
+                                    <p class="mb-0 fw-bold">@selectedItem.Unit</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Price Per Unit</p>
+                                    <p class="mb-0 fw-bold text-success">₱@selectedItem.PricePerUnit.ToString("N2")</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Description</p>
+                                    <p class="mb-0">@(string.IsNullOrEmpty(selectedItem.Description) ? "No description available" : selectedItem.Description)</p>
+                                </div>
+                            </div>
+                        </div>
+                        @if (selectedItem.DateAdded != default(DateTime))
+                        {
+                            <div class="col-md-6">
+                                <div class="card bg-light border-0">
+                                    <div class="card-body p-2">
+                                        <p class="text-muted small mb-1">Date Added</p>
+                                        <p class="mb-0">@selectedItem.DateAdded.ToString("MMM dd, yyyy")</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-primary" @onclick="@(() => EditItemFromDetails())">
+                        ✏️ Edit Item
+                    </button>
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CloseItemDetailsModal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- ARCHIVE CONFIRMATION MODAL -->
+@if (showArchiveConfirmationModal && supplierToArchive != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-warning">
+                    <h6 class="modal-title mb-0">⚠️ Archive Supplier</h6>
+                    <button type="button" class="btn-close" @onclick="CancelArchive"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <p class="mb-2">Are you sure you want to archive this supplier?</p>
+                    <p class="fw-bold mb-2">@supplierToArchive.SupplierName</p>
+                    <p class="small text-muted mb-0">You can restore it later from the Archives.</p>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CancelArchive">Cancel</button>
+                    <button type="button" class="btn btn-sm btn-warning" @onclick="ConfirmArchive">Yes, Archive</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- RESTORE CONFIRMATION MODAL -->
+@if (showRestoreConfirmation && supplierToRestore != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-success text-white">
+                    <h6 class="modal-title mb-0">↩️ Restore Supplier</h6>
+                    <button type="button" class="btn-close btn-close-white" @onclick="CancelRestore"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <p class="mb-2">Are you sure you want to restore this supplier?</p>
+                    <p class="fw-bold mb-2">@supplierToRestore.SupplierName</p>
+                    <small class="text-muted">Contact: @supplierToRestore.ContactPerson</small><br />
+                    <small class="text-muted">Items: @supplierToRestore.SupplierItems.Count</small>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CancelRestore">Cancel</button>
+                    <button type="button" class="btn btn-sm btn-success" @onclick="ConfirmRestore">Yes, Restore</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- ZERO PRICE WARNING MODAL -->
+@if (showZeroPriceWarning)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.7);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-warning text-dark">
+                    <h6 class="modal-title mb-0">⚠️ Zero Price Warning</h6>
+                    <button type="button" class="btn-close" @onclick="CancelZeroPriceWarning"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning mb-3">
+                        <strong>Warning:</strong> One or more items have a price of ₱0.00
+                    </div>
+                    <p class="mb-2"><strong>Items with zero price:</strong></p>
+                    <ul class="mb-3">
+                        @foreach (var item in supplierItems.Where(i => i.PricePerUnit == 0))
+                        {
+                            <li>@item.ItemName (@item.Brand)</li>
+                        }
+                    </ul>
+                    <p class="text-muted small">
+                        Items with zero price are allowed, but this may indicate missing pricing information.
+                        Do you want to continue saving this supplier?
+                    </p>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CancelZeroPriceWarning">
+                        ❌ Cancel - Fix Prices
+                    </button>
+                    <button type="button" class="btn btn-sm btn-warning" @onclick="ConfirmSaveWithZeroPrice">
+                        ✔️ Continue Saving
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private Supplier? selectedSupplier = null;
+    private bool showDetailsModal = false;
+    private List<Supplier> suppliers = new();
+    private List<Supplier> archivedSuppliers = new();
+    private Supplier currentSupplier = new();
+    private Supplier? editingSupplier = null;
+    private bool showAddForm = false;
+    private bool isLoading = true;
+    private bool showArchives = false;
+
+    private List<SupplierItem> supplierItems = new();
+
+    // Item modal variables
+    private bool showItemModal = false;
+    private SupplierItem tempItem = new();
+    private int editingItemIndex = -1;
+    private string phoneNumberInput = "";
+
+    // Item details modal variables
+    private bool showItemDetailsModal = false;
+    private SupplierItem? selectedItem = null;
+
+    // Archive/Restore modal variables
+    private bool showArchiveConfirmationModal = false;
+    private bool showRestoreConfirmation = false;
+    private Supplier? supplierToArchive = null;
+    private Supplier? supplierToRestore = null;
+
+    // Zero price warning
+    private bool showZeroPriceWarning = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadSuppliers();
+    }
+
+    private async Task LoadSuppliers()
+    {
+        isLoading = true;
+        suppliers = await ProcurementService.GetAllSuppliersAsync();
+        archivedSuppliers = await ProcurementService.GetArchivedSuppliersAsync();
+        isLoading = false;
+    }
+
+    private void ShowAddForm()
+    {
+        currentSupplier = new Supplier();
+        editingSupplier = null;
+        supplierItems = new();
+        showAddForm = true;
+        phoneNumberInput = "";
+    }
+
+    private void EditSupplier(Supplier supplier)
+    {
+        editingSupplier = supplier;
+        currentSupplier = new Supplier
+        {
+            SupplierId = supplier.SupplierId,
+            SupplierName = supplier.SupplierName,
+            ContactPerson = supplier.ContactPerson,
+            PhoneNumber = supplier.PhoneNumber,
+            Email = supplier.Email,
+            Address = supplier.Address,
+            Status = supplier.Status,
+            DateAdded = supplier.DateAdded,
+            IsActive = supplier.IsActive
+        };
+
+        // Load existing supplier items
+        supplierItems = supplier.SupplierItems
+            .Where(si => si.IsActive)
+            .Select(si => new SupplierItem
+            {
+                SupplierItemId = si.SupplierItemId,
+                SupplierId = si.SupplierId,
+                ItemName = si.ItemName,
+                Brand = si.Brand,
+                Category = si.Category,
+                Description = si.Description,
+                Unit = si.Unit,
+                PricePerUnit = si.PricePerUnit,
+                IsActive = si.IsActive
+            })
+            .ToList();
+
+        // Extract phone number without +63
+        if (!string.IsNullOrWhiteSpace(currentSupplier.PhoneNumber))
+        {
+            phoneNumberInput = currentSupplier.PhoneNumber.Replace("+63", "").Trim();
+        }
+        else
+        {
+            phoneNumberInput = "";
+        }
+        showAddForm = true;
+        showDetailsModal = false;
+        StateHasChanged();
+    }
+
+    private void ShowAddItemModal()
+    {
+        tempItem = new SupplierItem
+        {
+            Unit = "pcs",
+            PricePerUnit = 0
+        };
+        editingItemIndex = -1;
+        showItemModal = true;
+        StateHasChanged();
+    }
+
+    private void EditItemInModal(int index)
+    {
+        if (index >= 0 && index < supplierItems.Count)
+        {
+            var item = supplierItems[index];
+            tempItem = new SupplierItem
+            {
+                SupplierItemId = item.SupplierItemId,
+                SupplierId = item.SupplierId,
+                ItemName = item.ItemName,
+                Brand = item.Brand,
+                Category = item.Category,
+                Description = item.Description,
+                Unit = item.Unit,
+                PricePerUnit = item.PricePerUnit,
+                IsActive = item.IsActive
+            };
+            editingItemIndex = index;
+            showItemModal = true;
+            StateHasChanged();
+        }
+    }
+
+    private void SaveItemFromModal()
+    {
+        if (!IsItemFormValid())
+            return;
+
+        if (editingItemIndex >= 0)
+        {
+            // Update existing item
+            supplierItems[editingItemIndex] = new SupplierItem
+            {
+                SupplierItemId = tempItem.SupplierItemId,
+                SupplierId = tempItem.SupplierId,
+                ItemName = tempItem.ItemName,
+                Brand = tempItem.Brand,
+                Category = tempItem.Category,
+                Description = tempItem.Description,
+                Unit = tempItem.Unit,
+                PricePerUnit = tempItem.PricePerUnit,
+                IsActive = tempItem.IsActive
+            };
+        }
+        else
+        {
+            // Add new item
+            supplierItems.Add(new SupplierItem
+            {
+                ItemName = tempItem.ItemName,
+                Brand = tempItem.Brand,
+                Category = tempItem.Category,
+                Description = tempItem.Description,
+                Unit = tempItem.Unit,
+                PricePerUnit = tempItem.PricePerUnit,
+                IsActive = true
+            });
+        }
+
+        CloseItemModal();
+    }
+
+    private void CloseItemModal()
+    {
+        showItemModal = false;
+        tempItem = new SupplierItem();
+        editingItemIndex = -1;
+        StateHasChanged();
+    }
+
+    private void ViewItemDetails(int index)
+    {
+        if (index >= 0 && index < supplierItems.Count)
+        {
+            selectedItem = supplierItems[index];
+            showItemDetailsModal = true;
+            StateHasChanged();
+        }
+    }
+
+    private void CloseItemDetailsModal()
+    {
+        showItemDetailsModal = false;
+        selectedItem = null;
+        StateHasChanged();
+    }
+
+    private void EditItemFromDetails()
+    {
+        if (selectedItem != null)
+        {
+            var index = supplierItems.IndexOf(selectedItem);
+            if (index >= 0)
+            {
+                CloseItemDetailsModal();
+                EditItemInModal(index);
+            }
+        }
+    }
+
+    private bool IsItemFormValid()
+    {
+        return !string.IsNullOrWhiteSpace(tempItem.ItemName) &&
+               IsValidItemName(tempItem.ItemName) &&
+               !string.IsNullOrWhiteSpace(tempItem.Brand) &&
+               IsValidBrand(tempItem.Brand) &&
+               !string.IsNullOrWhiteSpace(tempItem.Category) &&
+               IsValidCategory(tempItem.Category) &&
+               !string.IsNullOrWhiteSpace(tempItem.Unit) &&
+               IsValidUnit(tempItem.Unit) &&
+               tempItem.PricePerUnit >= 0; // Changed from > 0 to >= 0
+    }
+
+    private void RemoveSupplierItem(int index)
+    {
+        if (index >= 0 && index < supplierItems.Count)
+        {
+            supplierItems.RemoveAt(index);
+            StateHasChanged();
+        }
+    }
+
+    private bool IsFormValid()
+    {
+        if (string.IsNullOrWhiteSpace(currentSupplier.SupplierName))
+            return false;
+            if (!IsValidContactPerson(currentSupplier.ContactPerson))
+    return false;
+
+
+        // Validate email if provided
+        if (!string.IsNullOrWhiteSpace(currentSupplier.Email) && !IsValidEmail(currentSupplier.Email))
+            return false;
+
+        // Validate phone if provided
+        if (!string.IsNullOrWhiteSpace(currentSupplier.PhoneNumber) && !IsValidPhoneNumber(currentSupplier.PhoneNumber))
+            return false;
+
+        // Validate address length
+        if (currentSupplier.Address?.Length > 200)
+            return false;
+
+        if (supplierItems.Count == 0)
+            return false;
+
+        foreach (var item in supplierItems)
+        {
+            if (string.IsNullOrWhiteSpace(item.ItemName) ||
+                string.IsNullOrWhiteSpace(item.Brand) ||
+                string.IsNullOrWhiteSpace(item.Category) ||
+                string.IsNullOrWhiteSpace(item.Unit) ||
+                item.PricePerUnit < 0 ||  // Changed: Allow zero, but not negative
+                item.Description?.Length > 200)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private async Task SaveSupplier()
+    {
+        if (!IsFormValid())
+            return;
+
+        // Check if any items have zero price
+        var zeroPricedItems = supplierItems.Where(item => item.PricePerUnit == 0).ToList();
+        if (zeroPricedItems.Any())
+        {
+            showZeroPriceWarning = true;
+            StateHasChanged();
+            return;
+        }
+
+        await SaveSupplierInternal();
+    }
+
+    private async Task SaveSupplierInternal()
+    {
+        bool success;
+
+        if (editingSupplier != null)
+        {
+            // Update existing supplier
+            editingSupplier.SupplierName = currentSupplier.SupplierName;
+            editingSupplier.ContactPerson = currentSupplier.ContactPerson;
+            editingSupplier.PhoneNumber = currentSupplier.PhoneNumber;
+            editingSupplier.Email = currentSupplier.Email;
+            editingSupplier.Address = currentSupplier.Address;
+            editingSupplier.Status = currentSupplier.Status;
+
+            // Update supplier items
+            editingSupplier.SupplierItems = supplierItems.Select(si => new SupplierItem
+            {
+                SupplierItemId = si.SupplierItemId,
+                SupplierId = editingSupplier.SupplierId,
+                ItemName = si.ItemName,
+                Brand = si.Brand,
+                Category = si.Category,
+                Description = si.Description,
+                Unit = si.Unit,
+                PricePerUnit = si.PricePerUnit,
+                IsActive = true
+            }).ToList();
+
+            success = await ProcurementService.UpdateSupplierAsync(editingSupplier);
+        }
+        else
+        {
+            // Add new supplier with items
+            currentSupplier.SupplierItems = supplierItems.Select(si => new SupplierItem
+            {
+                ItemName = si.ItemName,
+                Brand = si.Brand,
+                Category = si.Category,
+                Description = si.Description,
+                Unit = si.Unit,
+                PricePerUnit = si.PricePerUnit,
+                IsActive = true
+            }).ToList();
+
+            success = await ProcurementService.AddSupplierAsync(currentSupplier);
+        }
+
+        if (success)
+        {
+            await LoadSuppliers();
+            CancelForm();
+            StateHasChanged();
+        }
+    }
+
+    private async Task ConfirmSaveWithZeroPrice()
+    {
+        showZeroPriceWarning = false;
+        await SaveSupplierInternal();
+    }
+
+    private void CancelZeroPriceWarning()
+    {
+        showZeroPriceWarning = false;
+        StateHasChanged();
+    }
+
+    private void ShowArchiveConfirmation(Supplier supplier)
+    {
+        supplierToArchive = supplier;
+        showArchiveConfirmationModal = true;
+    }
+
+    private void CancelArchive()
+    {
+        supplierToArchive = null;
+        showArchiveConfirmationModal = false;
+    }
+
+    private async Task ConfirmArchive()
+    {
+        if (supplierToArchive != null)
+        {
+            var success = await ProcurementService.ArchiveSupplierAsync(supplierToArchive.SupplierId);
+            if (success)
+            {
+                await LoadSuppliers();
+                CancelArchive();
+            }
+        }
+    }
+
+    private void ShowArchiveList()
+    {
+        showArchives = true;
+        showAddForm = false;
+        StateHasChanged();
+    }
+
+    private void CloseArchiveList()
+    {
+        showArchives = false;
+        StateHasChanged();
+    }
+
+    private void ShowRestoreConfirmation(Supplier supplier)
+    {
+        supplierToRestore = supplier;
+        showRestoreConfirmation = true;
+    }
+
+    private void CancelRestore()
+    {
+        supplierToRestore = null;
+        showRestoreConfirmation = false;
+    }
+
+    private async Task ConfirmRestore()
+    {
+        if (supplierToRestore != null)
+        {
+            var success = await ProcurementService.RestoreSupplierAsync(supplierToRestore.SupplierId);
+            if (success)
+            {
+                await LoadSuppliers();
+                CancelRestore();
+            }
+        }
+    }
+
+    private async Task DeleteSupplier(int id)
+    {
+        await ProcurementService.DeleteSupplierAsync(id);
+        await LoadSuppliers();
+    }
+
+    private void ViewSupplierDetails(Supplier supplier)
+    {
+        selectedSupplier = supplier;
+        showDetailsModal = true;
+        StateHasChanged();
+    }
+
+    private void CloseDetailsModal()
+    {
+        showDetailsModal = false;
+        selectedSupplier = null;
+        StateHasChanged();
+    }
+
+    private void CancelForm()
+    {
+        showAddForm = false;
+        currentSupplier = new Supplier();
+        editingSupplier = null;
+        supplierItems = new();
+        phoneNumberInput = "";
+    }
+    // Phone number input variable
+
+    // ========== ENHANCED VALIDATION METHODS ==========
+
+    // 1. Supplier Name Validation - No 2+ special characters
+    private bool IsValidSupplierName(string? name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return false;
+
+        if (name.Length < 2)
+            return false;
+
+        if (!name.Any(char.IsLetter))
+            return false;
+
+        // Count special characters
+        var specialCharCount = name.Count(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c));
+        if (specialCharCount >= 2)
+            return false;
+
+        var lettersCount = name.Count(char.IsLetter);
+        return (double)lettersCount / name.Length >= 0.3;
+    }
+
+    // 2. Contact Person Validation - No 2+ special characters
+    private bool IsValidContactPerson(string? name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return false; // required now
+
+        if (!name.Any(char.IsLetter))
+            return false;
+
+        var specialCharCount = name.Count(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c));
+        if (specialCharCount >= 2)
+            return false;
+
+        var lettersCount = name.Count(char.IsLetter);
+        return (double)lettersCount / name.Length >= 0.2;
+    }
+
+
+    // 3. Philippine Phone Number Validation
+    private bool IsValidPhoneNumber(string? phoneNumber)
+    {
+        if (string.IsNullOrWhiteSpace(phoneNumber))
+            return false; // required
+
+        var cleaned = phoneNumber.Replace(" ", "");
+
+        if (!cleaned.StartsWith("+63"))
+            return false;
+
+        var number = cleaned.Substring(3);
+
+        if (number.Length != 10)
+            return false;
+
+        if (!number.StartsWith("9"))
+            return false;
+
+        return number.All(char.IsDigit);
+    }
+
+
+    // 4. Enhanced Email Validation
+    private bool IsValidEmail(string? email)
+    {
+        if (string.IsNullOrWhiteSpace(email))
+            return true;
+
+        var atIndex = email.IndexOf('@');
+        var dotIndex = email.LastIndexOf('.');
+
+        if (atIndex < 0 || dotIndex < 0 || atIndex >= dotIndex)
+            return false;
+
+        var localPart = email.Substring(0, atIndex);
+        var domainPart = email.Substring(atIndex + 1, dotIndex - atIndex - 1);
+        var extension = email.Substring(dotIndex + 1);
+
+        if (localPart.Length < 3 || domainPart.Length < 3)
+            return false;
+
+        if (!extension.Equals("com", StringComparison.OrdinalIgnoreCase))
+            return false;
+
+        if (email.Contains(" "))
+            return false;
+
+        var emailPattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+        return Regex.IsMatch(email, emailPattern);
+    }
+
+    private string GetEmailValidationError(string? email)
+    {
+        if (string.IsNullOrWhiteSpace(email))
+            return "Email is required";
+
+        var atIndex = email.IndexOf('@');
+        var dotIndex = email.LastIndexOf('.');
+
+        if (atIndex < 0)
+            return "Email must contain @ symbol";
+
+        if (dotIndex < 0 || dotIndex <= atIndex)
+            return "Email must end with .com";
+
+        var localPart = email.Substring(0, atIndex);
+        if (localPart.Length < 3)
+            return "Email must have at least 3 characters before @";
+
+        var domainPart = email.Substring(atIndex + 1, dotIndex - atIndex - 1);
+        if (domainPart.Length < 3)
+            return "Email must have at least 3 characters between @ and .";
+
+        var extension = email.Substring(dotIndex + 1);
+        if (!extension.Equals("com", StringComparison.OrdinalIgnoreCase))
+            return "Email must end with .com";
+
+        return "Please enter a valid email address";
+    }
+
+    // 5. Address Validation
+    private bool IsValidAddress(string? address)
+    {
+        if (string.IsNullOrWhiteSpace(address))
+            return true;
+
+        if (address.Length < 10)
+            return false;
+
+        var letterCount = address.Count(char.IsLetter);
+        if (letterCount < 5)
+            return false;
+
+        if (!address.Contains(" "))
+            return false;
+
+        return true;
+    }
+
+    // Phone Input Handler
+    private void HandlePhoneInput(ChangeEventArgs e)
+    {
+        var input = e.Value?.ToString() ?? "";
+        var cleaned = new string(input.Where(c => char.IsDigit(c) || c == ' ').ToArray());
+
+        if (cleaned.Replace(" ", "").Length > 10)
+        {
+            cleaned = string.Join("", cleaned.Where(char.IsDigit).Take(10));
+        }
+
+        var digitsOnly = new string(cleaned.Where(char.IsDigit).ToArray());
+        if (digitsOnly.Length > 0)
+        {
+            if (digitsOnly.Length <= 3)
+                phoneNumberInput = digitsOnly;
+            else if (digitsOnly.Length <= 6)
+                phoneNumberInput = $"{digitsOnly.Substring(0, 3)} {digitsOnly.Substring(3)}";
+            else
+                phoneNumberInput = $"{digitsOnly.Substring(0, 3)} {digitsOnly.Substring(3, 3)} {digitsOnly.Substring(6)}";
+        }
+        else
+        {
+            phoneNumberInput = "";
+        }
+
+        if (!string.IsNullOrWhiteSpace(phoneNumberInput))
+            currentSupplier.PhoneNumber = "+63 " + phoneNumberInput;
+        else
+            currentSupplier.PhoneNumber = "";
+
+        StateHasChanged();
+    }
+
+    // CSS Helper Methods
+    private string GetSupplierNameClass()
+    {
+        if (string.IsNullOrWhiteSpace(currentSupplier.SupplierName))
+            return "form-control";
+
+        return IsValidSupplierName(currentSupplier.SupplierName)
+            ? "form-control"
+            : "form-control is-invalid";
+    }
+
+    private string GetContactPersonClass()
+    {
+        if (string.IsNullOrWhiteSpace(currentSupplier.ContactPerson))
+            return "form-control";
+
+        return IsValidContactPerson(currentSupplier.ContactPerson)
+            ? "form-control"
+            : "form-control is-invalid";
+    }
+
+    private string GetEmailClass()
+    {
+        if (string.IsNullOrWhiteSpace(currentSupplier.Email))
+            return "form-control";
+
+        return IsValidEmail(currentSupplier.Email)
+            ? "form-control"
+            : "form-control is-invalid";
+    }
+
+    private string GetPhoneNumberClass()
+    {
+        if (string.IsNullOrWhiteSpace(currentSupplier.PhoneNumber))
+            return "form-control";
+
+        return IsValidPhoneNumber(currentSupplier.PhoneNumber)
+            ? "form-control"
+            : "form-control is-invalid";
+    }
+
+    private string GetAddressClass()
+    {
+        if (string.IsNullOrWhiteSpace(currentSupplier.Address))
+            return "form-control";
+
+        return IsValidAddress(currentSupplier.Address)
+            ? "form-control"
+            : "form-control is-invalid";
+    }
+
+    // ========== SUPPLIER ITEM VALIDATION METHODS ==========
+
+    // Item Name & Brand: Max 2 special characters
+    private bool IsValidItemName(string? name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return false;
+
+        var specialCharCount = name.Count(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c));
+        return specialCharCount <= 2;
+    }
+
+    private bool IsValidBrand(string? brand)
+    {
+        if (string.IsNullOrWhiteSpace(brand))
+            return false;
+
+        var specialCharCount = brand.Count(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c));
+        return specialCharCount <= 2;
+    }
+
+    // Category & Unit: No special characters allowed
+    private bool IsValidCategory(string? category)
+    {
+        if (string.IsNullOrWhiteSpace(category))
+            return false;
+
+        // Only letters, numbers, and spaces allowed
+        return category.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c));
+    }
+
+    private bool IsValidUnit(string? unit)
+    {
+        if (string.IsNullOrWhiteSpace(unit))
+            return false;
+
+        // Only letters, numbers, and spaces allowed
+        return unit.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c));
+    }
+
+    // CSS class helpers for validation
+    private string GetItemNameValidationClass()
+    {
+        if (string.IsNullOrWhiteSpace(tempItem.ItemName))
+            return "form-control";
+
+        return IsValidItemName(tempItem.ItemName)
+            ? "form-control"
+            : "form-control is-invalid";
+    }
+
+    private string GetBrandValidationClass()
+    {
+        if (string.IsNullOrWhiteSpace(tempItem.Brand))
+            return "form-control";
+
+        return IsValidBrand(tempItem.Brand)
+            ? "form-control"
+            : "form-control is-invalid";
+    }
+
+    private string GetCategoryValidationClass()
+    {
+        if (string.IsNullOrWhiteSpace(tempItem.Category))
+            return "form-control";
+
+        return IsValidCategory(tempItem.Category)
+            ? "form-control"
+            : "form-control is-invalid";
+    }
+
+    private string GetUnitValidationClass()
+    {
+        if (string.IsNullOrWhiteSpace(tempItem.Unit))
+            return "form-control is-invalid";
+
+        return IsValidUnit(tempItem.Unit)
+            ? "form-control"
+            : "form-control is-invalid";
+    }
+}

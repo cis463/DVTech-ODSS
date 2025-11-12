@@ -1,0 +1,436 @@
+﻿@page "/demand-forecast"
+@using DVTech_ODSS.Models
+@using DVTech_ODSS.Services
+@inject PredictiveService PredictiveService
+@inject InventoryService InventoryService
+@inject NavigationManager Navigation
+@rendermode InteractiveServer
+
+<PageTitle>Seasonal Forecast</PageTitle>
+
+
+<div class="container-fluid">
+    <div class="row mb-4 align-items-center">
+        <div class="col">
+            <h3 class="mb-0">Seasonal Forecast</h3>
+            <small class="text-muted">Predict future inventory needs based on historical sales data</small>
+        </div>
+    </div>
+
+    <!-- Forecast Mode Selection -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body p-3">
+            <div class="row g-2">
+                <div class="col-md-4">
+                    <div class="card h-100 @(forecastMode == "date" ? "border-primary shadow" : "")"
+                         style="cursor: pointer;"
+                         @onclick='() => forecastMode = "date"'>
+                        <div class="card-body text-center p-3">
+                            <h1 class="mb-2">📅</h1>
+                            <h6 class="mb-1">Specific Date</h6>
+                            <small class="text-muted">Predict demand for a target date</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 @(forecastMode == "season" ? "border-primary shadow" : "")"
+                         style="cursor: pointer;"
+                         @onclick='() => forecastMode = "season"'>
+                        <div class="card-body text-center p-3">
+                            <h1 class="mb-2">📊</h1>
+                            <h6 class="mb-1">Seasonal Forecast</h6>
+                            <small class="text-muted">Predict by quarter (Q1-Q4)</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 @(forecastMode == "top" ? "border-primary shadow" : "")"
+                         style="cursor: pointer;"
+                         @onclick='() => forecastMode = "top"'>
+                        <div class="card-body text-center p-3">
+                            <h1 class="mb-2">🏆</h1>
+                            <h6 class="mb-1">Top Sellers</h6>
+                            <small class="text-muted">View bestselling items</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (forecastMode == "date")
+    {
+        <!-- Date-based Forecast -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white py-2">
+                <h6 class="mb-0">📅 Date-Specific Demand Forecast</h6>
+            </div>
+            <div class="card-body p-3">
+                <div class="row g-2 mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label fw-bold small mb-1">Target Date</label>
+                        <input type="date" class="form-control" @bind="targetDate" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button class="btn btn-primary w-100" @onclick="PredictForDate" disabled="@isLoading">
+                            @if (isLoading)
+                            {
+                                <span class="spinner-border spinner-border-sm me-1"></span>
+                            }
+                            🔮 Generate Forecast
+                        </button>
+                    </div>
+                </div>
+
+                @if (dateForecasts.Any())
+                {
+                    <div class="alert alert-info py-2 mb-3">
+                        <strong>📊 Forecast for @targetDate.ToString("MMMM dd, yyyy")</strong><br />
+                        <small>Based on @dateForecasts.Sum(f => f.DataPointsUsed) historical data points</small>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-sm mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Item Name</th>
+                                    <th>Category</th>
+                                    <th class="text-center">Current Stock</th>
+                                    <th class="text-center">Predicted Demand</th>
+                                    <th class="text-center">Confidence</th>
+                                    <th class="text-center">Trend</th>
+                                    <th class="text-center">Order Qty</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var forecast in dateForecasts.OrderByDescending(f => f.PredictedDemand))
+                                {
+                                    var currentItem = GetInventoryItem(forecast.ItemId);
+                                    var currentStock = currentItem?.Quantity ?? 0;
+                                    var shortage = Math.Max(0, forecast.PredictedDemand - currentStock);
+
+                                    <tr>
+                                        <td class="small">
+                                            <strong>@forecast.ItemName</strong>
+                                        </td>
+                                        <td class="small">
+                                            <span class="badge bg-secondary">@forecast.Category</span>
+                                        </td>
+                                        <td class="text-center small">
+                                            <span class="badge @(currentStock < forecast.PredictedDemand ? "bg-danger" : "bg-success")">
+                                                @currentStock
+                                            </span>
+                                        </td>
+                                        <td class="text-center small">
+                                            <strong class="text-primary">@forecast.PredictedDemand</strong>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <div class="progress" style="width: 60px; height: 8px;">
+                                                    <div class="progress-bar @GetConfidenceClass(forecast.ConfidenceLevel)"
+                                                         style="width: @forecast.ConfidenceLevel%"></div>
+                                                </div>
+                                                <small class="ms-2">@forecast.ConfidenceLevel%</small>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge @GetTrendClass(forecast.TrendIndicator)">
+                                                @GetTrendIcon(forecast.TrendIndicator) @forecast.TrendIndicator
+                                            </span>
+                                        </td>
+                                        <td class="text-center small">
+                                            @if (shortage > 0)
+                                            {
+                                                <strong class="text-danger">+@shortage needed</strong>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-success">✓ Sufficient</span>
+                                            }
+                                        </td>
+                                        <td class="text-center">
+                                            @if (shortage > 0 && currentItem?.LastSupplierId != null)
+                                            {
+                                                <button class="btn btn-sm btn-success py-0 px-2"
+                                                        @onclick="() => CreateOrder(currentItem)">
+                                                    🛒 Order
+                                                </button>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+    else if (forecastMode == "season")
+    {
+        <!-- Seasonal Forecast -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-info text-white py-2">
+                <h6 class="mb-0">📊 Seasonal (Quarterly) Forecast</h6>
+            </div>
+            <div class="card-body p-3">
+                <div class="row g-2 mb-3">
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold small mb-1">Year</label>
+                        <input type="number" class="form-control" @bind="targetYear" min="@DateTime.Now.Year" max="@(DateTime.Now.Year + 5)" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold small mb-1">Quarter</label>
+                        <select class="form-select" @bind="targetQuarter">
+                            <option value="1">Q1 (Jan-Mar)</option>
+                            <option value="2">Q2 (Apr-Jun)</option>
+                            <option value="3">Q3 (Jul-Sep)</option>
+                            <option value="4">Q4 (Oct-Dec)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end">
+                        <button class="btn btn-info w-100" @onclick="PredictForSeason" disabled="@isLoading">
+                            @if (isLoading)
+                            {
+                                <span class="spinner-border spinner-border-sm me-1"></span>
+                            }
+                            🔮 Generate Forecast
+                        </button>
+                    </div>
+                </div>
+
+                @if (seasonForecasts.Any())
+                {
+                    <div class="alert alert-info py-2 mb-3">
+                        <strong>📊 Forecast for Q@targetQuarter @targetYear</strong><br />
+                        <small>Seasonal prediction based on historical quarterly patterns</small>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-sm mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Item Name</th>
+                                    <th>Category</th>
+                                    <th class="text-center">Current Stock</th>
+                                    <th class="text-center">Quarter Demand</th>
+                                    <th class="text-center">Confidence</th>
+                                    <th class="text-center">Trend</th>
+                                    <th class="text-center">Recommendation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var forecast in seasonForecasts.OrderByDescending(f => f.PredictedDemand))
+                                {
+                                    var currentItem = GetInventoryItem(forecast.ItemId);
+                                    var currentStock = currentItem?.Quantity ?? 0;
+                                    var shortage = Math.Max(0, forecast.PredictedDemand - currentStock);
+
+                                    <tr>
+                                        <td class="small"><strong>@forecast.ItemName</strong></td>
+                                        <td class="small"><span class="badge bg-secondary">@forecast.Category</span></td>
+                                        <td class="text-center small">
+                                            <span class="badge @(currentStock < forecast.PredictedDemand ? "bg-danger" : "bg-success")">
+                                                @currentStock
+                                            </span>
+                                        </td>
+                                        <td class="text-center small"><strong class="text-primary">@forecast.PredictedDemand</strong></td>
+                                        <td class="text-center small">@forecast.ConfidenceLevel%</td>
+                                        <td class="text-center">
+                                            <span class="badge @GetTrendClass(forecast.TrendIndicator)">
+                                                @forecast.TrendIndicator
+                                            </span>
+                                        </td>
+                                        <td class="text-center small">
+                                            @if (shortage > 0)
+                                            {
+                                                <span class="text-danger fw-bold">Order +@shortage units</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-success">✓ Stock OK</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+    else if (forecastMode == "top")
+    {
+        <!-- Top Selling Items -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-warning text-dark py-2">
+                <h6 class="mb-0">🏆 Top Selling Items (All-Time)</h6>
+            </div>
+            <div class="card-body p-3">
+                <button class="btn btn-warning mb-3" @onclick="LoadTopSellers" disabled="@isLoading">
+                    @if (isLoading)
+                    {
+                        <span class="spinner-border spinner-border-sm me-1"></span>
+                    }
+                    📊 Load Top 20 Bestsellers
+                </button>
+
+                @if (topSellers.Any())
+                {
+                    <div class="row g-3">
+                        @for (int i = 0; i < topSellers.Count; i++)
+                        {
+                            var item = topSellers[i];
+                            var rank = i + 1;
+                            var currentItem = GetInventoryItem(item.ItemId);
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card border-warning h-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h1 class="mb-0 text-warning">@(rank <= 3 ? "🥇🥈🥉"[rank - 1].ToString() : $"#{rank}")</h1>
+                                            <span class="badge bg-warning text-dark">@item.TrendIndicator</span>
+                                        </div>
+                                        <h6 class="mb-1">@item.ItemName</h6>
+                                        <small class="text-muted d-block mb-2">@item.Category</small>
+                                        <div class="row g-2 text-center">
+                                            <div class="col-6">
+                                                <div class="bg-light p-2 rounded">
+                                                    <small class="text-muted d-block">Total Sold</small>
+                                                    <strong class="text-primary">@item.PredictedDemand</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="bg-light p-2 rounded">
+                                                    <small class="text-muted d-block">Current Stock</small>
+                                                    <strong class="@(currentItem?.Quantity <= currentItem?.MinimumStockLevel ? "text-danger" : "text-success")">
+                                                        @(currentItem?.Quantity ?? 0)
+                                                    </strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private string forecastMode = "date";
+    private bool isLoading = false;
+
+    // Date forecast
+    private DateTime targetDate = DateTime.Today.AddDays(30);
+    private List<DemandForecast> dateForecasts = new();
+
+    // Season forecast
+    private int targetYear = DateTime.Now.Year;
+    private int targetQuarter = ((DateTime.Now.Month - 1) / 3) + 1;
+    private List<DemandForecast> seasonForecasts = new();
+
+    // Top sellers
+    private List<DemandForecast> topSellers = new();
+
+    // Inventory cache
+    private List<InventoryItem> inventoryItems = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        inventoryItems = await InventoryService.GetAllItemsAsync();
+    }
+
+    private async Task PredictForDate()
+    {
+        isLoading = true;
+        StateHasChanged();
+
+        try
+        {
+            dateForecasts = await PredictiveService.PredictDemandForDateAsync(targetDate);
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task PredictForSeason()
+    {
+        isLoading = true;
+        StateHasChanged();
+
+        try
+        {
+            seasonForecasts = await PredictiveService.PredictDemandForSeasonAsync(targetYear, targetQuarter);
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task LoadTopSellers()
+    {
+        isLoading = true;
+        StateHasChanged();
+
+        try
+        {
+            topSellers = await PredictiveService.GetTopSellingItemsAsync(20);
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private InventoryItem? GetInventoryItem(int itemId)
+    {
+        return inventoryItems.FirstOrDefault(i => i.ItemId == itemId);
+    }
+
+    private string GetConfidenceClass(int confidence)
+    {
+        return confidence >= 75 ? "bg-success" : confidence >= 50 ? "bg-warning" : "bg-danger";
+    }
+
+    private string GetTrendClass(string trend)
+    {
+        return trend switch
+        {
+            "Rising" => "bg-success",
+            "Stable" => "bg-info",
+            "Declining" => "bg-warning",
+            _ => "bg-secondary"
+        };
+    }
+
+    private string GetTrendIcon(string trend)
+    {
+        return trend switch
+        {
+            "Rising" => "📈",
+            "Stable" => "➡️",
+            "Declining" => "📉",
+            _ => "•"
+        };
+    }
+
+    private void CreateOrder(InventoryItem item)
+    {
+        if (item.LastSupplierId.HasValue)
+        {
+            Navigation.NavigateTo($"/purchase-orders?supplierId={item.LastSupplierId.Value}&autoCreate=true");
+        }
+    }
+}

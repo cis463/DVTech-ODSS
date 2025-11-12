@@ -1,0 +1,84 @@
+@using DVTech_ODSS.Services
+@inject AuthStateProvider AuthState
+@inject NavigationManager Navigation
+@implements IDisposable
+
+@if (AuthState.IsAuthenticated)
+{
+    <div class="top-row ps-3 navbar navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">DVTech-ODSS</a>
+        </div>
+    </div>
+
+    <input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+    <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+        <nav class="nav flex-column">
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Dashboard
+                </NavLink>
+            </div>
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="inventory">
+                    <span class="bi bi-box-seam-fill" aria-hidden="true"></span> Inventory
+                </NavLink>
+            </div>
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="suppliers">
+                    <span class="bi bi-building" aria-hidden="true"></span> Suppliers
+                </NavLink>
+            </div>
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="purchase-orders">
+                    <span class="bi bi-cart-fill" aria-hidden="true"></span> Purchase Orders
+                </NavLink>
+            </div>
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="employees">
+                    <span class="bi bi-people-fill" aria-hidden="true"></span> Employees
+                </NavLink>
+            </div>
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="schedules">
+                    <span class="bi bi-calendar-check-fill" aria-hidden="true"></span> Schedules
+                </NavLink>
+            </div>
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="demand-forecast">
+                    <span class="bi bi-graph-up" aria-hidden="true"></span> Forcast
+                </NavLink>
+            </div>
+
+            @if (AuthState.IsSecretary||AuthState.IsAdmin)
+            {
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="sales">
+                        <span class="bi bi-cash-coin" aria-hidden="true"></span> Sales
+                    </NavLink>
+                </div>
+            }
+        </nav>
+
+    </div>
+    
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        AuthState.OnAuthStateChanged += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        AuthState.OnAuthStateChanged -= StateHasChanged;
+    }
+}

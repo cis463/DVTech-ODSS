@@ -1,0 +1,248 @@
+@page "/login"
+@using DVTech_ODSS.Models
+@using DVTech_ODSS.Services
+@using System.ComponentModel.DataAnnotations
+@inject AuthService AuthService
+@inject AuthStateProvider AuthState
+@inject NavigationManager Navigation
+@rendermode InteractiveServer
+
+<PageTitle>Login - DVTech ODSS</PageTitle>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .login-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+    }
+
+    .login-card {
+        max-width: 450px;
+        width: 100%;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        overflow: hidden;
+        animation: slideIn 0.5s ease-out;
+    }
+
+    @@keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .login-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 40px;
+        text-align: center;
+        color: white;
+    }
+
+    .login-header h2 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .login-header p {
+        margin: 10px 0 0 0;
+        opacity: 0.9;
+    }
+
+    .login-body {
+        padding: 40px;
+    }
+
+    .form-floating {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 12px 15px;
+        font-size: 15px;
+        transition: all 0.3s;
+    }
+
+    .form-control:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+
+    .btn-login {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 600;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        border-radius: 10px;
+        transition: all 0.3s;
+        color: white;
+    }
+
+    .btn-login:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-login:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .logo-icon {
+        font-size: 60px;
+        margin-bottom: 10px;
+    }
+
+    .credentials-hint {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 20px;
+        border-left: 4px solid #667eea;
+    }
+
+    .credentials-hint code {
+        background: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 13px;
+        color: #667eea;
+        font-weight: 600;
+    }
+</style>
+
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-header">
+            <div class="logo-icon">🏢</div>
+            <h2>DVTech ODSS</h2>
+            <p>Office Data & Supply System</p>
+        </div>
+
+        <div class="login-body">
+            @if (!string.IsNullOrEmpty(errorMessage))
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>⚠️ Login Failed!</strong><br/>
+                    @errorMessage
+                    <button type="button" class="btn-close" @onclick="() => errorMessage = string.Empty"></button>
+                </div>
+            }
+
+            <EditForm Model="@loginModel" OnValidSubmit="HandleLogin">
+                <DataAnnotationsValidator />
+
+                <div class="form-floating mb-3">
+                    <InputText @bind-Value="loginModel.Username" 
+                               class="form-control" 
+                               id="username" 
+                               placeholder="Username"
+                               autocomplete="username"
+                               disabled="@isLoading" />
+                    <label for="username">👤 Username</label>
+                    <ValidationMessage For="@(() => loginModel.Username)" class="text-danger small mt-1" />
+                </div>
+
+                <div class="form-floating mb-4">
+                    <InputText @bind-Value="loginModel.Password" 
+                               type="password" 
+                               class="form-control" 
+                               id="password" 
+                               placeholder="Password"
+                               autocomplete="current-password"
+                               disabled="@isLoading" />
+                    <label for="password">🔒 Password</label>
+                    <ValidationMessage For="@(() => loginModel.Password)" class="text-danger small mt-1" />
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-login" disabled="@isLoading">
+                    @if (isLoading)
+                    {
+                        <span class="spinner-border spinner-border-sm me-2"></span>
+                        <span>Signing in...</span>
+                    }
+                    else
+                    {
+                        <span> Log In</span>
+                    }
+                </button>
+            </EditForm>
+
+            
+        </div>
+    </div>
+</div>
+
+@code {
+    private LoginModel loginModel = new();
+    private string errorMessage = string.Empty;
+    private bool isLoading = false;
+
+    protected override void OnInitialized()
+    {
+        // If already logged in, redirect to dashboard
+        if (AuthState.IsAuthenticated)
+        {
+            Navigation.NavigateTo("/", replace: true);
+        }
+    }
+
+    private async Task HandleLogin()
+    {
+        isLoading = true;
+        errorMessage = string.Empty;
+        StateHasChanged();
+
+        try
+        {
+            var user = await AuthService.LoginAsync(loginModel.Username, loginModel.Password);
+
+            if (user != null)
+            {
+                AuthState.SetUser(user);
+                Navigation.NavigateTo("/", replace: true);
+            }
+            else
+            {
+                errorMessage = "Invalid username or password. Please check your credentials and try again.";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"An error occurred during login: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    public class LoginModel
+    {
+        [Required(ErrorMessage = "Username is required")]
+        public string Username { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Password is required")]
+        public string Password { get; set; } = string.Empty;
+    }
+}

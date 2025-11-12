@@ -1,0 +1,38 @@
+@using DVTech_ODSS.Services
+@inject AuthStateProvider AuthState
+@inject NavigationManager Navigation
+
+@if (AuthState.IsAuthenticated)
+{
+    @if (RequireAdmin && !AuthState.IsAdmin)
+    {
+        <div class="alert alert-danger m-4">
+            <h4>⛔ Access Denied</h4>
+            <p>You don't have permission to access this page. Admin access required.</p>
+        </div>
+    }
+    else
+    {
+        @ChildContent
+    }
+}
+else
+{
+    <div></div>
+}
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public bool RequireAdmin { get; set; } = false;
+
+    protected override void OnInitialized()
+    {
+        if (!AuthState.IsAuthenticated)
+        {
+            Navigation.NavigateTo("/login", replace: true);
+        }
+    }
+}

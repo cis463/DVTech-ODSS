@@ -1,0 +1,112 @@
+@inherits LayoutComponentBase
+@using DVTech_ODSS.Services
+@inject AuthStateProvider AuthState
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@implements IDisposable
+
+@if (isLoginPage)
+{
+    <!-- Login page - No sidebar, no header -->
+    <article class="content">
+        @Body
+    </article>
+}
+else
+{
+    <!-- Authenticated pages - Show sidebar and header -->
+    <div class="page">
+        <div class="sidebar">
+            <NavMenu />
+        </div>
+
+        <main>
+            <div class="top-row px-4">
+                @if (AuthState.IsAuthenticated)
+                {
+                    <div class="d-flex align-items-center gap-3 ms-auto">
+                        <span class="text-muted">
+                            👤 <strong>@AuthState.CurrentUser?.FullName</strong>
+                            <span class="badge bg-@GetRoleBadgeColor() ms-2">@AuthState.CurrentUser?.Role</span>
+                        </span>
+                        <button class="btn btn-sm btn-danger" @onclick="ConfirmLogout">
+                            🚪 Logout
+                        </button>
+                    </div>
+                }
+            </div>
+
+            <article class="content px-4">
+                @Body
+            </article>
+        </main>
+    </div>
+}
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>
+
+@code {
+    private bool isLoginPage = false;
+
+    protected override void OnInitialized()
+    {
+        AuthState.OnAuthStateChanged += StateHasChanged;
+        Navigation.LocationChanged += OnLocationChanged;
+        CheckIfLoginPage();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            CheckIfLoginPage();
+        }
+    }
+
+    private void OnLocationChanged(object? sender, Microsoft.AspNetCore.Components.Routing.LocationChangedEventArgs e)
+    {
+        CheckIfLoginPage();
+        StateHasChanged();
+    }
+
+    private void CheckIfLoginPage()
+    {
+        var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        isLoginPage = uri.AbsolutePath.Equals("/login", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private async Task ConfirmLogout()
+    {
+        bool confirmed = await JS.InvokeAsync<bool>("confirm", "Are you sure you want to log out?");
+        if (confirmed)
+        {
+            HandleLogout();
+        }
+    }
+
+    private void HandleLogout()
+    {
+        AuthState.Logout();
+        Navigation.NavigateTo("/login", replace: true);
+    }
+
+    private string GetRoleBadgeColor()
+    {
+        return AuthState.CurrentUser?.Role switch
+        {
+            "Admin" => "primary",
+            "Secretary" => "success",
+            _ => "secondary"
+        };
+    }
+
+    public void Dispose()
+    {
+        AuthState.OnAuthStateChanged -= StateHasChanged;
+        Navigation.LocationChanged -= OnLocationChanged;
+    }
+}

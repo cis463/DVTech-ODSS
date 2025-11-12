@@ -1,0 +1,623 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\DvTech -\\DVTech-ODSS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\services\\procurementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:services\\procurementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\pages\\demandforecastpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\pages\\demandforecastpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\pages\\suppliermanagement.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\pages\\suppliermanagement.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\pages\\employeemanagement.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\pages\\employeemanagement.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\pages\\sales.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\pages\\sales.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\services\\predictiveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:services\\predictiveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\models\\demandforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:models\\demandforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\services\\authstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:services\\authstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\models\\supplieritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:models\\supplieritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\models\\inventoryitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:models\\inventoryitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\models\\purchaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:models\\purchaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\models\\purchaseorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:models\\purchaseorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\data\\historicaldataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:data\\historicaldataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\pages\\purchaseorders.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\pages\\purchaseorders.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\wwwroot\\js\\print.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:wwwroot\\js\\print.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\models\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:models\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\pages\\schedulemanagement.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\pages\\schedulemanagement.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\authguard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\authguard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\pages\\inventorylist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\pages\\inventorylist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\wwwroot\\js\\toast.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:wwwroot\\js\\toast.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\services\\salesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:services\\salesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\models\\saleitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:models\\saleitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\SAD Backup\\27\\DvTech -\\DVTech-ODSS\\Components\\Pages\\Home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|c:\\dvtech -\\dvtech-odss\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51A552-7359-4B82-9ED5-ACC645620E73}|DVTech-ODSS.csproj|solutionrelative:models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 2,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Sales.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\Sales.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Sales.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\Sales.razor",
+              "RelativeToolTip": "Components\\Pages\\Sales.razor",
+              "ViewState": "AgIAADcCAAAAAAAAAAAiwF0CAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-11T05:09:33.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EmployeeManagement.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\EmployeeManagement.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\EmployeeManagement.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\EmployeeManagement.razor",
+              "RelativeToolTip": "Components\\Pages\\EmployeeManagement.razor",
+              "ViewState": "AgIAAOgAAAAAAAAAAAAAAAEBAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-05T14:43:48.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SupplierManagement.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\SupplierManagement.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\SupplierManagement.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\SupplierManagement.razor",
+              "RelativeToolTip": "Components\\Pages\\SupplierManagement.razor",
+              "ViewState": "AgIAAPQBAAAAAAAAAAAawAACAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-05T14:49:53.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "InventoryItem.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Models\\InventoryItem.cs",
+              "RelativeDocumentMoniker": "Models\\InventoryItem.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Models\\InventoryItem.cs",
+              "RelativeToolTip": "Models\\InventoryItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T16:31:40.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Login.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\Login.razor",
+              "RelativeToolTip": "Components\\Pages\\Login.razor",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAAALAAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T11:55:18.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-09T07:43:46.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwFUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-11T05:10:55.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DemandForecastPage.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\DemandForecastPage.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\DemandForecastPage.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\DemandForecastPage.razor",
+              "RelativeToolTip": "Components\\Pages\\DemandForecastPage.razor",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-11T16:22:01.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProcurementService.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Services\\ProcurementService.cs",
+              "RelativeDocumentMoniker": "Services\\ProcurementService.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Services\\ProcurementService.cs",
+              "RelativeToolTip": "Services\\ProcurementService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T17:15:21.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-09T07:15:45.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PredictiveService.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Services\\PredictiveService.cs",
+              "RelativeDocumentMoniker": "Services\\PredictiveService.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Services\\PredictiveService.cs",
+              "RelativeToolTip": "Services\\PredictiveService.cs",
+              "ViewState": "AgIAAAgBAAAAAAAAAAAiwBwBAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T16:10:07.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SupplierItem.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Models\\SupplierItem.cs",
+              "RelativeDocumentMoniker": "Models\\SupplierItem.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Models\\SupplierItem.cs",
+              "RelativeToolTip": "Models\\SupplierItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T16:31:49.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AuthStateProvider.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Services\\AuthStateProvider.cs",
+              "RelativeDocumentMoniker": "Services\\AuthStateProvider.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Services\\AuthStateProvider.cs",
+              "RelativeToolTip": "Services\\AuthStateProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T16:31:52.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T16:49:47.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DemandForecast.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Models\\DemandForecast.cs",
+              "RelativeDocumentMoniker": "Models\\DemandForecast.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Models\\DemandForecast.cs",
+              "RelativeToolTip": "Models\\DemandForecast.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwCEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T16:36:44.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PurchaseOrder.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Models\\PurchaseOrder.cs",
+              "RelativeDocumentMoniker": "Models\\PurchaseOrder.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Models\\PurchaseOrder.cs",
+              "RelativeToolTip": "Models\\PurchaseOrder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T16:31:38.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PurchaseOrderItem.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Models\\PurchaseOrderItem.cs",
+              "RelativeDocumentMoniker": "Models\\PurchaseOrderItem.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Models\\PurchaseOrderItem.cs",
+              "RelativeToolTip": "Models\\PurchaseOrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T16:31:37.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "HistoricalDataSeeder.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Data\\HistoricalDataSeeder.cs",
+              "RelativeDocumentMoniker": "Data\\HistoricalDataSeeder.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Data\\HistoricalDataSeeder.cs",
+              "RelativeToolTip": "Data\\HistoricalDataSeeder.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAiwHsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T16:19:20.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "PurchaseOrders.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\PurchaseOrders.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\PurchaseOrders.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\PurchaseOrders.razor",
+              "RelativeToolTip": "Components\\Pages\\PurchaseOrders.razor",
+              "ViewState": "AgIAAPACAAAAAAAAAAAAAAsDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-05T05:25:46.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ScheduleManagement.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\ScheduleManagement.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\ScheduleManagement.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\ScheduleManagement.razor",
+              "RelativeToolTip": "Components\\Pages\\ScheduleManagement.razor",
+              "ViewState": "AgIAAOIEAAAAAAAAAAAhwP0EAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-09T05:45:48.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T19:20:32.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "print.js",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\wwwroot\\js\\print.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\print.js",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\wwwroot\\js\\print.js",
+              "RelativeToolTip": "wwwroot\\js\\print.js",
+              "ViewState": "AgIAADsAAAAAAAAAAAAuwE4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-11T06:37:39.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Sale.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Models\\Sale.cs",
+              "RelativeDocumentMoniker": "Models\\Sale.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Models\\Sale.cs",
+              "RelativeToolTip": "Models\\Sale.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T05:04:45.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "Components\\_Imports.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\_Imports.razor",
+              "RelativeToolTip": "Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-11T07:13:57.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AuthGuard.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\AuthGuard.razor",
+              "RelativeDocumentMoniker": "Components\\AuthGuard.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\AuthGuard.razor",
+              "RelativeToolTip": "Components\\AuthGuard.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-11T07:14:03.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "Components\\Routes.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Routes.razor",
+              "RelativeToolTip": "Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-11T07:14:06.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "InventoryList.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\InventoryList.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\InventoryList.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\InventoryList.razor",
+              "RelativeToolTip": "Components\\Pages\\InventoryList.razor",
+              "ViewState": "AgIAADgEAAAAAAAAAAAhwFMEAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-09T16:08:12.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Error.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\Error.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Error.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Pages\\Error.razor",
+              "RelativeToolTip": "Components\\Pages\\Error.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-11T07:12:17.427Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "SalesService.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Services\\SalesService.cs",
+              "RelativeDocumentMoniker": "Services\\SalesService.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Services\\SalesService.cs",
+              "RelativeToolTip": "Services\\SalesService.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAwHsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T05:06:21.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\App.razor",
+              "RelativeDocumentMoniker": "Components\\App.razor",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\App.razor",
+              "RelativeToolTip": "Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-11T06:35:13.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "DbSeeder.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Data\\DbSeeder.cs",
+              "RelativeDocumentMoniker": "Data\\DbSeeder.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Data\\DbSeeder.cs",
+              "RelativeToolTip": "Data\\DbSeeder.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowDkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T11:55:12.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "SaleItem.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Models\\SaleItem.cs",
+              "RelativeDocumentMoniker": "Models\\SaleItem.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Models\\SaleItem.cs",
+              "RelativeToolTip": "Models\\SaleItem.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAiwC8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T05:05:21.697Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAwEgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T05:05:40.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "toast.js",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\wwwroot\\js\\toast.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\toast.js",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\wwwroot\\js\\toast.js",
+              "RelativeToolTip": "wwwroot\\js\\toast.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-11T06:36:31.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "NavMenu.razor.css",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor.css",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeToolTip": "Components\\Layout\\NavMenu.razor.css",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-09T07:51:42.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Home.razor",
+              "DocumentMoniker": "G:\\SAD Backup\\27\\DvTech -\\DVTech-ODSS\\Components\\Pages\\Home.razor",
+              "ToolTip": "G:\\SAD Backup\\27\\DvTech -\\DVTech-ODSS\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAADMBAAAAAAAAAAAswGoBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T12:17:44.693Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\DvTech -\\DVTech-ODSS\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "Models\\Employee.cs",
+              "ToolTip": "C:\\DvTech -\\DVTech-ODSS\\Models\\Employee.cs",
+              "RelativeToolTip": "Models\\Employee.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAA4wGkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T17:40:35.992Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

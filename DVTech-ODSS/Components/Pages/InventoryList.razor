@@ -1,0 +1,1122 @@
+﻿@page "/inventory"
+@using DVTech_ODSS.Models
+@using DVTech_ODSS.Services
+@inject InventoryService InventoryService
+@inject IJSRuntime JSRuntime
+@inject NavigationManager Navigation
+@rendermode InteractiveServer
+
+<PageTitle>Inventory Management</PageTitle>
+
+<div class="container-fluid">
+    <div class="row mb-3 align-items-center">
+        <div class="col">
+            <h3 class="mb-0">📦 Inventory Management</h3>
+            <small class="text-muted">Inventory items are automatically added when purchase orders are received</small>
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-secondary" @onclick="ShowArchiveList">
+                📁 Archives (@archivedItems.Count)
+            </button>
+        </div>
+    </div>
+
+    <!-- Summary Cards with Profit -->
+    <div class="row g-3 mb-3">
+        <div class="col-md-3">
+            <div class="card shadow-sm border-primary">
+                <div class="card-body p-3">
+                    <p class="text-muted small mb-1">💰 Total Cost Value</p>
+                    <h4 class="mb-0 text-primary">₱@CalculateTotalCost().ToString("N2")</h4>
+                    <small class="text-muted">What you paid suppliers</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-success">
+                <div class="card-body p-3">
+                    <p class="text-muted small mb-1">💵 Total Selling Value</p>
+                    <h4 class="mb-0 text-success">₱@CalculateTotalSellingValue().ToString("N2")</h4>
+                    <small class="text-muted">What you'll earn selling all</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-info">
+                <div class="card-body p-3">
+                    <p class="text-muted small mb-1">📈 Total Profit Potential</p>
+                    <h4 class="mb-0 text-info">₱@CalculateTotalProfit().ToString("N2")</h4>
+                    <small class="text-muted">If all items are sold</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-warning">
+                <div class="card-body p-3">
+                    <p class="text-muted small mb-1">⚠️ Low Stock Items</p>
+                    <h4 class="mb-0 text-danger">@lowStockItems.Count</h4>
+                    <small class="text-muted">Need to reorder</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="card shadow-sm mb-3">
+        <div class="card-body p-2">
+            <div class="row g-2 align-items-center">
+                <div class="col-md-3">
+                    <input type="text" class="form-control form-control-sm" placeholder="🔍 Search by name..." @bind="searchText" @bind:event="oninput" @onkeyup="ApplyFilters" />
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select form-select-sm" @onchange="OnCategoryChanged">
+                        <option value="">All Categories</option>
+                        @foreach (var category in GetAllCategories())
+                        {
+                            <option value="@category">@category</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select form-select-sm" @onchange="OnBrandChanged">
+                        <option value="">All Brands</option>
+                        @foreach (var brand in GetAllBrands())
+                        {
+                            <option value="@brand">@brand</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-3 text-end">
+                    @if (!string.IsNullOrEmpty(selectedCategory) || !string.IsNullOrEmpty(selectedBrand) || !string.IsNullOrEmpty(selectedStockStatus))
+                    {
+                        <span class="badge bg-info">@displayedItems.Count items shown</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (lowStockItems.Any() && string.IsNullOrEmpty(selectedCategory))
+    {
+        <div class="alert alert-warning py-2" role="alert">
+            <strong>⚠️ Low Stock Alert!</strong> You have @lowStockItems.Count item(s) running low on stock.
+        </div>
+    }
+
+    @if (isLoading)
+    {
+        <div class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    }
+    else if (showArchives)
+    {
+        <div class="card shadow-sm">
+            <div class="card-header bg-secondary text-white py-2">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0">📁 Archived Items</h6>
+                    <button type="button" class="btn btn-sm btn-light" @onclick="CloseArchiveList">Back to Inventory</button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover table-sm mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="py-2">Item Name</th>
+                                <th class="py-2">Brand</th>
+                                <th class="py-2">Category</th>
+                                <th class="py-2">Quantity</th>
+                                <th class="py-2">Unit Price</th>
+                                <th class="py-2">Archived Date</th>
+                                <th class="py-2 text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (archivedItems.Any())
+                            {
+                                @foreach (var item in archivedItems)
+                                {
+                                    <tr>
+                                        <td class="py-2 small">@item.ItemName</td>
+                                        <td class="py-2 small">@item.Brand</td>
+                                        <td class="py-2 small">@item.Category</td>
+                                        <td class="py-2 small">@item.Quantity @item.Unit</td>
+                                        <td class="py-2 small">₱@item.UnitPrice.ToString("N2")</td>
+                                        <td class="py-2 small">@item.ArchivedDate?.ToString("MMM dd, yyyy") ?? "Unknown"</td>
+                                        <td class="py-2 text-center">
+                                            <button type="button" class="btn btn-sm btn-outline-success py-0 px-2" @onclick="@(() => ShowRestoreConfirmation(item))">↩️ Restore</button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="7" class="text-center py-4 text-muted">
+                                        No archived items.
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card shadow-sm">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover table-sm mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="py-2">Item Name</th>
+                                <th class="py-2">Brand</th>
+                                <th class="py-2">Category</th>
+                                <th class="py-2">Qty</th>
+                                <th class="py-2">Cost Price</th>
+                                <th class="py-2">Markup %</th>
+                                <th class="py-2">Selling Price</th>
+                                <th class="py-2">Profit/Unit</th>
+                                <th class="py-2">Total Profit</th>
+                                <th class="py-2 text-center">
+                                    <select class="form-select form-select-sm d-inline-block w-auto" @onchange="OnStockStatusChanged" style="font-size: 0.875rem;">
+                                        <option value="">Stock Status ▼</option>
+                                        <option value="Low Stock">Low Stock</option>
+                                        <option value="Good Stock">Good Stock</option>
+                                        <option value="High Stock">High Stock</option>
+                                    </select>
+                                </th>
+                                <th class="py-2 text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (displayedItems.Any())
+                            {
+                                @foreach (var item in displayedItems)
+                                {
+                                    <tr style="cursor: pointer;" @onclick="@(() => ViewItemDetails(item))">
+                                        <td class="py-2 small">@item.ItemName</td>
+                                        <td class="py-2 small">@item.Brand</td>
+                                        <td class="py-2 small">@item.Category</td>
+                                        <td class="py-2 small">
+                                            <span class="@(item.Quantity <= item.MinimumStockLevel ? "text-danger fw-bold" : "")">
+                                                @item.Quantity
+                                            </span>
+                                        </td>
+                                        <td class="py-2 small">₱@item.UnitPrice.ToString("N2")</td>
+                                        <td class="py-2 small">
+                                            <span class="badge bg-info">@item.MarkupPercentage.ToString("F1")%</span>
+                                        </td>
+                                        <td class="py-2 small"><strong>₱@item.SellingPrice.ToString("N2")</strong></td>
+                                        <td class="py-2 small text-success">₱@item.ProfitPerUnit.ToString("N2")</td>
+                                        <td class="py-2 small text-success"><strong>₱@item.TotalProfitPotential.ToString("N2")</strong></td>
+                                        <td class="py-2 text-center">
+                                            <span class="badge @GetStockStatusBadgeClass(item) small">
+                                                @GetStockStatus(item)
+                                            </span>
+                                        </td>
+                                        <td class="py-2 text-center" @onclick:stopPropagation="true">
+                                            <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" @onclick="@(() => ShowEditModal(item))" title="Edit">
+                                                ✏️
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-outline-warning py-0 px-2 me-1" @onclick="@(() => ShowMarkupModal(item))" title="Edit Markup">
+                                                💰
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-success py-0 px-2 me-1" @onclick="@(() => GoToCreateOrder(item))" title="Create Order">
+                                                🛒
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-outline-danger py-0 px-2" @onclick="@(() => ShowArchiveConfirmation(item))" title="Archive">
+                                                🗑️
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="11" class="text-center py-4 text-muted">
+                                        <div>
+                                            <p class="mb-2">📦 No inventory items yet.</p>
+                                            <p class="small">Items will be added automatically when purchase orders are received.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- MARKUP EDIT MODAL - SLIDER REMOVED -->
+@if (showMarkupModal && editingMarkupItem != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-warning text-dark">
+                    <h6 class="modal-title mb-0">💰 Edit Markup - @editingMarkupItem.ItemName</h6>
+                    <button type="button" class="btn-close" @onclick="CloseMarkupModal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="alert alert-info py-2 small mb-3">
+                        <strong>Quick Tip:</strong> Adjust the markup percentage to set your profit margin. Selling price updates automatically!
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="card bg-light">
+                                <div class="card-body p-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p class="small text-muted mb-1">Cost Price (Fixed)</p>
+                                            <h5 class="mb-0">₱@tempUnitPrice.ToString("N2")</h5>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <p class="small text-muted mb-1">Current Quantity</p>
+                                            <h5 class="mb-0">@editingMarkupItem.Quantity @editingMarkupItem.Unit</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label fw-bold mb-2">Markup Percentage</label>
+                            <div class="input-group input-group-lg">
+                                <input type="number" class="form-control text-center"
+                                       value="@tempMarkupPercentage"
+                                       @oninput="OnMarkupChanged"
+                                       min="0"
+                                       max="1000"
+                                       step="0.1" />
+                                <span class="input-group-text">%</span>
+                            </div>
+                            <small class="text-muted">Enter markup percentage (0% - 1000%)</small>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card border-success">
+                                <div class="card-body p-3">
+                                    <div class="row text-center">
+                                        <div class="col-4">
+                                            <p class="small text-muted mb-1">Selling Price</p>
+                                            <h4 class="mb-0 text-success">₱@tempSellingPrice.ToString("N2")</h4>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="small text-muted mb-1">Profit Per Unit</p>
+                                            <h4 class="mb-0 text-info">₱@((tempSellingPrice - tempUnitPrice).ToString("N2"))</h4>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="small text-muted mb-1">Total Profit</p>
+                                            <h4 class="mb-0 text-primary">₱@((editingMarkupItem.Quantity * (tempSellingPrice - tempUnitPrice)).ToString("N2"))</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label small text-muted mb-2">Quick Markup Presets:</label>
+                            <div class="d-flex gap-2 justify-content-center flex-wrap">
+                                <button type="button" class="btn btn-outline-secondary btn-sm" @onclick="@(() => SetMarkup(10))">10%</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm" @onclick="@(() => SetMarkup(15))">15%</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm" @onclick="@(() => SetMarkup(20))">20%</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm" @onclick="@(() => SetMarkup(25))">25%</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm" @onclick="@(() => SetMarkup(30))">30%</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm" @onclick="@(() => SetMarkup(50))">50%</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm" @onclick="@(() => SetMarkup(75))">75%</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm" @onclick="@(() => SetMarkup(100))">100%</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CloseMarkupModal">Cancel</button>
+                    <button type="button" class="btn btn-sm btn-warning" @onclick="SaveMarkup">
+                        💾 Save Markup
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- RESTORE CONFIRMATION MODAL -->
+@if (showRestoreConfirmation && itemToRestore != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.7);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-success text-white">
+                    <h6 class="modal-title mb-0">↩️ Restore Item</h6>
+                </div>
+                <div class="modal-body p-3">
+                    <p class="mb-2">You are about to restore this archived item:</p>
+                    <div class="alert alert-light border py-2 mb-3">
+                        <strong>@itemToRestore.ItemName</strong><br />
+                        <small>Brand: @itemToRestore.Brand | Category: @itemToRestore.Category</small><br />
+                        <small>Quantity: @itemToRestore.Quantity @itemToRestore.Unit</small>
+                    </div>
+
+                    @if (CheckForDuplicateOnRestore(itemToRestore))
+                    {
+                        <div class="alert alert-warning py-2">
+                            <strong>⚠️ Merge Notice:</strong><br />
+                            <small>A matching item already exists in inventory. The quantities will be merged together automatically.</small>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-info py-2">
+                            <strong>ℹ️ Note:</strong><br />
+                            <small>This item will be restored to active inventory.</small>
+                        </div>
+                    }
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CancelRestore">Cancel</button>
+                    <button type="button" class="btn btn-sm btn-success" @onclick="ConfirmRestore">Yes, Restore</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- OTHER MODALS REMAIN THE SAME -->
+<!-- ITEM DETAILS MODAL (Updated with Profit Info) -->
+@if (showDetailsModal && selectedItem != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-light">
+                    <h6 class="modal-title mb-0">📦 @selectedItem.ItemName</h6>
+                    <button type="button" class="btn-close" @onclick="CloseDetailsModal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Brand</p>
+                                    <p class="mb-0 fw-bold">@(selectedItem.Brand ?? "N/A")</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Category</p>
+                                    <p class="mb-0 fw-bold">@selectedItem.Category</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing Information -->
+                        <div class="col-12">
+                            <div class="card border-warning">
+                                <div class="card-header bg-warning text-dark py-2">
+                                    <strong>💰 Pricing & Profit Information</strong>
+                                </div>
+                                <div class="card-body p-3">
+                                    <div class="row text-center">
+                                        <div class="col-3">
+                                            <p class="small text-muted mb-1">Cost Price</p>
+                                            <h5 class="mb-0">₱@selectedItem.UnitPrice.ToString("N2")</h5>
+                                            <small class="text-muted">What you paid</small>
+                                        </div>
+                                        <div class="col-3">
+                                            <p class="small text-muted mb-1">Markup</p>
+                                            <h5 class="mb-0 text-info">@selectedItem.MarkupPercentage.ToString("F1")%</h5>
+                                            <small class="text-muted">Profit margin</small>
+                                        </div>
+                                        <div class="col-3">
+                                            <p class="small text-muted mb-1">Selling Price</p>
+                                            <h5 class="mb-0 text-success">₱@selectedItem.SellingPrice.ToString("N2")</h5>
+                                            <small class="text-muted">What you charge</small>
+                                        </div>
+                                        <div class="col-3">
+                                            <p class="small text-muted mb-1">Profit/Unit</p>
+                                            <h5 class="mb-0 text-primary">₱@selectedItem.ProfitPerUnit.ToString("N2")</h5>
+                                            <small class="text-muted">Your profit</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card border-0" style="background-color: #e8f5e9;">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Current Quantity</p>
+                                    <h5 class="mb-0 text-success">@selectedItem.Quantity @selectedItem.Unit</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0" style="background-color: #e3f2fd;">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Total Cost Value</p>
+                                    <h5 class="mb-0 text-primary">₱@selectedItem.TotalCostValue.ToString("N2")</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0" style="background-color: #fff3e0;">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Total Profit Potential</p>
+                                    <h5 class="mb-0 text-warning">₱@selectedItem.TotalProfitPotential.ToString("N2")</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Min Stock</p>
+                                    <p class="mb-0 fw-bold">@selectedItem.MinimumStockLevel @selectedItem.Unit</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">High Stock</p>
+                                    <p class="mb-0 fw-bold">@selectedItem.HighStockLevel @selectedItem.Unit</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0" style="background-color: @(selectedItem.Quantity <= selectedItem.MinimumStockLevel ? "#ffebee" : selectedItem.Quantity >= selectedItem.HighStockLevel ? "#e8f5e9" : "#e3f2fd");">
+                                <div class="card-body p-2 text-center">
+                                    <p class="text-muted small mb-1">Stock Status</p>
+                                    <span class="badge @GetStockStatusBadgeClass(selectedItem)">@GetStockStatus(selectedItem)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Description</p>
+                                    <p class="mb-0">@(selectedItem.Description ?? "No description available")</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Date Added</p>
+                                    <p class="mb-0">@selectedItem.DateAdded.ToString("MMM dd, yyyy")</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light border-0">
+                                <div class="card-body p-2">
+                                    <p class="text-muted small mb-1">Last Restocked</p>
+                                    <p class="mb-0">@(selectedItem.LastRestocked?.ToString("MMM dd, yyyy") ?? "Never")</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(selectedItem.LastSupplierName))
+                        {
+                            <div class="col-12">
+                                <div class="card bg-light border-0">
+                                    <div class="card-body p-2">
+                                        <p class="text-muted small mb-1">Last Supplier</p>
+                                        <p class="mb-0">@selectedItem.LastSupplierName</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-warning" @onclick="@(() => ShowMarkupModalFromDetails())">
+                        💰 Edit Markup
+                    </button>
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CloseDetailsModal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- EDIT ITEM MODAL -->
+@if (showFormModal && editingItem != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-primary text-white">
+                    <h6 class="modal-title mb-0">✏️ Edit Item Details</h6>
+                    <button type="button" class="btn-close btn-close-white" @onclick="CloseFormModal"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div class="alert alert-info py-2 small mb-3">
+                        <strong>Note:</strong> Item pricing/markup is edited separately. Quantity is managed through purchase orders.
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-md-7">
+                            <label class="form-label small fw-bold mb-1">Item Name *</label>
+                            <input type="text" class="form-control form-control-sm" @bind="itemName" />
+                        </div>
+                        <div class="col-md-5">
+                            <label class="form-label small fw-bold mb-1">Brand</label>
+                            <input type="text" class="form-control form-control-sm" @bind="brand" />
+                        </div>
+                    </div>
+                    <div class="row g-2 mt-2">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold mb-1">Category *</label>
+                            <input type="text" class="form-control form-control-sm" @bind="category" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold mb-1">Unit *</label>
+                            <input type="text" class="form-control form-control-sm" @bind="unit" placeholder="e.g., pcs, units, meters" />
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label class="form-label small fw-bold mb-1">Description</label>
+                        <textarea class="form-control form-control-sm" rows="2" @bind="description"></textarea>
+                    </div>
+                    <div class="row g-2 mt-2">
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold mb-1">Current Quantity</label>
+                            <input type="number" class="form-control form-control-sm bg-light" value="@editingItem.Quantity" readonly />
+                            <small class="text-muted">Managed via PO</small>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold mb-1">Min Stock Level *</label>
+                            <input type="number" class="form-control form-control-sm" @bind="minimumStockLevel" min="0" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold mb-1">High Stock Level *</label>
+                            <input type="number" class="form-control form-control-sm" @bind="highStockLevel" min="0" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CloseFormModal">Cancel</button>
+                    <button type="button" class="btn btn-sm btn-primary" @onclick="ShowEditConfirmation" disabled="@(!IsFormValid())">
+                        💾 Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- EDIT CONFIRMATION MODAL -->
+@if (showEditConfirmation)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.7);">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-warning">
+                    <h6 class="modal-title mb-0">⚠️ Confirm Changes</h6>
+                </div>
+                <div class="modal-body p-3">
+                    <p class="mb-2">Are you sure you want to save these changes to:</p>
+                    <p class="fw-bold mb-0">@editingItem?.ItemName</p>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CancelEdit">Cancel</button>
+                    <button type="button" class="btn btn-sm btn-warning" @onclick="ConfirmEdit">Yes, Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- ARCHIVE CONFIRMATION MODAL -->
+@if (showArchiveConfirmationModal && itemToArchive != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.7);">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header py-2 bg-danger text-white">
+                    <h6 class="modal-title mb-0">⚠️ Archive Item</h6>
+                </div>
+                <div class="modal-body p-3">
+                    <p class="mb-2">Are you sure you want to archive this item?</p>
+                    <p class="fw-bold mb-2">@itemToArchive.ItemName</p>
+                    <p class="small text-muted mb-0">You can restore it later from the Archives.</p>
+                </div>
+                <div class="modal-footer py-2">
+                    <button type="button" class="btn btn-sm btn-secondary" @onclick="CancelArchive">Cancel</button>
+                    <button type="button" class="btn btn-sm btn-danger" @onclick="ConfirmArchive">Yes, Archive</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<InventoryItem> allItems = new();
+    private List<InventoryItem> displayedItems = new();
+    private List<InventoryItem> archivedItems = new();
+    private List<InventoryItem> lowStockItems = new();
+    private InventoryItem? selectedItem = null;
+    private InventoryItem? editingItem = null;
+    private InventoryItem? editingMarkupItem = null;
+    private InventoryItem? itemToArchive = null;
+    private InventoryItem? itemToRestore = null;
+
+    private bool showFormModal = false;
+    private bool showDetailsModal = false;
+    private bool showArchives = false;
+    private bool showEditConfirmation = false;
+    private bool showArchiveConfirmationModal = false;
+    private bool showMarkupModal = false;
+    private bool showRestoreConfirmation = false;
+    private bool isLoading = true;
+
+    // Filters
+    private string searchText = string.Empty;
+    private string selectedCategory = string.Empty;
+    private string selectedBrand = string.Empty;
+    private string selectedStockStatus = string.Empty;
+
+    // Form fields
+    private string itemName = string.Empty;
+    private string brand = string.Empty;
+    private string category = string.Empty;
+    private string description = string.Empty;
+    private int minimumStockLevel = 0;
+    private int highStockLevel = 0;
+    private string unit = string.Empty;
+
+    // Markup modal temp values
+    private decimal tempUnitPrice = 0;
+    private decimal tempMarkupPercentage = 25;
+    private decimal tempSellingPrice = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadItems();
+    }
+
+    private async Task LoadItems()
+    {
+        isLoading = true;
+        allItems = await InventoryService.GetAllItemsAsync();
+        archivedItems = await InventoryService.GetArchivedItemsAsync();
+        displayedItems = allItems;
+        lowStockItems = allItems.Where(i => i.Quantity <= i.MinimumStockLevel).ToList();
+        isLoading = false;
+        StateHasChanged();
+    }
+
+    private void ApplyFilters()
+    {
+        var filtered = allItems.AsEnumerable();
+
+        if (!string.IsNullOrEmpty(searchText))
+        {
+            filtered = filtered.Where(i =>
+                i.ItemName.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                (i.Brand != null && i.Brand.Contains(searchText, StringComparison.OrdinalIgnoreCase))
+            );
+        }
+
+        if (!string.IsNullOrEmpty(selectedCategory))
+        {
+            filtered = filtered.Where(i => i.Category == selectedCategory);
+        }
+
+        if (!string.IsNullOrEmpty(selectedBrand))
+        {
+            filtered = filtered.Where(i => i.Brand == selectedBrand);
+        }
+
+        if (!string.IsNullOrEmpty(selectedStockStatus))
+        {
+            filtered = filtered.Where(i => GetStockStatus(i) == selectedStockStatus);
+        }
+
+        displayedItems = filtered.ToList();
+        StateHasChanged();
+    }
+
+    private List<string> GetAllCategories()
+    {
+        return allItems.Select(i => i.Category).Distinct().OrderBy(c => c).ToList();
+    }
+
+    private List<string> GetAllBrands()
+    {
+        return allItems.Where(i => !string.IsNullOrEmpty(i.Brand)).Select(i => i.Brand!).Distinct().OrderBy(b => b).ToList();
+    }
+
+    // NEW: Profit calculation methods
+    private decimal CalculateTotalCost()
+    {
+        return displayedItems.Sum(i => i.TotalCostValue);
+    }
+
+    private decimal CalculateTotalSellingValue()
+    {
+        return displayedItems.Sum(i => i.TotalSellingValue);
+    }
+
+    private decimal CalculateTotalProfit()
+    {
+        return displayedItems.Sum(i => i.TotalProfitPotential);
+    }
+
+    // NEW: Markup modal methods
+    private void ShowMarkupModal(InventoryItem item)
+    {
+        editingMarkupItem = item;
+        tempUnitPrice = item.UnitPrice;
+        tempMarkupPercentage = item.MarkupPercentage;
+        tempSellingPrice = item.SellingPrice;
+        showMarkupModal = true;
+        StateHasChanged();
+    }
+
+    private void ShowMarkupModalFromDetails()
+    {
+        if (selectedItem != null)
+        {
+            CloseDetailsModal();
+            ShowMarkupModal(selectedItem);
+        }
+    }
+
+    private void CloseMarkupModal()
+    {
+        showMarkupModal = false;
+        editingMarkupItem = null;
+        StateHasChanged();
+    }
+
+    private void OnMarkupChanged(ChangeEventArgs e)
+    {
+        if (decimal.TryParse(e?.Value?.ToString(), out var markup))
+        {
+            tempMarkupPercentage = markup;
+            tempSellingPrice = tempUnitPrice * (1 + (tempMarkupPercentage / 100));
+            StateHasChanged();
+        }
+    }
+
+    private void SetMarkup(decimal percentage)
+    {
+        tempMarkupPercentage = percentage;
+        tempSellingPrice = tempUnitPrice * (1 + (tempMarkupPercentage / 100));
+        StateHasChanged();
+    }
+
+    private async Task SaveMarkup()
+    {
+        if (editingMarkupItem != null)
+        {
+            try
+            {
+                editingMarkupItem.MarkupPercentage = tempMarkupPercentage;
+                editingMarkupItem.SellingPrice = tempSellingPrice;
+
+                var success = await InventoryService.UpdateItemAsync(editingMarkupItem);
+
+                if (success)
+                {
+                    var itemName = editingMarkupItem.ItemName;
+                    var markupPercent = tempMarkupPercentage;
+
+                    await LoadItems();
+                    ApplyFilters();
+                    CloseMarkupModal();
+
+                    try
+                    {
+                        await JSRuntime.InvokeVoidAsync("showToast", "success", "Markup Updated!", $"Markup for {itemName} has been updated to {markupPercent:F1}%");
+                    }
+                    catch { }
+                }
+                else
+                {
+                    try
+                    {
+                        await JSRuntime.InvokeVoidAsync("showToast", "danger", "Error", "Failed to update markup. Please try again.");
+                    }
+                    catch { }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving markup: {ex.Message}");
+            }
+        }
+    }
+
+    private void ShowEditModal(InventoryItem item)
+    {
+        editingItem = item;
+        itemName = item.ItemName;
+        brand = item.Brand ?? string.Empty;
+        category = item.Category;
+        description = item.Description ?? string.Empty;
+        minimumStockLevel = item.MinimumStockLevel;
+        highStockLevel = item.HighStockLevel;
+        unit = item.Unit;
+
+        showFormModal = true;
+        StateHasChanged();
+    }
+
+    private bool IsFormValid()
+    {
+        return !string.IsNullOrWhiteSpace(itemName) &&
+               !string.IsNullOrWhiteSpace(category) &&
+               !string.IsNullOrWhiteSpace(unit) &&
+               minimumStockLevel >= 0 &&
+               highStockLevel >= 0;
+    }
+
+    private void ShowEditConfirmation()
+    {
+        if (IsFormValid())
+        {
+            showEditConfirmation = true;
+            StateHasChanged();
+        }
+    }
+
+    private async Task ConfirmEdit()
+    {
+        showEditConfirmation = false;
+        await PerformSave();
+    }
+
+    private void CancelEdit()
+    {
+        showEditConfirmation = false;
+        StateHasChanged();
+    }
+
+    private async Task PerformSave()
+    {
+        if (editingItem != null)
+        {
+            editingItem.ItemName = itemName;
+            editingItem.Brand = brand;
+            editingItem.Category = category;
+            editingItem.Description = description;
+            editingItem.MinimumStockLevel = minimumStockLevel;
+            editingItem.HighStockLevel = highStockLevel;
+            editingItem.Unit = unit;
+
+            var success = await InventoryService.UpdateItemAsync(editingItem);
+
+            if (success)
+            {
+                await LoadItems();
+                ApplyFilters();
+                CloseFormModal();
+                await ShowToast("success", "Item Updated!", $"{itemName} details have been successfully updated.");
+            }
+            else
+            {
+                await ShowToast("error", "Error", "Failed to save item. Please try again.");
+            }
+        }
+    }
+
+    private void CloseFormModal()
+    {
+        showFormModal = false;
+        editingItem = null;
+        StateHasChanged();
+    }
+
+    private void ViewItemDetails(InventoryItem item)
+    {
+        selectedItem = item;
+        showDetailsModal = true;
+        StateHasChanged();
+    }
+
+    private void CloseDetailsModal()
+    {
+        selectedItem = null;
+        showDetailsModal = false;
+        StateHasChanged();
+    }
+
+    private void ShowArchiveList()
+    {
+        showArchives = true;
+        StateHasChanged();
+    }
+
+    private void CloseArchiveList()
+    {
+        showArchives = false;
+        StateHasChanged();
+    }
+
+    private void ShowArchiveConfirmation(InventoryItem item)
+    {
+        itemToArchive = item;
+        showArchiveConfirmationModal = true;
+        StateHasChanged();
+    }
+
+    private void CancelArchive()
+    {
+        itemToArchive = null;
+        showArchiveConfirmationModal = false;
+        StateHasChanged();
+    }
+
+    private async Task ConfirmArchive()
+    {
+        if (itemToArchive != null)
+        {
+            var success = await InventoryService.ArchiveItemAsync(itemToArchive.ItemId);
+            if (success)
+            {
+                var itemNameCopy = itemToArchive.ItemName;
+                await LoadItems();
+                ApplyFilters();
+                CancelArchive();
+                await ShowToast("info", "Item Archived", $"{itemNameCopy} has been moved to archives.");
+            }
+        }
+    }
+
+    // NEW: Restore with merge confirmation
+    private void ShowRestoreConfirmation(InventoryItem item)
+    {
+        itemToRestore = item;
+        showRestoreConfirmation = true;
+        StateHasChanged();
+    }
+
+    private void CancelRestore()
+    {
+        itemToRestore = null;
+        showRestoreConfirmation = false;
+        StateHasChanged();
+    }
+
+    private bool CheckForDuplicateOnRestore(InventoryItem archivedItem)
+    {
+        return allItems.Any(i =>
+            i.ItemName == archivedItem.ItemName &&
+            i.Brand == archivedItem.Brand &&
+            i.Category == archivedItem.Category);
+    }
+
+    private async Task ConfirmRestore()
+    {
+        if (itemToRestore != null)
+        {
+            var itemNameCopy = itemToRestore.ItemName;
+            var willMerge = CheckForDuplicateOnRestore(itemToRestore);
+
+            var success = await InventoryService.RestoreItemAsync(itemToRestore.ItemId);
+
+            if (success)
+            {
+                await LoadItems();
+                ApplyFilters();
+                CancelRestore();
+
+                if (willMerge)
+                {
+                    await ShowToast("success", "Item Restored & Merged!", $"{itemNameCopy} has been merged with existing inventory.");
+                }
+                else
+                {
+                    await ShowToast("success", "Item Restored", $"{itemNameCopy} has been restored to inventory.");
+                }
+            }
+            else
+            {
+                await ShowToast("error", "Restore Failed", "Failed to restore item. Please try again.");
+            }
+        }
+    }
+
+    private string GetStockStatus(InventoryItem item)
+    {
+        if (item.Quantity <= item.MinimumStockLevel)
+            return "Low Stock";
+        else if (item.Quantity >= item.HighStockLevel)
+            return "High Stock";
+        else
+            return "Good Stock";
+    }
+
+    private string GetStockStatusBadgeClass(InventoryItem item)
+    {
+        if (item.Quantity <= item.MinimumStockLevel)
+            return "bg-danger";
+        else if (item.Quantity >= item.HighStockLevel)
+            return "bg-success";
+        else
+            return "bg-primary";
+    }
+
+    private Task OnCategoryChanged(ChangeEventArgs e)
+    {
+        selectedCategory = e?.Value?.ToString() ?? "";
+        ApplyFilters();
+        return Task.CompletedTask;
+    }
+
+    private Task OnBrandChanged(ChangeEventArgs e)
+    {
+        selectedBrand = e?.Value?.ToString() ?? "";
+        ApplyFilters();
+        return Task.CompletedTask;
+    }
+
+    private Task OnStockStatusChanged(ChangeEventArgs e)
+    {
+        selectedStockStatus = e?.Value?.ToString() ?? "";
+        ApplyFilters();
+        return Task.CompletedTask;
+    }
+
+    private async Task ShowToast(string type, string title, string message)
+    {
+        var toastType = type switch
+        {
+            "success" => "success",
+            "error" => "danger",
+            "info" => "info",
+            "warning" => "warning",
+            _ => "info"
+        };
+
+        await JSRuntime.InvokeVoidAsync("showToast", toastType, title, message);
+    }
+
+    private void GoToCreateOrder(InventoryItem item)
+    {
+        if (item.LastSupplierId.HasValue && item.LastSupplierId.Value > 0)
+        {
+            Navigation.NavigateTo($"/purchase-orders?supplierId={item.LastSupplierId.Value}&autoCreate=true");
+        }
+        else
+        {
+            Navigation.NavigateTo("/purchase-orders");
+        }
+    }
+}

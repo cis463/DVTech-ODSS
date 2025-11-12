@@ -1,0 +1,747 @@
+@page "/"
+@using DVTech_ODSS.Models
+@using DVTech_ODSS.Services
+@using DVTech_ODSS.Components
+@inject InventoryService InventoryService
+@inject ProcurementService ProcurementService
+@inject ManpowerService ManpowerService
+@inject SalesService SalesService
+@inject AuthStateProvider AuthState
+@inject NavigationManager Navigation
+@rendermode InteractiveServer
+
+<AuthGuard>
+    <PageTitle>Dashboard - DVTech ODSS</PageTitle>
+
+    <style>
+        .metric-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+            .metric-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+            }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        .scrollable-table {
+            max-height: 320px;
+            overflow-y: auto;
+        }
+
+        .badge-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @@keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .trend-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+
+        .welcome-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quick-action-btn {
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+            .quick-action-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            }
+    </style>
+
+    <div class="container-fluid">
+        @if (isLoading && !pageLoaded)
+        {
+            <div class="text-center py-5">
+                <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="visually-hidden">Loading dashboard...</span>
+                </div>
+                <p class="mt-3 text-muted">Loading analytics...</p>
+            </div>
+        }
+        else
+        {
+            <!-- Welcome Banner -->
+            <div class="welcome-banner shadow-sm">
+                @if (AuthState.IsAdmin && GetPendingOrdersCount() > 0)
+                {
+                    <div class="alert alert-warning py-2 mb-3" role="alert">
+                        <strong>⚠️ Action Required!</strong> You have <strong>@GetPendingOrdersCount()</strong> purchase order(s) awaiting approval.
+                        <a href="/purchase-orders" class="alert-link ms-2">Review Now →</a>
+                    </div>
+                }
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h2 class="mb-2">👋 Welcome back, @AuthState.CurrentUser?.FullName!</h2>
+                        <p class="mb-0 opacity-75">Here's what's happening with your business today</p>
+                        <small class="opacity-75">Last updated: @lastUpdateTime.ToString("MMM dd, yyyy hh:mm tt")</small>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <button class="btn btn-light quick-action-btn" @onclick="RefreshDashboard" disabled="@isLoading">
+                            @if (isLoading)
+                            {
+                                <span class="spinner-border spinner-border-sm me-1"></span>
+                            }
+                            else
+                            {
+                                <span>🔄</span>
+                            }
+                            Refresh Data
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Quick Actions (Role-based) -->
+            <div class="row g-3 mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-3">
+                            <h6 class="mb-3">⚡ Quick Actions</h6>
+                            <div class="d-flex gap-2 flex-wrap">
+                                @if (AuthState.IsSecretary)
+                                {
+                                    <button class="btn btn-success quick-action-btn" @onclick='() => Navigation.NavigateTo("/sales")'>
+                                        💰 New Sale
+                                    </button>
+                                }
+                                @if (AuthState.IsAdmin)
+                                {
+                                    <button class="btn btn-primary quick-action-btn" @onclick='() => Navigation.NavigateTo("/purchase-orders")'>
+                                        🛒 Create Purchase Order
+                                    </button>
+                                    <button class="btn btn-info quick-action-btn" @onclick='() => Navigation.NavigateTo("/suppliers")'>
+                                        🏢 Add Supplier
+                                    </button>
+                                    <button class="btn btn-warning quick-action-btn" @onclick='() => Navigation.NavigateTo("/employees")'>
+                                        👥 Add Employee
+                                    </button>
+                                }
+                                <button class="btn btn-outline-secondary quick-action-btn" @onclick='() => Navigation.NavigateTo("/schedules")'>
+                                    📅 View Schedules
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KEY METRICS (Improved with Trends) -->
+            <div class="row g-3 mb-4">
+                <div class="col-12">
+                    <h5 class="mb-3">📊 Key Business Metrics</h5>
+                </div>
+
+                <!-- Sales Today (Secretary sees this prominently) -->
+                @if (AuthState.IsSecretary)
+                {
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card shadow-sm border-success metric-card" @onclick='() => Navigation.NavigateTo("/sales")'>
+                            <div class="card-body p-3">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div class="stat-label">💵 TODAY'S SALES</div>
+                                    <span class="badge bg-success trend-badge">Today</span>
+                                </div>
+                                <div class="stat-number text-success">₱@todaySales.ToString("N0")</div>
+                                <small class="text-muted">Profit: ₱@todayProfit.ToString("N0")</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card shadow-sm border-info metric-card" @onclick='() => Navigation.NavigateTo("/sales")'>
+                            <div class="card-body p-3">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div class="stat-label">📈 TOTAL SALES</div>
+                                    <span class="badge bg-info trend-badge">All Time</span>
+                                </div>
+                                <div class="stat-number text-info">@totalSalesCount</div>
+                                <small class="text-muted">Total Revenue: ₱@totalRevenue.ToString("N0")</small>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!-- Inventory Value -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm border-primary metric-card" @onclick='() => Navigation.NavigateTo("/inventory")'>
+                        <div class="card-body p-3">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="stat-label">📦 INVENTORY VALUE</div>
+                                <span class="badge bg-primary trend-badge">@inventoryItems.Count items</span>
+                            </div>
+                            <div class="stat-number text-primary">₱@CalculateTotalCost().ToString("N0")</div>
+                            <small class="text-muted">Potential: ₱@CalculateTotalSellingValue().ToString("N0")</small>
+                            <div class="progress mt-2" style="height: 4px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: @GetInventoryHealthPercentage()%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profit Potential -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm border-warning metric-card" @onclick='() => Navigation.NavigateTo("/inventory")'>
+                        <div class="card-body p-3">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="stat-label">💰 PROFIT POTENTIAL</div>
+                                <span class="badge bg-warning text-dark trend-badge">ROI: @GetROIPercentage().ToString("N1")%</span>
+                            </div>
+                            <div class="stat-number text-warning">₱@CalculateTotalProfit().ToString("N0")</div>
+                            <small class="text-muted">If all items sold</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Low Stock Alert -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm @(GetLowStockItems().Count > 0 ? "border-danger" : "border-success") metric-card" @onclick='() => Navigation.NavigateTo("/inventory")'>
+                        <div class="card-body p-3">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="stat-label">⚠️ LOW STOCK</div>
+                                @if (GetLowStockItems().Count > 0)
+                                {
+                                    <span class="badge bg-danger badge-pulse trend-badge">Action Needed</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-success trend-badge">✓ Healthy</span>
+                                }
+                            </div>
+                            <div class="stat-number @(GetLowStockItems().Count > 0 ? "text-danger" : "text-success")">@GetLowStockItems().Count</div>
+                            <small class="text-muted">Items need restock</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECONDARY METRICS -->
+            <div class="row g-3 mb-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm metric-card" @onclick='() => Navigation.NavigateTo("/employees")'>
+                        <div class="card-body p-3 text-center">
+                            <div class="stat-label mb-2">👥 WORKFORCE</div>
+                            <div class="h2 mb-0 text-success">@employees.Count</div>
+                            <small class="text-muted">@employees.Count(e => e.Status == "Active") Active</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm metric-card" @onclick='() => Navigation.NavigateTo("/suppliers")'>
+                        <div class="card-body p-3 text-center">
+                            <div class="stat-label mb-2">🏢 SUPPLIERS</div>
+                            <div class="h2 mb-0 text-info">@suppliers.Count</div>
+                            <small class="text-muted">@GetTotalSupplierItems() Products</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm metric-card" @onclick='() => Navigation.NavigateTo("/purchase-orders")'>
+                        <div class="card-body p-3 text-center">
+                            <div class="stat-label mb-2">📦 PENDING ORDERS</div>
+                            <div class="h2 mb-0 text-warning">@GetPendingOrdersCount()</div>
+                            <small class="text-muted">Need action</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm metric-card" @onclick='() => Navigation.NavigateTo("/schedules")'>
+                        <div class="card-body p-3 text-center">
+                            <div class="stat-label mb-2">📅 TODAY'S SCHEDULES</div>
+                            <div class="h2 mb-0 text-primary">@GetTodaySchedulesCount()</div>
+                            <small class="text-muted">Scheduled today</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INVENTORY STATUS OVERVIEW -->
+            <div class="row g-3 mb-4">
+                <div class="col-12">
+                    <h5 class="mb-3">📊 Inventory Health Status</h5>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="card shadow-sm border-primary">
+                        <div class="card-body p-3 text-center">
+                            <div class="stat-label">Total Items</div>
+                            <div class="h3 mb-0 text-primary">@inventoryItems.Count</div>
+                            <small class="text-muted">@GetCategoriesCount() categories</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="card shadow-sm border-success">
+                        <div class="card-body p-3 text-center">
+                            <div class="stat-label">Well Stocked</div>
+                            <div class="h3 mb-0 text-success">@GetWellStockedCount()</div>
+                            <small class="text-muted">Healthy levels</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="card shadow-sm border-warning">
+                        <div class="card-body p-3 text-center">
+                            <div class="stat-label">Low Stock</div>
+                            <div class="h3 mb-0 text-warning">@GetLowStockItems().Count</div>
+                            <small class="text-muted">Need restock</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="card shadow-sm border-danger">
+                        <div class="card-body p-3 text-center">
+                            <div class="stat-label">Out of Stock</div>
+                            <div class="h3 mb-0 text-danger">@GetOutOfStockCount()</div>
+                            <small class="text-muted">Zero quantity</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="card shadow-sm border-info">
+                        <div class="card-body p-3 text-center">
+                            <div class="stat-label">High Stock</div>
+                            <div class="h3 mb-0 text-info">@GetHighStockCount()</div>
+                            <small class="text-muted">Overstocked</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="card shadow-sm border-secondary">
+                        <div class="card-body p-3 text-center">
+                            <div class="stat-label">Total Units</div>
+                            <div class="h3 mb-0 text-secondary">@GetTotalQuantity().ToString("N0")</div>
+                            <small class="text-muted">All items</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TWO COLUMN LAYOUT -->
+            <div class="row g-3 mb-4">
+                <!-- LEFT COLUMN -->
+                <div class="col-lg-6">
+                    <!-- Low Stock Alerts -->
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-warning text-dark py-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0">⚠️ Low Stock Alerts</h6>
+                                <span class="badge bg-dark">@GetLowStockItems().Count items</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="scrollable-table">
+                                @if (GetLowStockItems().Any())
+                                {
+                                    <table class="table table-sm table-hover mb-0">
+                                        <thead class="table-light sticky-top">
+                                            <tr>
+                                                <th class="py-2">Item</th>
+                                                <th class="py-2 text-center">Stock</th>
+                                                <th class="py-2 text-center">Min</th>
+                                                <th class="py-2 text-end">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in GetLowStockItems().Take(8))
+                                            {
+                                                <tr>
+                                                    <td class="py-2 small">
+                                                        <strong>@item.ItemName</strong><br />
+                                                        <small class="text-muted">@item.Brand</small>
+                                                    </td>
+                                                    <td class="py-2 text-center">
+                                                        <span class="badge @(item.Quantity == 0 ? "bg-danger" : "bg-warning text-dark")">
+                                                            @item.Quantity
+                                                        </span>
+                                                    </td>
+                                                    <td class="py-2 text-center small">@item.MinimumStockLevel</td>
+                                                    <td class="py-2 text-end">
+                                                        <button class="btn btn-sm btn-success py-0 px-2" @onclick="() => GoToReorder(item)">
+                                                            🛒 Reorder
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                }
+                                else
+                                {
+                                    <div class="text-center py-4 text-success">
+                                        <h1 class="mb-2">✅</h1>
+                                        <p class="mb-0">All items are well stocked!</p>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        @if (GetLowStockItems().Count > 8)
+                        {
+                            <div class="card-footer py-2 text-center bg-light">
+                                <a href="/inventory" class="btn btn-sm btn-warning">View All (@GetLowStockItems().Count)</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="col-lg-6">
+                    <!-- Recent Activities -->
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-info text-white py-2">
+                            <h6 class="mb-0">🕐 Recent Activities</h6>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="scrollable-table">
+                                <div class="list-group list-group-flush">
+                                    @foreach (var activity in GetRecentActivities().Take(8))
+                                    {
+                                        <div class="list-group-item list-group-item-action py-2">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <div class="small mb-1">
+                                                        <span class="badge @activity.BadgeClass">@activity.Type</span>
+                                                        <strong class="ms-2">@activity.Title</strong>
+                                                    </div>
+                                                    <small class="text-muted">@activity.Description</small>
+                                                </div>
+                                                <small class="text-muted">@activity.TimeAgo</small>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOP VALUE ITEMS & RECENT PURCHASE ORDERS -->
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-success text-white py-2">
+                            <h6 class="mb-0">💎 Top 10 Most Valuable Items</h6>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="scrollable-table">
+                                <table class="table table-sm table-hover mb-0">
+                                    <thead class="table-light sticky-top">
+                                        <tr>
+                                            <th class="py-2">#</th>
+                                            <th class="py-2">Item</th>
+                                            <th class="py-2 text-center">Qty</th>
+                                            <th class="py-2 text-end">Value</th>
+                                            <th class="py-2 text-end">Profit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            var topItems = inventoryItems.OrderByDescending(i => i.TotalCostValue).Take(10).ToList();
+                                            for (int i = 0; i < topItems.Count; i++)
+                                            {
+                                                var item = topItems[i];
+                                                <tr style="cursor: pointer;" @onclick='() => Navigation.NavigateTo("/inventory")'>
+                                                    <td class="py-2 small text-muted">@(i + 1)</td>
+                                                    <td class="py-2 small">
+                                                        <strong>@item.ItemName</strong><br />
+                                                        <small class="text-muted">@item.Brand</small>
+                                                    </td>
+                                                    <td class="py-2 text-center small">
+                                                        <span class="badge bg-secondary">@item.Quantity</span>
+                                                    </td>
+                                                    <td class="py-2 text-end small">
+                                                        <strong class="text-primary">₱@item.TotalCostValue.ToString("N0")</strong>
+                                                    </td>
+                                                    <td class="py-2 text-end small">
+                                                        <strong class="text-success">₱@item.TotalProfitPotential.ToString("N0")</strong>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white py-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0">📦 Recent Purchase Orders</h6>
+                                <span class="badge bg-light text-dark">@purchaseOrders.Count total</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="scrollable-table">
+                                @if (purchaseOrders.Any())
+                                {
+                                    <table class="table table-sm table-hover mb-0">
+                                        <thead class="table-light sticky-top">
+                                            <tr>
+                                                <th class="py-2">Order #</th>
+                                                <th class="py-2">Supplier</th>
+                                                <th class="py-2 text-end">Amount</th>
+                                                <th class="py-2 text-center">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var order in purchaseOrders.OrderByDescending(o => o.OrderDate).Take(10))
+                                            {
+                                                <tr style="cursor: pointer;" @onclick='() => Navigation.NavigateTo("/purchase-orders")'>
+                                                    <td class="py-2 small">
+                                                        <strong>@order.OrderNumber</strong><br />
+                                                        <small class="text-muted">@order.OrderDate.ToString("MMM dd, yyyy")</small>
+                                                    </td>
+                                                    <td class="py-2 small">@order.Supplier?.SupplierName</td>
+                                                    <td class="py-2 text-end small"><strong class="text-success">₱@order.TotalAmount.ToString("N0")</strong></td>
+                                                    <td class="py-2 text-center">
+                                                        <span class="badge @GetPOStatusClass(order.Status) small">@order.Status</span>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                }
+                                else
+                                {
+                                    <div class="text-center py-4 text-muted">
+                                        <p class="mb-0">No purchase orders yet.</p>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    @code {
+        private List<InventoryItem> inventoryItems = new();
+        private List<Supplier> suppliers = new();
+        private List<PurchaseOrder> purchaseOrders = new();
+        private List<Employee> employees = new();
+        private List<Schedule> schedules = new();
+
+        private bool isLoading = false;
+        private bool pageLoaded = false;
+        private DateTime lastUpdateTime = DateTime.Now;
+
+        // Sales metrics
+        private decimal todaySales = 0;
+        private decimal todayProfit = 0;
+        private int totalSalesCount = 0;
+        private decimal totalRevenue = 0;
+
+        protected override async Task OnInitializedAsync()
+        {
+            await LoadDashboardData();
+            pageLoaded = true;
+        }
+
+        private async Task LoadDashboardData()
+        {
+            isLoading = true;
+            StateHasChanged();
+
+            try
+            {
+                inventoryItems = await InventoryService.GetAllItemsAsync();
+                suppliers = await ProcurementService.GetAllSuppliersAsync();
+                purchaseOrders = await ProcurementService.GetAllPurchaseOrdersAsync();
+                employees = await ManpowerService.GetAllEmployeesAsync();
+                schedules = await ManpowerService.GetAllSchedulesAsync();
+
+                // Load sales data
+                var sales = await SalesService.GetAllSalesAsync();
+                todaySales = await SalesService.GetTotalSalesTodayAsync();
+                todayProfit = await SalesService.GetTotalProfitTodayAsync();
+                totalSalesCount = sales.Count;
+                totalRevenue = sales.Sum(s => s.TotalAmount);
+
+                lastUpdateTime = DateTime.Now;
+            }
+            catch (Exception)
+            {
+                // Handle error silently
+            }
+            finally
+            {
+                isLoading = false;
+                StateHasChanged();
+            }
+        }
+
+        private async Task RefreshDashboard()
+        {
+            await LoadDashboardData();
+        }
+
+        // Activity tracking
+        private class Activity
+        {
+            public string Type { get; set; } = string.Empty;
+            public string Title { get; set; } = string.Empty;
+            public string Description { get; set; } = string.Empty;
+            public string TimeAgo { get; set; } = string.Empty;
+            public string BadgeClass { get; set; } = string.Empty;
+        }
+
+        private List<Activity> GetRecentActivities()
+        {
+            var activities = new List<Activity>();
+
+            // Recent POs
+            foreach (var po in purchaseOrders.OrderByDescending(p => p.CreatedDate).Take(5))
+            {
+                activities.Add(new Activity
+                {
+                    Type = "PO",
+                    Title = po.OrderNumber,
+                    Description = $"{po.Supplier?.SupplierName} - ₱{po.TotalAmount:N0}",
+                    TimeAgo = GetTimeAgo(po.CreatedDate),
+                    BadgeClass = "bg-primary"
+                });
+            }
+
+            // Recent inventory restocks
+            foreach (var item in inventoryItems.Where(i => i.LastRestocked.HasValue).OrderByDescending(i => i.LastRestocked).Take(3))
+            {
+                activities.Add(new Activity
+                {
+                    Type = "Restock",
+                    Title = item.ItemName,
+                    Description = $"Qty: {item.Quantity} - {item.LastSupplierName}",
+                    TimeAgo = GetTimeAgo(item.LastRestocked.Value),
+                    BadgeClass = "bg-success"
+                });
+            }
+
+            return activities.OrderByDescending(a => a.TimeAgo).Take(10).ToList();
+        }
+
+        private string GetTimeAgo(DateTime date)
+        {
+            var timeSpan = DateTime.Now - date;
+
+            if (timeSpan.TotalMinutes < 1)
+                return "Just now";
+            if (timeSpan.TotalMinutes < 60)
+                return $"{(int)timeSpan.TotalMinutes}m ago";
+            if (timeSpan.TotalHours < 24)
+                return $"{(int)timeSpan.TotalHours}h ago";
+            if (timeSpan.TotalDays < 7)
+                return $"{(int)timeSpan.TotalDays}d ago";
+            if (timeSpan.TotalDays < 30)
+                return $"{(int)(timeSpan.TotalDays / 7)}w ago";
+            if (timeSpan.TotalDays < 365)
+                return $"{(int)(timeSpan.TotalDays / 30)}mo ago";
+            return $"{(int)(timeSpan.TotalDays / 365)}y ago";
+        }
+
+        // Inventory metrics
+        private int GetCategoriesCount() => inventoryItems.Select(i => i.Category).Distinct().Count();
+        private int GetTotalQuantity() => inventoryItems.Sum(i => i.Quantity);
+        private decimal CalculateTotalCost() => inventoryItems.Sum(i => i.TotalCostValue);
+        private decimal CalculateTotalSellingValue() => inventoryItems.Sum(i => i.TotalSellingValue);
+        private decimal CalculateTotalProfit() => inventoryItems.Sum(i => i.TotalProfitPotential);
+
+        private decimal GetROIPercentage()
+        {
+            var cost = CalculateTotalCost();
+            if (cost == 0) return 0;
+            return (CalculateTotalProfit() / cost) * 100;
+        }
+
+        private decimal GetInventoryHealthPercentage()
+        {
+            if (inventoryItems.Count == 0) return 0;
+            var healthyItems = inventoryItems.Count(i => i.Quantity > i.MinimumStockLevel);
+            return ((decimal)healthyItems / inventoryItems.Count) * 100;
+        }
+
+        private List<InventoryItem> GetLowStockItems() =>
+        inventoryItems.Where(i => i.Quantity <= i.MinimumStockLevel && i.Quantity > 0)
+        .OrderBy(i => i.Quantity).ToList();
+
+        private int GetOutOfStockCount() => inventoryItems.Count(i => i.Quantity == 0);
+        private int GetWellStockedCount() => inventoryItems.Count(i => i.Quantity > i.MinimumStockLevel && i.Quantity < i.HighStockLevel);
+        private int GetHighStockCount() => inventoryItems.Count(i => i.Quantity >= i.HighStockLevel);
+
+        // Supplier metrics
+        private int GetTotalSupplierItems() => suppliers.Sum(s => s.SupplierItems?.Count ?? 0);
+
+        // Purchase Order metrics
+        private int GetPendingOrdersCount() => purchaseOrders.Count(po => po.Status == "Pending" || po.Status == "Approved");
+
+        // Schedule metrics
+        private int GetTodaySchedulesCount() => schedules.Count(s => s.Date.Date == DateTime.Today && s.IsActive);
+
+        // Helper methods
+        private string GetPOStatusClass(string status)
+        {
+            return status switch
+            {
+                "Pending" => "bg-warning text-dark",
+                "Approved" => "bg-info",
+                "Ordered" => "bg-primary",
+                "Delivered" => "bg-success",
+                "Cancelled" => "bg-danger",
+                _ => "bg-secondary"
+            };
+        }
+
+        private void GoToReorder(InventoryItem item)
+        {
+            if (item.LastSupplierId.HasValue && item.LastSupplierId.Value > 0)
+            {
+                Navigation.NavigateTo($"/purchase-orders?supplierId={item.LastSupplierId.Value}&autoCreate=true");
+            }
+            else
+            {
+                Navigation.NavigateTo("/purchase-orders");
+            }
+        }
+    }
+</AuthGuard>
